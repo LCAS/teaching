@@ -1,0 +1,58 @@
+------------------------------------------------------------------------------------------------------------------------
+
+CSP CASE:
+
+RUNING:
+
+T1: roslaunch lucia_meta_csp_lecture cbr_lecture.launch
+
+T2(BENCHMARK): rosrun lucia_sim_2014 lucia_sim_2014_benchmark_node_csp
+
+T3(Start task): rostopic pub active_sensing std_msgsg "active"
+
+BENCHMARK:
+Achivements:
+  -> Reach panels.
+Penalization set:
+  -> Robot bumps something:
+  -> Excedes time: 25[s];
+  -> Excedes time: 50[s].
+Disqualifying set:
+  -> robot damages or hits down a wall or QR panel.
+
+ADDITIONAL EVALUTION PARAMETERES:
+  -> Execution time;
+
+TIMEOUT: 220[s]
+
+------------------------------------------------------------------------------------------------------------------------
+
+ASP CASE:
+
+T1: roslaunch asp_session_files environment_asp.launch
+
+T2: rosrun rosoclingo irun.py --files: /home/pmiraldo/catkin_ws/src/asp_session_files/asp/environment.lp /home/pmiraldo/catkin_ws/src/asp_session_files/asp/winterschool.lp
+
+T4: rosrun asp_session_files interface_winterschool.py
+
+T5(BENCHMAKR): rosrun lucia_sim_2014 lucia_sim_2014_benchmark_node_asp
+
+T3(start task): rosrun asp_session_files winterschool_1.py
+
+BENCHMARK:
+Achivements:
+  -> Reach panels.
+Penalization set:
+  -> Robot bumps something:
+  -> Excedes time: 110[s];
+  -> Excedes time: 180[s].
+Disqualifying set:
+  -> robot damages or hits down a wall or QR panel.
+
+ADDITIONAL EVALUTION PARAMETERES:
+  -> Execution time;
+  -> Total distances that the robot requered to compute the task.
+
+TIMEOUT: 220[s];
+
+------------------------------------------------------------------------------------------------------------------------

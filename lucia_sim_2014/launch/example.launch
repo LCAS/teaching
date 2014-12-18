@@ -1,0 +1,10 @@
+<launch>
+
+
+<!-- example -->
+	<node pkg="lucia_sim_2014" type="lucia_sim_2014_node" name="lucia_sim_2014_node" output="screen">
+
+
+	</node>
+ 
+</launch>

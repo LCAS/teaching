@@ -1,0 +1,36 @@
+digraph G {
+"turtlebot_2/odom" -> "turtlebot_2/base_footprint"[label="Broadcaster: /turtlebot_2/mobile_base_nodelet_manager\nAverage rate: 50.495 Hz\nMost recent transform: 1417103400.114 \nBuffer length: 4.654 sec\n"];
+"turtlebot_2/base_footprint" -> "turtlebot_2/base_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/camera_rgb_frame" -> "turtlebot_2/camera_depth_frame"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/camera_rgb_frame"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/camera_depth_frame" -> "turtlebot_2/camera_depth_optical_frame"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/camera_rgb_frame" -> "turtlebot_2/camera_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/camera_rgb_frame" -> "turtlebot_2/camera_rgb_optical_frame"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/caster_back_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/caster_front_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/cliff_sensor_front_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/cliff_sensor_left_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/cliff_sensor_right_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/gyro_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/plate_bottom_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/plate_middle_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/plate_top_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_bottom_0_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_bottom_1_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_bottom_2_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_bottom_3_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_bottom_4_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_bottom_5_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_kinect_0_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_kinect_1_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_middle_0_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_middle_1_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_middle_2_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_middle_3_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_top_0_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_top_1_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_top_2_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/pole_top_3_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 5.217 Hz\nMost recent transform: 1417103400.648 \nBuffer length: 4.600 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/wheel_left_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 4.801 Hz\nMost recent transform: 1417103399.994 \nBuffer length: 4.374 sec\n"];
+"turtlebot_2/base_link" -> "turtlebot_2/wheel_right_link"[label="Broadcaster: /turtlebot_2/robot_state_publisher\nAverage rate: 4.801 Hz\nMost recent transform: 1417103399.994 \nBuffer length: 4.374 sec\n"];
+}

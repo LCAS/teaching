@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="lucia_meta_csp_lecture" pkg="lucia_meta_csp_lecture" type="active_perception" args="se.oru.aass.lucia_meta_csp_lecture.exercises.Ex2" output="screen">
+  </node>
+</launch>

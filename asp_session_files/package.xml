@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package>
+  <name>asp_session_files</name>
+  <version>1.0.0</version>
+  <description>Additional files you need for the ASP session</description>
+  <maintainer email="bandres@cs.uni-potsdam.de">Benjamin Andres</maintainer>
+  <license>TODO</license>
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

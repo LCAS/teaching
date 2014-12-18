@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package>
+  <name>rosoclingo_examples</name>
+  <version>0.0.0</version>
+  <description>The rosoclingo_examples package</description>
+
+  <!-- One maintainer tag required, multiple allowed, one person per tag --> 
+  <maintainer email="bandres@cs.uni-potsdam.de">Benjamin Andres</maintainer>
+
+  <!-- One license tag required, multiple allowed, one license per tag -->
+  <license>GPLv2</license>
+
+  <!-- Url tags are optional, but mutiple are allowed, one per tag -->
+  <url type="website">http://www.cs.uni-potsdam.de/rosoclingo/</url>
+
+  <!-- Author tags are optional, mutiple are allowed, one per tag -->
+  <author email="bandres@cs.uni-potsdam.de">Benjamin Andres</author>
+  <author email="daver@cse.unsw.edu.au">David Rajaratnam</author>
+
+
+  <!-- The *_depend tags are used to specify dependencies -->
+  <!-- Dependencies can be catkin packages or system dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>rosoclingo</run_depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+  </export>
+</package>

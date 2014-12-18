@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+ <include file="$(find lucia_sim_2014)/launch/environment.launch" />
+ <include file="$(find lucia_meta_csp_lecture)/launch/meta_csp_reasoning.launch" />
+</launch>

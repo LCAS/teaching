@@ -1,0 +1,28 @@
+<launch>
+ <!-- Gazebo config -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug" value="false"/>
+    <arg name="gui" value="true"/>
+    <arg name="world_name" value="$(find lucia_sim_2014)/launch/worlds/lucia.world"/>
+  </include>
+
+
+  <arg name="map_file" default="$(find lucia_sim_2014)/launch/maps/lucia_map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" >
+  <param name="frame_id" value="/map" />
+  </node>
+
+  <!-- Launch for multi robots -->
+  <include file="$(find lucia_sim_2014)/launch/multi-robots.launch.xml" />
+
+  <!-- Service for panel locations -->
+  <include file="$(find lucia_sim_2014)/launch/panel_service.launch" />
+ 
+
+  <!-- pumpers -->
+  <node pkg="lucia_sim_2014" type="bumpers_node" name="bumpers_node" output="screen"/>
+
+
+</launch>
+

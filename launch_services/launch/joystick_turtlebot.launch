@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+  <!--name of the robot-->
+  <arg name="robot" default="turtlebot_1"/>
+  <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" args="cmd_vel:=/$(arg robot)/$(arg robot)/commands/velocity" output="screen"/>
+</launch>

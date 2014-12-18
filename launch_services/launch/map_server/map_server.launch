@@ -1,0 +1,12 @@
+<launch>
+
+  <!-- Map server -->
+  <arg name="map_file" default="$(find launch_services)/launch/map_server/maps/lucia_map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" >
+   </node>
+
+  <!-- Service for panel locations -->
+  <include file="$(find launch_services)/launch/panel_service.launch" />
+
+</launch>
+

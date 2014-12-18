@@ -1,0 +1,22 @@
+<launch>
+
+  <arg name="base" default="$(optenv TURTLEBOT_BASE kobuki)"/>
+  <arg name="battery" default="$(optenv TURTLEBOT_BATTERY /proc/acpi/battery/BAT0)"/>
+  <arg name="stacks" default="$(optenv TURTLEBOT_STACKS hexagons)"/>
+  <arg name="3d_sensor" default="$(optenv TURTLEBOT_3D_SENSOR kinect)"/>
+
+  <arg name="model" default="$(find turtlebot_description)/robots/kobuki_hexagons_kinect.urdf.xacro" />
+
+   <param name="robot_description" command="$(find xacro)/xacro.py '$(arg model)'" />
+
+  <!-- Bring up robot1 -->
+  <group ns="turtlebot_1">
+<param name="tf_prefix" value="turtlebot_1" />
+    <include file="$(find lucia_sim_2014)/launch/robot.launch.xml" >
+      <arg name="robot_name"  value="turtlebot_1" />
+      <arg name="x" value="1.00"/>
+      <arg name="y" value="-0.50"/>
+    </include>
+  </group>
+
+</launch>

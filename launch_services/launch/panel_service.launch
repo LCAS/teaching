@@ -1,0 +1,45 @@
+<launch>
+  <!-- Service for panel locations -->
+  <node pkg="launch_services" type="panel_serv_node" name="panel_serv_node" output="screen">
+
+                <!-- panel_1, -2.245 1.197 | -2.528 1.455 -->
+		<param name="panel1_x2" type="double" value="-2.245" />
+		<param name="panel1_y2" type="double" value="1.197" />
+		<param name="panel1_x1" type="double" value="-2.528" />
+		<param name="panel1_y1" type="double" value="1.455" />
+
+                <!-- panel_2, -2.995 -2.353 | -2.720 -2.875 -->
+		<param name="panel2_x1" type="double" value="-2.995" />
+		<param name="panel2_y1" type="double" value="-2.353" />
+		<param name="panel2_x2" type="double" value="-2.720" />
+		<param name="panel2_y2" type="double" value="-2.875" />
+
+                <!-- panel_3, -0.129 1.284 | -0.135 0.916 -->
+		<param name="panel3_x1" type="double" value="-0.129" />
+		<param name="panel3_y1" type="double" value="1.284" />
+		<param name="panel3_x2" type="double" value="-0.135" />
+		<param name="panel3_y2" type="double" value="0.916" />
+
+                <!-- panel_4, -0.033 -2.105 | -0.311 -2.463 -->
+		<param name="panel4_x1" type="double" value="-0.033" />
+		<param name="panel4_y1" type="double" value="-2.105" />
+		<param name="panel4_x2" type="double" value="-0.311" />
+		<param name="panel4_y2" type="double" value="-2.463" />
+
+		<!-- panel_5, 2.452 1.175 | 2.285 0.836 -->
+		<param name="panel5_x1" type="double" value="2.452" />
+		<param name="panel5_y1" type="double" value="1.175" />
+		<param name="panel5_x2" type="double" value="2.285" />
+		<param name="panel5_y2" type="double" value="0.836" />
+
+		<!-- panel_6, 2.795 -2.128 | 2.354 -2.128 -->
+		<param name="panel6_x2" type="double" value="2.795" />
+		<param name="panel6_y2" type="double" value="-2.128" />
+		<param name="panel6_x1" type="double" value="2.354" />
+		<param name="panel6_y1" type="double" value="-2.128" />
+
+   </node>
+
+
+</launch>
+
