@@ -1,7 +1,7 @@
 all: installed
 
 REV_ORIG=f33d3b65601f
-REV=fac455fd571d
+REV=c682e1aa274d
 TARBALL=${REV}.tar.gz
 TARBALL_URL=http://hg.fast-downward.org/archive/${TARBALL}
 SOURCE_DIR=build/downward
