@@ -1,4 +1,4 @@
-CMP3641M
+LCAS Teaching Repo
 ========
 
-Material for the CMP3641M course
+A repository for all the teaching stuff
