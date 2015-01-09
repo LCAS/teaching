@@ -1,10 +1,9 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package catkinized_downward
+Changelog for package uol_morse_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Forthcoming
 -----------
 * bumped version after moving packages
-* imported hydri-version
-* imported planners
+* initialised with basic packages
 * Contributors: Marc Hanheide
