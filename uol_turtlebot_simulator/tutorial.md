@@ -1,7 +1,7 @@
 # The Turtlebot Simulator - A Brief Tutorial
 
 ## Empty world and keyboard teleop
-The following has largely been taken from (the first official tutorial)[http://wiki.ros.org/turtlebot_simulator/Tutorials/hydro/Explore%20the%20Gazebo%20world].
+The following has largely been taken from [the first official tutorial](http://wiki.ros.org/turtlebot_simulator/Tutorials/hydro/Explore%20the%20Gazebo%20world).
 
 ### Installation
 Ubuntu packages:
@@ -36,3 +36,13 @@ q : quit.
 * Adding objects to see something:
  * In Gazebo, select a cube, speher, or cylinder and drop it with a mouse click infront of the robot
  * Go back to rviz and observe what you can see
+ 
+## Comp Lab C and rviz
+
+### Start-up
+* Comp Lab C and rviz: 
+ * Simulator: `roslaunch uol_turtlebot_simulator labc.launch`
+ * Rviz: `roslaunch uol_turtlebot_simulator view_navigation.launch`
+
+### Control
+* Use the 2 "2D Nav Goal" buttons to send the robots around.
