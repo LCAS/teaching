@@ -3,11 +3,6 @@
 ## Empty world and keyboard teleop
 The following has largely been taken from [the first official tutorial](http://wiki.ros.org/turtlebot_simulator/Tutorials/hydro/Explore%20the%20Gazebo%20world).
 
-### Installation
-Ubuntu packages:
-* Turtlebot specific tools: `sudo apt-get install ros-hydro-turtlebot-apps ros-hydro-turtlebot-rviz-launchers`
-* Turtlebot simulator: `sudo apt-get install ros-hydro-turtlebot-simulator`
-
 ### Start-up
 * Empty world with keyboard teleop: 
  * Simulator: `roslaunch turtlebot_gazebo turtlebot_empty_world.launch`
