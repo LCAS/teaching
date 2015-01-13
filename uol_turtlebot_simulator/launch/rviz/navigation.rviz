@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /TF1/Frames1
         - /TF1/Tree1
-        - /Turtlebot_11
       Splitter Ratio: 0.5
     Tree Height: 349
   - Class: rviz/Selection
@@ -649,5 +648,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1622
-  X: 44
+  X: 37
   Y: 24

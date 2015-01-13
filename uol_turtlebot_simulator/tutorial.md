@@ -45,4 +45,17 @@ q : quit.
  * Rviz: `roslaunch uol_turtlebot_simulator view_navigation.launch`
 
 ### Control
-* Use the 2 "2D Nav Goal" buttons to send the robots around.
+* Use the 2 "2D Nav Goal" buttons in the top panel to send the robots around.
+ * Click the button
+ * Click and hold the left mouse button somewhere on the map. An arrow should appear.
+ * While holding the left mouse button you can oreint the arrow which determines the final orientation of the robot when arriving at the designated target.
+ * Let the left mouse button go to send the goal to the robot.
+
+### Visualisations
+In the left panel you can see three groups of visualisations:
+
+* Global: This turns on the map and the robot models. Untick to turn this off.
+* Turtlebot_1: This turns on the global and local costmap, the global and local path, the image, the amcl point cloud, and the laser scan of turtlebot 1.
+* Turtlebot_2: This turns on the global and local costmap, the global and local path, the image, the amcl point cloud, and the laser scan of turtlebot 2.
+
+All of these groups can be expanded to turn on/off the seperate visualisations.

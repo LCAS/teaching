@@ -5,7 +5,7 @@
   <arg name="stacks" default="$(optenv TURTLEBOT_STACKS hexagons)"/>
   <arg name="3d_sensor" default="$(optenv TURTLEBOT_3D_SENSOR kinect)"/>
 
-  <arg name="model" default="$(find turtlebot_description)/robots/kobuki_hexagons_kinect.urdf.xacro" />
+  <arg name="model" default="$(find uol_turtlebot_simulator)/urdf/kobuki_hexagons_kinect.urdf.xacro" />
 
    <param name="robot_description" command="$(find xacro)/xacro.py '$(arg model)'" />
 
