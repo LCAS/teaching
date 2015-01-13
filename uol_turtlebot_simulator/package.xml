@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>uol_turtlebot_simulator</name>
+  <version>0.1.2</version>
+  <description>The uol_turtlebot_simulator package</description>
+
+  <maintainer email="cdondrup@lincoln.ac.uk">Christian Dondrup</maintainer>
+
+  <license>TODO</license>
+
+  <url type="website">https://github.com/LCAS/teaching</url> 
+
+  <author email="cdondrup@lincoln.ac.uk">Christian Dondrup</author> 
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <run_depend>turtlebot_apps</run_depend>
+  <run_depend>turtlebot_rviz_launchers</run_depend>
+  <run_depend>turtlebot_simulator</run_depend>
+
+  <export/>
+</package>
