@@ -2,8 +2,8 @@
 Changelog for package uol_turtlebot_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.3 (2015-01-14)
+------------------
 * First version of simulation with one turtlebot
 * First tutorial version only containing an empty world and keyboard teleop.
 * Contributors: Christian Dondrup, cdondrup
