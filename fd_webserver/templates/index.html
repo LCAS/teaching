@@ -27,9 +27,12 @@
   <link rel="apple-touch-icon-precomposed" href="static/img/apple-touch-icon-57-precomposed.png">
   <link rel="shortcut icon" href="static/img/favicon.png">
   
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="static/js/scripts.js"></script>
+	<link rel="stylesheet" href="static/codemirror.css">
+	<script src="static/codemirror.js"></script>
+
 </head>
 
 <body>
@@ -58,6 +61,12 @@
 				<div class="form-group">
 					<textarea class="form-control" id="domain"></textarea>
 				</div>
+				<script>
+  					var editor = CodeMirror.fromTextArea(domain, {
+    					lineNumbers: true, 
+    					mode: "text/x-common-lisp"
+  					});
+				</script>
 			</form>
 		</div>
 		<div class="col-md-6 column">
