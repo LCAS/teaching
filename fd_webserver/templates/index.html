@@ -67,7 +67,7 @@
 						<textarea class="form-control" id="domain"></textarea>
 					</div>
 					<script>
-	  					var editor = CodeMirror.fromTextArea(document.getElementById("domain"), {
+	  					domain_editor = CodeMirror.fromTextArea(document.getElementById("domain"), {
 	    					lineNumbers: true,
 	    					styleActiveLine: true,
 	    					matchBrackets: true,
@@ -92,7 +92,7 @@
 						<textarea class="form-control" id="problem"></textarea>
 					</div>
 					<script>
-	  					var editor = CodeMirror.fromTextArea(document.getElementById("problem"), {
+	  					problem_editor = CodeMirror.fromTextArea(document.getElementById("problem"), {
 	    					lineNumbers: true,
 	    					styleActiveLine: true,
 	    					matchBrackets: true,
@@ -112,7 +112,7 @@
 								
 								var $btn = $(this).button('loading');
 							    
-								$.post( "/", {domain: "", problem: ""}, function( data ) {
+								$.post( "/", {domain: domain_editor.getValue(), problem: problem_editor.getValue()}, function( data ) {
 	  								$('#sout').val(data.sout)
 	  								$('#plan').val(data.plan)
 								})

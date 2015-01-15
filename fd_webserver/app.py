@@ -5,7 +5,10 @@ app = Flask(__name__)
 
 
 def call_planner(domain, problem):
-    print "call the planner here"
+    print "call the planner here: "
+    print "Domain: %s" % domain
+    print "Problem: %s" % problem
+    return "This contains the logs", "This shall be the plan"
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -14,8 +17,8 @@ def index(name=None):
         print "post"
         domain = request.form['domain']
         problem = request.form['problem']
-        call_planner(domain, problem)
-        return jsonify(sout='stdout', plan='plan')
+        sout, plan = call_planner(domain, problem)
+        return jsonify(sout=sout, plan=plan)
     else:
         domain = request.args.get('domain', '')
         problem = request.args.get('problem', '')
