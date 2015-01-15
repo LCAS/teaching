@@ -2,8 +2,8 @@
 Changelog for package uol_morse_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.4 (2015-01-15)
+------------------
 * Remote uol_turtlebot_common package. Removed dependencies from uol_morse_simulator package that do not exist in hydro yet.
 * Contributors: Christian Dondrup
 
