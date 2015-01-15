@@ -30,8 +30,14 @@
 	<script type="text/javascript" src="static/js/jquery.min.js"></script>
 	<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="static/js/scripts.js"></script>
-	<link rel="stylesheet" href="static/codemirror.css">
-	<script src="static/codemirror.js"></script>
+	<link rel="stylesheet" href="static/codemirror/lib/codemirror.css">
+	<script src="static/codemirror/lib/codemirror.js"></script>
+	<script src="static/codemirror/mode/javascript/javascript.js"></script>
+	<script src="static/codemirror/mode/commonlisp/commonlisp.js"></script>
+	<script src="static/codemirror/addon/selection/active-line.js"></script>
+	<script src="static/codemirror/addon/edit/matchbrackets.js"></script>
+	<link rel="stylesheet" href="static/codemirror/theme/eclipse.css">
+
 
 </head>
 
@@ -51,54 +57,100 @@
 	</div>
 	<div class="row clearfix">
 		<div class="col-md-6 column">
-			<h2>
-				Domain
-			</h2>
-			<p>
-				Copy your PDDL domain definition here.
-			</p>
-			<form class="form-horizontal" role="form">
-				<div class="form-group">
-					<textarea class="form-control" id="domain"></textarea>
-				</div>
-				<script>
-  					var editor = CodeMirror.fromTextArea(domain, {
-    					lineNumbers: true, 
-    					mode: "text/x-common-lisp"
-  					});
-				</script>
-			</form>
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Domain</h3>
+			  </div>
+			  <div class="panel-body">
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<textarea class="form-control" id="domain"></textarea>
+					</div>
+					<script>
+	  					var editor = CodeMirror.fromTextArea(document.getElementById("domain"), {
+	    					lineNumbers: true,
+	    					styleActiveLine: true,
+	    					matchBrackets: true,
+	    					theme: "eclipse",
+	    					mode: "commonlisp"//"text/x-common-lisp"
+	  					});
+					</script>
+				</form>
+
+			  </div>
+			</div>
+
 		</div>
 		<div class="col-md-6 column">
-			<h2>
-				Problem
-			</h2>
-			<p>
-				Copy your PDDL problem definition here.
-			</p>
-			<form class="form-horizontal" role="form">
-				<div class="form-group">
-					<textarea class="form-control" id="problem"></textarea>
-				</div>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						 <button type="button" class="btn btn-default">Solve it</button>
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Problem</h3>
+			  </div>
+			  <div class="panel-body">
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<textarea class="form-control" id="problem"></textarea>
 					</div>
-				</div>
-			</form>
-			<div class="progress">
-				<div class="progress-bar progress-success">
-				</div>
+					<script>
+	  					var editor = CodeMirror.fromTextArea(document.getElementById("problem"), {
+	    					lineNumbers: true,
+	    					styleActiveLine: true,
+	    					matchBrackets: true,
+	    					theme: "eclipse",
+	    					mode: "commonlisp"//"text/x-common-lisp"
+	  					});
+					</script>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							 <button id="planit" 
+							 	data-loading-text="Processing..." 
+							 	type="button" 
+							 	class="btn btn-default">Solve it</button>
+						</div>
+						<script type="text/javascript" async defer>
+							$('#planit').on('click', function () {
+								
+								var $btn = $(this).button('loading');
+							    
+								$.post( "/", {domain: "", problem: ""}, function( data ) {
+	  								$('#sout').val(data.sout)
+	  								$('#plan').val(data.plan)
+								})
+								.always(function() {
+	  								$btn.button('reset');
+								})
+								.fail(function() {
+								    alert( "error" );
+	  							});
+							});
+						</script>
+					</div>
+				</form>
+			  </div>
 			</div>
+
 		</div>
 	</div>
 	<div class="row clearfix">
 		<div class="col-md-8 column">
-			<h3>
-				h3. Lorem ipsum dolor sit amet.
-			</h3>
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Log</h3>
+			  </div>
+			  <div class="panel-body">
+			    <textarea rows="30" id="sout" style="width: 100%" readonly>see the logs here after clicking "Solve it"</textarea>
+			  </div>
+			</div>
 		</div>
 		<div class="col-md-4 column">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Plan</h3>
+			  </div>
+			  <div class="panel-body">
+			    <textarea rows="30" id="plan" style="width: 100%" readonly>see the generated plan here after clicking "Solve it"</textarea>
+			  </div>
+			</div>
 		</div>
 	</div>
 </div>
