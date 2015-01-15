@@ -41,7 +41,6 @@
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>uol_kobuki_gazebo_plugins</run_depend>
-  <run_depend>uol_turtlebot_common</run_depend>
   <run_depend>uol_turtlebot_simulator</run_depend>
 
 
