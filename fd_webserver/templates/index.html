@@ -64,6 +64,25 @@
 			  <div class="panel-body">
 				<form class="form-horizontal" role="form">
 					<div class="form-group">
+						<div class="dropdown">
+						  <button class="btn btn-default dropdown-toggle" type="button" id="dropDownDomain" data-toggle="dropdown" aria-expanded="true">
+						    Domain Templates
+						    <span class="caret"></span>
+						  </button>
+						  <ul id="ddm-domain" class="dropdown-menu" role="menu" aria-labelledby="dropDownDomain">
+						    <li role="presentation"><a role="menuitem" tabindex="-1">template</a></li>
+						  </ul>
+						</div>					
+						<script type="text/javascript" async defer>
+							$("#ddm-domain li a").click(function () {
+								$.get("static/domains/" + $(this).text() + ".pddl", function(data) {
+									domain_editor.setValue(data)
+								});
+						        console.log("Selected Option:"+$(this).text());
+							});
+						</script>
+					</div>
+					<div class="form-group">
 						<textarea class="form-control" id="domain"></textarea>
 					</div>
 					<script>
@@ -89,6 +108,25 @@
 			  <div class="panel-body">
 				<form class="form-horizontal" role="form">
 					<div class="form-group">
+						<div class="dropdown">
+						  <button class="btn btn-default dropdown-toggle" type="button" id="dropDownDomain" data-toggle="dropdown" aria-expanded="true">
+						    Problem Templates
+						    <span class="caret"></span>
+						  </button>
+						  <ul id="ddm-problem" class="dropdown-menu" role="menu" aria-labelledby="dropDownProblem">
+						    <li role="presentation"><a role="menuitem" tabindex="-1">template</a></li>
+						  </ul>
+						</div>					
+						<script type="text/javascript" async defer>
+							$("#ddm-problem li a").click(function () {
+								$.get("static/problems/" + $(this).text() + ".pddl", function(data) {
+									problem_editor.setValue(data)
+								});
+						        console.log("Selected Option:"+$(this).text());
+							});
+						</script>
+					</div>
+					<div class="form-group">
 						<textarea class="form-control" id="problem"></textarea>
 					</div>
 					<script>
@@ -106,6 +144,16 @@
 							 	data-loading-text="Processing..." 
 							 	type="button" 
 							 	class="btn btn-primary btn-lg">Solve it</button>
+							<div class="dropdown">
+							  <button class="btn btn-default dropdown-toggle" type="button" id="dropDownDomain" data-toggle="dropdown" aria-expanded="true">
+							    Domain Templates
+							    <span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu" role="menu" aria-labelledby="dropDownDomain">
+							    <li role="presentation"><a role="menuitem" tabindex="-1">template</a></li>
+							  </ul>
+							</div>					
+
 						</div>
 						<script type="text/javascript" async defer>
 							$('#planit').on('click', function () {
