@@ -9,6 +9,6 @@
 )
 
 (:goal (and
-		(not (pred obj1))
+		(not (pred0 obj1))
 	)
 ))

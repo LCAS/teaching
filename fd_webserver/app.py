@@ -1,13 +1,44 @@
 from flask import Flask, render_template, request, jsonify
-
+from subprocess import CalledProcessError
 
 app = Flask(__name__)
 
 
 def call_planner(domain, problem):
-    print "call the planner here: "
-    print "Domain: %s" % domain
-    print "Problem: %s" % problem
+
+    from driver.main import main
+    from tempfile import mkdtemp
+    from shutil import rmtree
+    from os import path
+
+    tmpdir = mkdtemp()
+
+    domain_file = path.join(tmpdir, 'domain.pddl')
+    problem_file = path.join(tmpdir, 'problem.pddl')
+    plan_file = path.join(tmpdir, 'plan.out')
+
+    print "operate in %s" % tmpdir
+
+    with open(domain_file, "w") as text_file:
+        text_file.write(domain)
+    with open(problem_file, "w") as text_file:
+        text_file.write(problem)
+
+    try:
+        log = main(["--plan-file", plan_file, "--cwd", tmpdir, problem_file, "--search", "astar(blind)"])
+        with open(plan_file, "r") as text_file:
+            p = text_file.read()
+        return log, p
+
+    except (CalledProcessError) as e:
+        return e.output, "no plan due to error. check logs"
+
+    except (RuntimeError, OSError) as e:
+        print e
+        return str(e), "no plan due to error. check logs"
+
+    
+    #rmtree(tmpdir, ignore_errors=True)
     return "This contains the logs", "This shall be the plan"
 
 
