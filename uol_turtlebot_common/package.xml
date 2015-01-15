@@ -42,7 +42,7 @@
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>turtlebot_actions</build_depend>
   <build_depend>turtlebot_bringup</build_depend>
-  <build_depend>turtlebot_core_apps</build_depend>
+  <build_depend>turtlebot_apps</build_depend>
   <build_depend>turtlebot_dashboard</build_depend>
   <build_depend>turtlebot_msgs</build_depend>
   <build_depend>turtlebot_navigation</build_depend>
