@@ -2,6 +2,12 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Updated tutorial for indigo.
+* Adding the possibility of teleoperating the turtlebots via key op, see tutorial.md. Changing topic names to have the command velocities published under . Using the yocs_command_velocity_smoother as suggested by kobuki.
+* Contributors: Christian Dondrup
+
 0.1.3 (2015-01-14)
 ------------------
 * Minor changes made during meeting.
