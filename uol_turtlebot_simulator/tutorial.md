@@ -5,7 +5,7 @@ The following has largely been taken from [the first official tutorial](http://w
 
 ### Start-up
 * Empty world with keyboard teleop: 
- * Simulator: `roslaunch turtlebot_gazebo turtlebot_empty_world.launch`
+ * Simulator: `roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$(rospack find turtlebot_gazebo)/worlds/empty.world`
  * Keyboard teleop: `roslaunch kobuki_keyop keyop.launch`
 
 ### Control
@@ -27,7 +27,10 @@ q : quit.
 * Show the image:
  * Tick the box next to `image`
  * Expand the `image` node and select `/camera/rgb/image_raw` as the `Topic`
- * Enable `Laser Scan`
+* Enable `Laser Scan`
+* Show the registered pointcloud:
+ * Tick the box next to `Registered PointCloud`
+ * Expand the `Regesitered PointCloud` node and select `/camera/depth/points` as the `Topic`
 * Adding objects to see something:
  * In Gazebo, select a cube, speher, or cylinder and drop it with a mouse click infront of the robot
  * Go back to rviz and observe what you can see
