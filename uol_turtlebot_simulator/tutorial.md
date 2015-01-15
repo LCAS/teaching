@@ -45,6 +45,19 @@ q : quit.
  * Click and hold the left mouse button somewhere on the map. An arrow should appear.
  * While holding the left mouse button you can oreint the arrow which determines the final orientation of the robot when arriving at the designated target.
  * Let the left mouse button go to send the goal to the robot.
+* Use the keyboard teleop
+ * Run the teleop in a new terminal specifing which robot you want to control: `roslaunch uol_turtlebot_simulator keyop.launch robot_name:=<robot_name>`. Where `<robot_name>` can be `turtlebot_1` or `turtlebot_2`.
+ * The actual control mechanism is printed on the screen:
+ ```
+Reading from keyboard
+---------------------------
+Forward/back arrows : linear velocity incr/decr.
+Right/left arrows : angular velocity incr/decr.
+Spacebar : reset linear/angular velocities.
+d : disable motors.
+e : enable motors.
+q : quit.
+ ```
 
 ### Visualisations
 In the left panel you can see three groups of visualisations:

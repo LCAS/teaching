@@ -212,7 +212,7 @@ void GazeboRosKobuki::Load(physics::ModelPtr parent, sdf::ElementPtr sdf)
     return;
   }
   last_cmd_vel_time_ = world_->GetSimTime();
-  cmd_vel_sub_ = nh_priv_.subscribe(node_name_ + "/commands/velocity", 100, &GazeboRosKobuki::cmdVelCB, this);
+  cmd_vel_sub_ = nh_priv_.subscribe("cmd_vel", 100, &GazeboRosKobuki::cmdVelCB, this);
 
   /*
    * Prepare cliff sensors

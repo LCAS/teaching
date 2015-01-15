@@ -23,7 +23,7 @@
   <node pkg="nodelet" type="nodelet" name="cmd_vel_mux"
         args="load yocs_cmd_vel_mux/CmdVelMuxNodelet $(arg robot_name)_nodelet_manager">
     <param name="yaml_cfg_file" value="$(find turtlebot_bringup)/param/mux.yaml" />
-    <remap from="cmd_vel_mux/output" to="commands/velocity"/>
+    <remap from="cmd_vel_mux/output" to="cmd_vel"/>
   </node>
 
   <!-- bumper2pc.launch.xml -->
@@ -39,7 +39,7 @@
     <param name="tf_prefix" type="string" value="$(arg robot_name)" />
   </node>
 
-<!-- fake lazer -->
+<!-- fake laser -->
   <node pkg="nodelet" type="nodelet" name="$(arg robot_name)_laserscan_nodelet_manager" args="manager"/>
   <node pkg="nodelet" type="nodelet" name="depthimage_to_laserscan"
         args="load depthimage_to_laserscan/DepthImageToLaserScanNodelet $(arg robot_name)_laserscan_nodelet_manager">
@@ -55,10 +55,19 @@
     <rosparam file="$(find turtlebot_bringup)/param/defaults/smoother.yaml" command="load"/>
     <remap from="$(arg robot_name)_navigation_velocity_smoother/smooth_cmd_vel" to="cmd_vel_mux/input/navi"/>
     <remap from="$(arg robot_name)_navigation_velocity_smoother/odometry" to="odom"/>
-    <remap from="$(arg robot_name)_navigation_velocity_smoother/robot_cmd_vel" to="commands/velocity"/>
+    <remap from="$(arg robot_name)_navigation_velocity_smoother/raw_cmd_vel" to="move_base/cmd_vel"/>
+  </node>
+  <node pkg="nodelet" type="nodelet" name="$(arg robot_name)_keyop_velocity_smoother" args="load yocs_velocity_smoother/VelocitySmootherNodelet $(arg robot_name)_nodelet_manager">
+    <rosparam file="$(find turtlebot_bringup)/param/defaults/smoother.yaml" command="load"/>
+    <remap from="$(arg robot_name)_keyop_velocity_smoother/smooth_cmd_vel" to="cmd_vel_mux/input/teleop"/>
+    <remap from="$(arg robot_name)_keyop_velocity_smoother/odometry" to="odom"/>
+    <remap from="$(arg robot_name)_keyop_velocity_smoother/raw_cmd_vel" to="keyop/cmd_vel"/>
   </node>
 
-
+  <!-- Kobuki safety controller -->
+  <node pkg="nodelet" type="nodelet" name="$(arg robot_name)_kobuki_safety_controller" args="load kobuki_safety_controller/SafetyControllerNodelet $(arg robot_name)_nodelet_manager">
+    <remap from="$(arg robot_name)_kobuki_safety_controller/cmd_vel" to="cmd_vel_mux/safety_controller"/> 
+  </node>
 
   <!-- robot_pose_ekf -->
  <node  pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf" >
@@ -93,7 +102,7 @@
     <rosparam file="$(find uol_turtlebot_simulator)/param/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find uol_turtlebot_simulator)/param/base_local_planner_params.yaml" command="load" />
     <rosparam file="$(find uol_turtlebot_simulator)/param/move_base_params.yaml" command="load" />
-    <remap from="cmd_vel" to="$(arg robot_name)/commands/velocity"/>
+    <remap from="cmd_vel" to="move_base/cmd_vel"/>
     <remap from="map" to="/map" />
   </node>
 
