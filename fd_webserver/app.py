@@ -38,7 +38,7 @@ def call_planner(domain, problem):
         print e
         return str(e), "no plan due to error. check logs"
 
-    #rmtree(tmpdir, ignore_errors=True)
+    rmtree(tmpdir, ignore_errors=True)
     return "This contains the logs", "This shall be the plan"
 
 
