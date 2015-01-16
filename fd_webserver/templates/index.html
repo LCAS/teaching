@@ -152,7 +152,7 @@
 								
 								var $btn = $(this).button('loading');
 							    
-								$.post( "/", {domain: domain_editor.getValue(), problem: problem_editor.getValue()}, function( data ) {
+								$.post( document.URL, {domain: domain_editor.getValue(), problem: problem_editor.getValue()}, function( data ) {
 	  								$('#sout').val(data.sout)
 	  								$('#plan').val(data.plan)
 								})

@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, Blueprint
 from subprocess import CalledProcessError
 
 app = Flask(__name__)
 
+bp = Blueprint('fd_webserver', __name__, static_folder='static')
 
 def call_planner(domain, problem):
 
@@ -37,12 +38,11 @@ def call_planner(domain, problem):
         print e
         return str(e), "no plan due to error. check logs"
 
-    
     #rmtree(tmpdir, ignore_errors=True)
     return "This contains the logs", "This shall be the plan"
 
 
-@app.route('/', methods=['POST', 'GET'])
+@bp.route('/', methods=['POST', 'GET'])
 def index(name=None):
     if request.method == 'POST':
         print "post"
@@ -57,4 +57,5 @@ def index(name=None):
 
 
 if __name__ == '__main__':
+    app.register_blueprint(bp, url_prefix='/fast-downward')
     app.run(debug=True)
