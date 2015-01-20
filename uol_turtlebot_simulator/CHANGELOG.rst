@@ -2,6 +2,11 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Adding the essential uol_kobiku node to the package.xml
+* Contributors: Christian Dondrup
+
 0.1.4 (2015-01-15)
 ------------------
 * Updated tutorial for indigo.
