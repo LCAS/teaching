@@ -2,8 +2,8 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.5 (2015-01-20)
+------------------
 * Adding the essential uol_kobiku node to the package.xml
 * Contributors: Christian Dondrup
 
