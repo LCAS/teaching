@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>uol_turtlebot_simulator</name>
-  <version>0.1.5</version>
+  <version>0.1.6</version>
   <description>The uol_turtlebot_simulator package</description>
 
   <maintainer email="cdondrup@lincoln.ac.uk">Christian Dondrup</maintainer>
