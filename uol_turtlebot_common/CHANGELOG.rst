@@ -2,8 +2,8 @@
 Changelog for package uol_turtlebot_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.7 (2015-01-23)
+------------------
 * A bit too much copy and paste
 * Reviving the uol_turtlebot_common package
   Installing all the necessary packages to run the actual robot. This makes the custom turtlebot workspace obsolete.
