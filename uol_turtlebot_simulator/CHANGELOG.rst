@@ -2,6 +2,9 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.6 (2015-01-21)
 ------------------
 

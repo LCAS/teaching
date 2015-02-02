@@ -2,6 +2,11 @@
 Changelog for package uol_turtlebot_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Added custom launch file for all of the turtlebot functionalities and a cmd_vel republisher to uol_turtlebot_common
+* Contributors: Christian Dondrup
+
 0.1.7 (2015-01-23)
 ------------------
 * A bit too much copy and paste
