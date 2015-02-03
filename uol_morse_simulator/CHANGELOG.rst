@@ -2,6 +2,9 @@
 Changelog for package uol_morse_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.8 (2015-02-02)
 ------------------
 

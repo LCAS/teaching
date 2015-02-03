@@ -2,6 +2,9 @@
 Changelog for package catkinized_downward
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.8 (2015-02-02)
 ------------------
 
