@@ -232,5 +232,28 @@
                  izz="0.01" />
       </inertial>
     </link>
+    <joint name="colour_blob_joint" type="fixed">
+      <origin xyz="-0.01364 0.0  0.3966" rpy="0 0 0"/>
+      <parent link="${parent}"/>
+      <child link="colour_blob_joint"/>
+    </joint>  
+    <link name="colour_blob_joint">
+      <visual>
+        <origin xyz="0 0 0.05" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.07 0.15 0.1"/>
+        </geometry>
+      </visual>  
+      <inertial>
+        <mass value="0.01"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="0.01" ixy="0.0" ixz="0.0"
+                 iyy="0.01" iyz="0.0"
+                 izz="0.01" />
+      </inertial>
+    </link>
+    <gazebo reference="colour_blob_joint">
+      <material>Gazebo/Green</material>
+    </gazebo>
   </xacro:macro>
 </robot>
