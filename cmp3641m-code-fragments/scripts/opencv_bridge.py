@@ -11,8 +11,8 @@ class image_converter:
 
     cv2.namedWindow("Image window", 1)
     self.bridge = CvBridge()
-    self.image_sub = rospy.Subscriber("/camera/rgb/image_color",Image,self.callback)
-
+    self.image_sub = rospy.Subscriber("/image",Image,self.callback)
+    #self.image_sub = rospy.Subscriber("/camera/rgb/image_color",Image,self.callback)
   def callback(self,data):
     try:
       cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
@@ -38,7 +38,9 @@ def main(args):
   ic = image_converter()
   rospy.init_node('image_converter', anonymous=True)
   try:
-    rospy.spin()
+    #rospy.spin()
+    while not rospy.is_shutdown():
+        cv2.waitKey(3)
   except KeyboardInterrupt:
     print "Shutting down"
   cv2.destroyAllWindows()
