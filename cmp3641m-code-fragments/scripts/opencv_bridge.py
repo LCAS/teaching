@@ -14,7 +14,9 @@ class image_converter:
     def __init__(self):
 
         namedWindow("Image window", 1)
+
         self.bridge = CvBridge()
+
         startWindowThread()
         self.image_sub = rospy.Subscriber("/usb_cam/image_raw",
                                           Image, self.callback)
