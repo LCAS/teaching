@@ -11,7 +11,7 @@ startWindowThread()
 img = imread('../blofeld.jpg')
 imshow("original", img)
 
-img2 = blur(img,(3, 3))
+img2 = blur(img, (3, 3))
 imshow("blur", img2)
 
 img3 = Canny(img, 10, 200)
