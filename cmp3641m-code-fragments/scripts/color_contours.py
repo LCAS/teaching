@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import sys
+
 import rospy
 import cv2
 import numpy
@@ -11,6 +11,7 @@ class image_converter:
   def __init__(self):
 
     cv2.namedWindow("Image window", 1)
+    cv2.startWindowThread()
     self.bridge = CvBridge()
     self.image_sub = rospy.Subscriber("/usb_cam/image_raw",Image,self.callback)
     #self.image_sub = rospy.Subscriber("/camera/rgb/image_color",Image,self.callback)
@@ -43,18 +44,8 @@ class image_converter:
     #print contours0
     #cv2.drawContours(cv_image, contours0, -1, (255,0,0))
     cv2.imshow("Image window", hsv_thresh)
-    cv2.waitKey(3)
 
-def main(args):
-  ic = image_converter()
-  rospy.init_node('image_converter', anonymous=True)
-  try:
-    rospy.spin()
-    #while not rospy.is_shutdown():
-        #cv2.waitKey(3)
-  except KeyboardInterrupt:
-    print "Shutting down"
-  cv2.destroyAllWindows()
-
-if __name__ == '__main__':
-    main(sys.argv)
+image_converter()
+rospy.init_node('image_converter', anonymous=True)
+rospy.spin()
+cv2.destroyAllWindows()
