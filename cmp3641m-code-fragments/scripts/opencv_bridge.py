@@ -2,6 +2,7 @@
 import sys
 import rospy
 import cv2
+import numpy
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 
@@ -11,26 +12,26 @@ class image_converter:
 
     cv2.namedWindow("Image window", 1)
     self.bridge = CvBridge()
-    self.image_sub = rospy.Subscriber("/image",Image,self.callback)
+    self.image_sub = rospy.Subscriber("/video",Image,self.callback)
     #self.image_sub = rospy.Subscriber("/camera/rgb/image_color",Image,self.callback)
   def callback(self,data):
     try:
       cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
     except CvBridgeError, e:
       print e
-
-    (rows,cols,channels) = cv_image.shape
-    if cols > 60 and rows > 60 :
-      cv2.circle(cv_image, (50,50), 10, 255)
-
-    b=cv2.SimpleBlobDetector()
+    gimg = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)
+    thresh = cv2.inRange(cv_image, numpy.array((200, 230, 230)), numpy.array((255, 255, 255)))
+    contours0, hierarchy = cv2.findContours( thresh.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     
-    d=b.detect(cv_image)
-    print d
-    for p in d:
-        print p.size
-        cv2.circle(cv_image, (int(p.pt[0]), int(p.pt[1])), int(p.size), 255)
-
+    for c in contours0:
+        a = cv2.contourArea(c)
+        if a > 100.0:
+            m = cv2.moments(c,True)
+            print m
+            cv2.drawContours(cv_image, c, -1, (255,0,0))
+    print '===='    
+    #print contours0
+    #cv2.drawContours(cv_image, contours0, -1, (255,0,0))
     cv2.imshow("Image window", cv_image)
     cv2.waitKey(3)
 
