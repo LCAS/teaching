@@ -26,7 +26,7 @@ class Braitenberg():
         cv2.startWindowThread()
 
         self.image_sub = rospy.Subscriber(  # Creating a subscriber listening to the kinect image topic
-            "/camera/rgb/image_color",      # The topic to which it should listend, could also be /camera/rgb/image_mono
+            "/camera/rgb/image_color",      # The topic to which it should listened
             Image,                          # The data type of the topic
             callback=self.image_callback,   # The callback function that is triggered when a new message arrives
             queue_size=1                    # Disregard every message but the latest
