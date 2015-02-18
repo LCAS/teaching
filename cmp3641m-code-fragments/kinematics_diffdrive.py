@@ -1,16 +1,14 @@
 import math
 from geometry_msgs.msg import Twist
 
-wheel_radius = 1 / (math.pi * 2.0)
+wheel_radius = 1
 robot_radius = 1
-
-wheel_circumference = 2 * math.pi * wheel_radius
 
 
 # computing the forward kinematics for a differential drive
 def forward_kinematics(w_l, w_r):
-    c_l = wheel_circumference * w_l
-    c_r = wheel_circumference * w_r
+    c_l = wheel_radius * w_l
+    c_r = wheel_radius * w_r
     v = (c_l + c_r) / 2
     a = (c_l - c_r) / robot_radius
     return (v, a)
@@ -20,8 +18,8 @@ def forward_kinematics(w_l, w_r):
 def inverse_kinematics(v, a):
     c_l = v + (robot_radius * a) / 2
     c_r = v - (robot_radius * a) / 2
-    w_l = c_l / wheel_circumference
-    w_r = c_r / wheel_circumference
+    w_l = c_l / wheel_radius
+    w_r = c_r / wheel_radius
     return (w_l, w_r)
 
 
@@ -30,7 +28,7 @@ def inverse_kinematics_from_twist(t):
     return inverse_kinematics(t.linear.x, t.angular.z)
 
 
-(w_l, w_r) = inverse_kinematics(0.0, 2 * math.pi)
+(w_l, w_r) = inverse_kinematics(0.0, 1.0)
 print "w_l = %f,\tw_r = %f" % (w_l, w_r)
 
 (v, a) = forward_kinematics(w_l, w_r)
