@@ -25,6 +25,6 @@
 )
 
 (:goal (and
-		(at forklift0 shelf_3)
+		(at forklift0 shelf3)
 	)
 ))
