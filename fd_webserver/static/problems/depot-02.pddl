@@ -1,54 +1,52 @@
-(define (problem depotprob1818) (:domain Depot)
+(define (problem depot-02) (:domain Depot)
 (:objects
-	pallet0 pallet1 pallet2 pallet3 - pallet
-	inbay0 inbay1 inbay2 - inbay
-	shelf0 shelf1 shelf2 shelf3 shelf4 - shelf
-	outbay0 outbay1 outbay2 - outbay
-	forklift0 - forklift
+	pallet_0 pallet_1 pallet_2 pallet_3 - pallet
+	inbay_0 inbay_1 inbay_2 - inbay
+	shelf_0 shelf_1 shelf_2 shelf_3 shelf_4 - shelf
+	outbay_0 outbay_1 outbay_2 - outbay
+	forklift_0 - forklift
 	parking - place
 	)
+
 (:init
+	(connected parking inbay_0)
+	(connected inbay_0 shelf_0)
+	(connected inbay_1 shelf_1)
+	(connected inbay_2 shelf_2)
+	(connected shelf_0 shelf_1)
+	(connected shelf_1 shelf_2)
+	(connected shelf_2 shelf_3)
+	(connected shelf_3 shelf_4)
+	(connected shelf_0 outbay_0)
+	(connected shelf_1 outbay_1)
+	(connected shelf_2 outbay_2)
 
-	(connected parking inbay0)
-	(connected inbay0 shelf0)
-	(connected inbay1 shelf1)
-	(connected inbay2 shelf2)
-	(connected shelf0 shelf1)
-	(connected shelf1 shelf2)
-	(connected shelf2 shelf3)
-	(connected shelf3 shelf4)
-	(connected shelf0 outbay0)
-	(connected shelf1 outbay1)
-	(connected shelf2 outbay2)
+	(at forklift_0 parking)
+	(at pallet_0 shelf_0)
+	(at pallet_1 inbay_0)
+	(at pallet_2 inbay_1)
+	(at pallet_3 inbay_2)
 
-	(at forklift0 parking)
-	(at pallet0 shelf0)
-	(at pallet1 inbay0)
-	(at pallet2 inbay1)
-	(at pallet3 inbay2)
+	(clear shelf_1)
+	(clear shelf_2)
+	(clear shelf_3)
+	(clear shelf_4)
 
-	(clear shelf1)
-	(clear shelf2)
-	(clear shelf3)
-	(clear shelf4)
+	(clear outbay_0)
+	(clear outbay_1)
+	(clear outbay_2)
 
-	(clear outbay0)
-	(clear outbay1)
-	(clear outbay2)
-
-	(available forklift0)
-	
-
+	(available forklift_0)
 )
 
 (:goal (and
-		(clear inbay0)
-		(clear inbay1)
-		(clear inbay2)
-		(at pallet0 outbay0)
-		(at pallet1 outbay1)
-		(at pallet2 outbay2)
-		(available forklift0)
-		(at forklift0 parking)
+		(clear inbay_0)
+		(clear inbay_1)
+		(clear inbay_2)
+		(at pallet_0 outbay_0)
+		(at pallet_1 outbay_1)
+		(at pallet_2 outbay_2)
+		(available forklift_0)
+		(at forklift_0 parking)
 	)
 ))
