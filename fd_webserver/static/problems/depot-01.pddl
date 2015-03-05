@@ -1,4 +1,4 @@
-(define (problem move) (:domain Depot)
+(define (problem depot-01) (:domain Depot)
 (:objects
 	pallet_0 pallet_1 pallet_2 pallet_3 - pallet
 	inbay_0 inbay_1 inbay_2 - inbay
@@ -22,9 +22,24 @@
 	(connected shelf_2 outbay_2)
 
 	(at forklift_0 parking)
+	(at pallet_0 shelf_0)
+	(at pallet_1 inbay_0)
+	(at pallet_2 inbay_1)
+	(at pallet_3 inbay_2)
+
+	(clear shelf_1)
+	(clear shelf_2)
+	(clear shelf_3)
+	(clear shelf_4)
+
+	(clear outbay_0)
+	(clear outbay_1)
+	(clear outbay_2)
+
+	(available forklift_0)
 )
 
 (:goal (and
-		(at forklift0 shelf_3)
+		(at pallet_0 outbay_0)
 	)
 ))
