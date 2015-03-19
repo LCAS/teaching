@@ -18,7 +18,7 @@
    (at ?t ?x ?y) (blank ?x ?y)
    (inc ?p ?pp) (dec ?p ?pp))
 
-  (:action move-up
+  (:action move-down
     :parameters (?t ?px ?py ?by)
     :precondition (and
 		   (tile ?t) (position ?px) (position ?py) (position ?by)
@@ -26,7 +26,7 @@
     :effect (and (not (blank ?px ?by)) (not (at ?t ?px ?py))
 		 (blank ?px ?py) (at ?t ?px ?by)))
 
-  (:action move-down
+  (:action move-up
     :parameters (?t ?px ?py ?by)
     :precondition (and
 		   (tile ?t) (position ?px) (position ?py) (position ?by)
@@ -34,7 +34,7 @@
     :effect (and (not (blank ?px ?by)) (not (at ?t ?px ?py))
 		 (blank ?px ?py) (at ?t ?px ?by)))
 
-  (:action move-left
+  (:action move-right
     :parameters (?t ?px ?py ?bx)
     :precondition (and
 		   (tile ?t) (position ?px) (position ?py) (position ?bx)
@@ -42,7 +42,7 @@
     :effect (and (not (blank ?bx ?py)) (not (at ?t ?px ?py))
 		 (blank ?px ?py) (at ?t ?bx ?py)))
 
-  (:action move-right
+  (:action move-left
     :parameters (?t ?px ?py ?bx)
     :precondition (and
 		   (tile ?t) (position ?px) (position ?py) (position ?bx)
@@ -50,3 +50,4 @@
     :effect (and (not (blank ?bx ?py)) (not (at ?t ?px ?py))
 		 (blank ?px ?py) (at ?t ?bx ?py)))
   )
+
