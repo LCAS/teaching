@@ -2,6 +2,13 @@
 Changelog for package uol_turtlebot_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Adding necessary build depends.
+* Offering service to reenable. Blinking leds on back yellow and red to visualise a collision.
+* listening to bumper and sending stop continuously.
+* Contributors: Christian Dondrup
+
 0.1.10 (2015-02-20)
 -------------------
 
