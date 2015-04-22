@@ -2,6 +2,11 @@
 Changelog for package uol_turtlebot_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* A launch file also starting the navigation and reducing the CPU load by not registering the depth and rgb image.
+* Contributors: Christian Dondrup
+
 0.1.11 (2015-04-20)
 -------------------
 * Adding necessary build depends.
