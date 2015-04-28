@@ -26,7 +26,7 @@ def call_planner(domain, problem):
         text_file.write(problem)
 
     try:
-        log = main(["--plan-file", plan_file, "--cwd", tmpdir, problem_file, "--search", "astar(blind)"])
+        log = main(["--plan-file", plan_file, "--cwd", tmpdir, problem_file, "--search", "astar(ff)"])
         with open(plan_file, "r") as text_file:
             p = text_file.read()
         return log, p
