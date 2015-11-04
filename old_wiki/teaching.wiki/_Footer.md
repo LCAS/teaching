@@ -1,0 +1,1 @@
+Copyright by [Lincoln Centre for Autonomous Systems](http://lcas.lincoln.ac.uk)
