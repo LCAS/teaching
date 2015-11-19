@@ -1,19 +1,9 @@
 <launch>
- <!-- Gazebo config -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="use_sim_time" value="true"/>
-    <arg name="debug" value="false"/>
-    <arg name="gui" value="true"/>
-    <arg name="world_name" value="$(find uol_turtlebot_simulator)/worlds/labC.world"/>
-  </include>
 
-
-  <arg name="map_file" default="$(find uol_turtlebot_simulator)/maps/labC-cropped.yaml"/>
-  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" >
-  <param name="frame_id" value="/map" />
-  </node>
-
-  <!-- Launch for multi robots -->
-  <include file="$(find uol_turtlebot_simulator)/launch/multi-robots.launch.xml" />
+  <!-- Launch gazebo -->
+  <include file="$(find uol_turtlebot_simulator)/launch/gazebo.launch"/>
+  
+  <!-- Launch robots -->
+  <include file="$(find uol_turtlebot_simulator)/launch/robots.launch"/>
 </launch>
 
