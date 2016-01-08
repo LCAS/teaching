@@ -35,6 +35,7 @@
 	<script src="static/codemirror/mode/commonlisp/commonlisp.js"></script>
 	<script src="static/codemirror/addon/selection/active-line.js"></script>
 	<script src="static/codemirror/addon/edit/matchbrackets.js"></script>
+	<script src="static/js/FileSaver.min.js"></script>
 	<link rel="stylesheet" href="static/codemirror/theme/eclipse.css">
 
 	<link href="static/css/style.css" rel="stylesheet">
@@ -99,6 +100,20 @@
 	    					mode: "commonlisp"//"text/x-common-lisp"
 	  					});
 					</script>
+					<div class="form-group">
+						<div class="col-sm-offset-5 col-sm-10">
+							 <button id="download_domain" 
+							 	type="button" 
+							 	class="btn btn-primary btn-lg">Download</button>
+						</div>
+						<script type="text/javascript" async defer>
+							$('#download_domain').on('click', function () {
+								var blob = new Blob([domain_editor.getValue()], {type: "text/plain;charset=ascii"});
+								saveAs(blob, "domain.pddl");
+							});
+						</script>
+					</div>
+
 				</form>
 
 			  </div>
@@ -137,6 +152,9 @@
 						        console.log("Selected Option:"+$(this).text());
 							});
 						</script>
+
+
+
 					</div>
 					<div class="form-group">
 						<textarea class="form-control" id="problem"></textarea>
