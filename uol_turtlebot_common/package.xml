@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <package>
   <name>uol_turtlebot_common</name>
-  <version>0.1.9</version>
+  <version>0.1.13</version>
   <description>The uol_turtlebot_common package</description>
 
-  <!-- One maintainer tag required, multiple allowed, one person per tag --> 
+  <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
   <maintainer email="cdondrup@lincoln.ac.uk">cdondrup</maintainer>
@@ -40,6 +40,10 @@
   <!-- Use test_depend for packages you need only for testing: -->
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>kobuki_msgs</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_srvs</build_depend>
   <run_depend>geometry_msgs</run_depend>
   <run_depend>map_store</run_depend>
   <run_depend>turtlebot</run_depend>

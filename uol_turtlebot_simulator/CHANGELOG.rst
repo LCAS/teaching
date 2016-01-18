@@ -2,6 +2,22 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.1.13 (2015-11-19)
+-------------------
+* Splitting labc.launch into two launch files and have lbac.launch as the meta launch file. This way it is easier to avoid the race condition on the lab machines.
+* Contributors: Christian Dondrup
+
+0.1.12 (2015-04-22)
+-------------------
+
+0.1.11 (2015-04-20)
+-------------------
+
+0.1.10 (2015-02-20)
+-------------------
+* change box size to the real one
+* Contributors: Marc Hanheide
+
 0.1.9 (2015-02-03)
 ------------------
 * Adding a green box on top of each robot.

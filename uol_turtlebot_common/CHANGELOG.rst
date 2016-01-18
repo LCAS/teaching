@@ -2,6 +2,24 @@
 Changelog for package uol_turtlebot_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.1.13 (2015-11-19)
+-------------------
+
+0.1.12 (2015-04-22)
+-------------------
+* A launch file also starting the navigation and reducing the CPU load by not registering the depth and rgb image.
+* Contributors: Christian Dondrup
+
+0.1.11 (2015-04-20)
+-------------------
+* Adding necessary build depends.
+* Offering service to reenable. Blinking leds on back yellow and red to visualise a collision.
+* listening to bumper and sending stop continuously.
+* Contributors: Christian Dondrup
+
+0.1.10 (2015-02-20)
+-------------------
+
 0.1.9 (2015-02-03)
 ------------------
 

@@ -13,7 +13,6 @@
 	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
 	
 	<link href="static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="static/css/style.css" rel="stylesheet">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -36,8 +35,10 @@
 	<script src="static/codemirror/mode/commonlisp/commonlisp.js"></script>
 	<script src="static/codemirror/addon/selection/active-line.js"></script>
 	<script src="static/codemirror/addon/edit/matchbrackets.js"></script>
+	<script src="static/js/FileSaver.min.js"></script>
 	<link rel="stylesheet" href="static/codemirror/theme/eclipse.css">
 
+	<link href="static/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -50,8 +51,9 @@
 					Fast-Downward Planning on the Web
 				</h1>
 				<p>
-					Solve PDDL problems using <a href="http://www.fast-downward.org/">fast-downward</a>
+					Solve PDDL problems using <a href="http://www.fast-downward.org/">fast-downward</a>. Note that this service is reported to have some problems running in MS Internet Explorer. Please use Chrome.
 				</p>
+				<p>Read <a href="http://www.cs.toronto.edu/~sheila/2542/s14/A1/introtopddl2.pdf">this introduction</a> into the PDDL language.
 			</div>
 		</div>
 	</div>
@@ -66,12 +68,15 @@
 					<div class="form-group">
 						<div class="dropdown">
 						  <button class="btn btn-default dropdown-toggle" type="button" id="dropDownDomain" data-toggle="dropdown" aria-expanded="true">
-						    Domain Templates
+						    Domain Examples
 						    <span class="caret"></span>
 						  </button>
 						  <ul id="ddm-domain" class="dropdown-menu" role="menu" aria-labelledby="dropDownDomain">
 						    <li role="presentation"><a role="menuitem" tabindex="-1">template</a></li>
-						    <li role="presentation"><a role="menuitem" tabindex="-1">depot</a></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1">blocks</a></li>
+                                                    <li role="presentation"><a role="menuitem" tabindex="-1">slidetile</a></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1">robot</a></li>
+                                                    <li role="presentation"><a role="menuitem" tabindex="-1">robot_typed</a></li>
 						  </ul>
 						</div>					
 						<script type="text/javascript" async defer>
@@ -95,6 +100,20 @@
 	    					mode: "commonlisp"//"text/x-common-lisp"
 	  					});
 					</script>
+					<div class="form-group">
+						<div class="col-sm-offset-5 col-sm-10">
+							 <button id="download_domain" 
+							 	type="button" 
+							 	class="btn btn-primary btn-lg">Download</button>
+						</div>
+						<script type="text/javascript" async defer>
+							$('#download_domain').on('click', function () {
+								var blob = new Blob([domain_editor.getValue()], {type: "text/plain;charset=ascii"});
+								saveAs(blob, "domain.pddl");
+							});
+						</script>
+					</div>
+
 				</form>
 
 			  </div>
@@ -111,13 +130,25 @@
 					<div class="form-group">
 						<div class="dropdown">
 						  <button class="btn btn-default dropdown-toggle" type="button" id="dropDownDomain" data-toggle="dropdown" aria-expanded="true">
-						    Problem Templates
+						    Predefined Problems
 						    <span class="caret"></span>
 						  </button>
 						  <ul id="ddm-problem" class="dropdown-menu" role="menu" aria-labelledby="dropDownProblem">
 						    <li role="presentation"><a role="menuitem" tabindex="-1">template</a></li>
-						    <li role="presentation"><a role="menuitem" tabindex="-1">depot1</a></li>
-						  </ul>
+                                                    <li role="presentation"><a role="menuitem" tabindex="-1">travel-1</a></li>
+                                                    <li role="presentation"><a role="menuitem" tabindex="-1">travel-2</a></li>
+                                                    <li role="presentation"><a role="menuitem" tabindex="-1">wolf-goat-cabbage-problem</a></li>
+
+
+
+                            <li role="presentation"><a role="menuitem" tabindex="-1">move</a></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1">depot-01</a></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1">depot-02</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1">blocks</a></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1">slidetile_8</a></li>
+                                                    <li role="presentation"><a role="menuitem" tabindex="-1">robot</a></li>
+                                                   <li role="presentation"><a role="menuitem" tabindex="-1">robot_typed</a></li>
+ 						  </ul>
 						</div>					
 						<script type="text/javascript" async defer>
 							$("#ddm-problem li a").click(function () {
@@ -127,6 +158,9 @@
 						        console.log("Selected Option:"+$(this).text());
 							});
 						</script>
+
+
+
 					</div>
 					<div class="form-group">
 						<textarea class="form-control" id="problem"></textarea>
@@ -160,7 +194,7 @@
 	  								$btn.button('reset');
 								})
 								.fail(function() {
-								    alert( "error" );
+								    alert( "An error occurred that most likely caused by the planner timing out. This means the problem it was trying to solve was too hard, and your domain file should probably be redesigned to reduce the number of applicable actions for a given state (e.g. by using stronger typing)." );
 	  							});
 							});
 						</script>
