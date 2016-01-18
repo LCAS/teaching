@@ -13,7 +13,8 @@ class image_converter:
     namedWindow("Image window", 1)
     self.bridge = CvBridge()
     startWindowThread()
-    self.image_sub = rospy.Subscriber("/usb_cam/image_raw",Image,self.callback)
+    self.image_sub = rospy.Subscriber("/usb_cam/image_raw",
+                                      Image, self.callback)
     #self.image_sub = rospy.Subscriber("/turtlebot_1/camera/rgb/image_raw",Image,self.callback)
 
   def callback(self,data):

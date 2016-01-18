@@ -48,9 +48,9 @@ class image_converter:
         for c in hsv_contours:
             a = cv2.contourArea(c)
             if a > 100.0:
-                cv2.drawContours(cv_image, c, -1, (255, 0, 0))
+                cv2.drawContours(cv_image, c, -1, (255, 0, 255))
         print '===='
-        cv2.imshow("Image window", hsv_thresh)
+        cv2.imshow("Image window", cv_image)
 
 image_converter()
 rospy.init_node('image_converter', anonymous=True)
