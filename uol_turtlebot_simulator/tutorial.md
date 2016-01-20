@@ -23,9 +23,24 @@ e : enable motors.
 q : quit.
 ```
 
+### Adding things to the simulation
+
+In order to see something with our robot's sensors, we want to add some obstacles:
+
+**Simple geometric objects**
+* In the top left menue bar you can find a cube, sphere, and cylinder object.
+* Click on one of them and then click in the simulation environment where you want to place it.
+
+**More advanced objects**
+* On the left hand side of the Simulator window, click on the `Insert` tab
+* Expand the node that starts with `http://gazebosim.org/...`. This might take a few moments to download all the models form the database.
+* Click on one of the object names and place it the simulator environment.
+
+_Have a play with the environment and create some interesting arrangements._
+
 ### Visualising what the robot sees
 
-* Run rviz: `roslaunch turtlebot_rviz_launchers view_robot.launch`
+* I a new terminal, run rviz: `roslaunch turtlebot_rviz_launchers view_robot.launch`
 * Show the image:
  * Tick the box next to `image`
  * Expand the `image` node and select `/camera/rgb/image_raw` as the `Topic`
