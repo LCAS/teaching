@@ -4,6 +4,8 @@
 The following has largely been taken from [the first official tutorial](http://wiki.ros.org/turtlebot_simulator/Tutorials/hydro/Explore%20the%20Gazebo%20world).
 
 ### Start-up
+_For each of the following commands, open a new terminal and then execute it._
+
 * Empty world with keyboard teleop: 
  * Simulator: `roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$(rospack find turtlebot_gazebo)/worlds/empty.world`
  * Keyboard teleop: `roslaunch kobuki_keyop keyop.launch`
