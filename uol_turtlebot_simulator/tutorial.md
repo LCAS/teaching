@@ -49,8 +49,10 @@ _Have a play with the environment and create some interesting arrangements._
  * Tick the box next to `Registered PointCloud`
  * Expand the `Regesitered PointCloud` node and select `/camera/depth/points` as the `Topic`
 * Adding objects to see something:
- * In Gazebo, select a cube, speher, or cylinder and drop it with a mouse click infront of the robot
+ * If you haven't already done so, in Gazebo, select a cube, speher, or cylinder and drop it with a mouse click infront of the robot
  * Go back to rviz and observe what you can see
+
+_Drive the robot through your environment using the teleop from above and see how it perceives the world in rviz._
  
 ## Comp Lab C and rviz
 
