@@ -59,6 +59,8 @@ _Drive the robot through your environment using the teleop from above and see ho
 _If you still have the simulator running from above example, close verything ypou started by closing the GUI window and/or pressing `Ctrl+C` in the terminal you started it in._
 
 ### Start-up
+_For each of the following commands, open a new terminal and then execute it._
+
 * Comp Lab C and rviz: 
  * Simulator: `roslaunch uol_turtlebot_simulator labc.launch`
  * Rviz: `roslaunch uol_turtlebot_simulator view_navigation.launch`
