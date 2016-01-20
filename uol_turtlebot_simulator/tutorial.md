@@ -64,6 +64,22 @@ _For each of the following commands, open a new terminal and then execute it._
 * Comp Lab C and rviz: 
  * Simulator: `roslaunch uol_turtlebot_simulator labc.launch`
  * Rviz: `roslaunch uol_turtlebot_simulator view_navigation.launch`
+* Trouble shooting:
+ * If, after starting the simulator, you get output like this:
+
+ ```
+Warning [gazebo.cc:215] Waited 1seconds for namespaces.
+Error [gazebo.cc:220] Waited 11 seconds for namespaces. Giving up.
+Error [Node.cc:90] No namespace found
+ ```
+
+ on the terminal, it because Gazbo is trying to download missing models. Please give it a minute or two and if nothing happens, please ask a demonstrator.
+ * If the simulation does not want to start properly, try launching these two files instead, each in a separate terminal:
+ 
+ ```
+roslaunch uol_turtlebot_simulator gazebo.launch
+roslaunch uol_turtlebot_simulator robots.launch
+ ```
 
 ### Control
 * Use the 2 "2D Nav Goal" buttons in the top panel to send the robots around.
