@@ -28,7 +28,7 @@ q : quit.
 In order to see something with our robot's sensors, we want to add some obstacles:
 
 **Simple geometric objects**
-* In the top left menue bar you can find a cube, sphere, and cylinder object.
+* In the top left menu bar you can find a cube, sphere, and cylinder object.
 * Click on one of them and then click in the simulation environment where you want to place it.
 
 **More advanced objects**
@@ -40,7 +40,7 @@ _Have a play with the environment and create some interesting arrangements._
 
 ### Visualising what the robot sees
 
-* I a new terminal, run rviz: `roslaunch turtlebot_rviz_launchers view_robot.launch`
+* In a new terminal, run rviz: `roslaunch turtlebot_rviz_launchers view_robot.launch`
 * Show the image:
  * Tick the box next to `image`
  * Expand the `image` node and select `/camera/rgb/image_raw` as the `Topic`
@@ -56,7 +56,7 @@ _Drive the robot through your environment using the teleop from above and see ho
  
 ## Comp Lab C and rviz
 
-_If you still have the simulator running from above example, close verything ypou started by closing the GUI window and/or pressing `Ctrl+C` in the terminal you started it in._
+_If you still have the simulator running from above example, close everything you started by closing the GUI window and/or pressing `Ctrl+C` in the terminal you started it in._
 
 ### Start-up
 _For each of the following commands, open a new terminal and then execute it._
