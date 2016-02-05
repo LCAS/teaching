@@ -35,8 +35,8 @@ class image_converter:
 
         imshow("Image window", gray_img)
 
-ic = image_converter()
 rospy.init_node('image_converter')
+ic = image_converter()
 rospy.spin()
 
 destroyAllWindows()
