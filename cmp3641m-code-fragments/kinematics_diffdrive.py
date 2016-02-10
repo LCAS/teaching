@@ -1,5 +1,5 @@
 import math
-from geometry_msgs.msg import Twist
+# from geometry_msgs.msg import Twist
 
 wheel_radius = 1
 robot_radius = 1
@@ -34,10 +34,10 @@ print "w_l = %f,\tw_r = %f" % (w_l, w_r)
 (v, a) = forward_kinematics(w_l, w_r)
 print "v = %f,\ta = %f" % (v, a)
 
-t = Twist()
+# t = Twist()
 
-t.linear.x = 0.3
-t.angular.z = 0.8
+# t.linear.x = 0.3
+# t.angular.z = 0.8
 
-(w_l, w_r) = inverse_kinematics_from_twist(t)
-print "w_l = %f,\tw_r = %f" % (w_l, w_r)
+# (w_l, w_r) = inverse_kinematics_from_twist(t)
+# print "w_l = %f,\tw_r = %f" % (w_l, w_r)
