@@ -3,7 +3,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (define 
-	(problem BLOCKS-3)
+	(problem boat1)
 	(:domain boat)
     ; only needs two objects, namely representing
     ; either banke side of the river, [w]est and [e]ast

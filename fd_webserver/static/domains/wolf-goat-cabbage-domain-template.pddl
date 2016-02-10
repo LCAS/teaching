@@ -18,21 +18,19 @@
     ;; e.g. the predicate (config w w w w) represents
     ;; the situation that wolf, goat, cabbage, and boat
     ;; are all located at the west bank
-   		(config ?a1 ?a2 ?a3 ?boat)
+   		(config ?wolf ?goat ?cabbage ?boat)
 
 	  ;; This predicate represent all valid configurations
     ;; The actions need to make sure that only
     ;; valid configuration are ever created
     ;; i.e. that nothing gets eaten.
-   		(valid ?a1 ?a2 ?a3 ?boat)
+   		(valid ?wolf ?goat ?cabbage ?boat)
    	)
 
   ;; THE ACTIONS
   ;; Each action changes the state of the world,
-  ;; in this example they only modify the 
-  ;; (config ?a1 ?a2 ?a3 ?boat) predicate by 
-  ;; changing from w to e or vice versa for the
-  ;; entity to be moved.
+  ;; in this example they will modify the 
+  ;; (config ?wolf ?goat ?cabbage ?boat) predicate
   
   ;; You should have (at least) four actions named 
   ;; "move_wolf", "move_goat", "move_cabbage", "move_empty"
