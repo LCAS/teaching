@@ -1,45 +1,45 @@
-(define (problem depot-01) (:domain Depot)
+(define (problem depotprob1818) (:domain Depot)
 (:objects
-	pallet_0 pallet_1 pallet_2 pallet_3 - pallet
-	inbay_0 inbay_1 inbay_2 - inbay
-	shelf_0 shelf_1 shelf_2 shelf_3 shelf_4 - shelf
-	outbay_0 outbay_1 outbay_2 - outbay
-	forklift_0 - forklift
-	parking - place
-	)
+	depot0 distributor0 distributor1 truck0 truck1 pallet0 pallet1 pallet2 crate0 crate1 hoist0 hoist1 hoist2 )
 (:init
-
-	(connected parking inbay_0)
-	(connected inbay_0 shelf_0)
-	(connected inbay_1 shelf_1)
-	(connected inbay_2 shelf_2)
-	(connected shelf_0 shelf_1)
-	(connected shelf_1 shelf_2)
-	(connected shelf_2 shelf_3)
-	(connected shelf_3 shelf_4)
-	(connected shelf_0 outbay_0)
-	(connected shelf_1 outbay_1)
-	(connected shelf_2 outbay_2)
-
-	(at forklift_0 parking)
-	(at pallet_0 shelf_0)
-	(at pallet_1 inbay_0)
-	(at pallet_2 inbay_1)
-	(at pallet_3 inbay_2)
-
-	(clear shelf_1)
-	(clear shelf_2)
-	(clear shelf_3)
-	(clear shelf_4)
-
-	(clear outbay_0)
-	(clear outbay_1)
-	(clear outbay_2)
-
-	(available forklift_0)
+	(pallet pallet0)
+	(surface pallet0)
+	(at pallet0 depot0)
+	(clear crate1)
+	(pallet pallet1)
+	(surface pallet1)
+	(at pallet1 distributor0)
+	(clear crate0)
+	(truck truck0)
+	(at truck0 distributor1)
+	(truck truck1)
+	(at truck1 depot0)
+	(hoist hoist0)
+	(at hoist0 depot0)
+	(available hoist0)
+	(hoist hoist1)
+	(at hoist1 distributor0)
+	(available hoist1)
+	(hoist hoist2)
+	(at hoist2 distributor1)
+	(available hoist2)
+	(crate crate0)
+	(surface crate0)
+	(at crate0 distributor0)
+	(on crate0 pallet1)
+	(crate crate1)
+	(surface crate1)
+	(at crate1 depot0)
+	(on crate1 pallet0)
+	(place depot0)
+	(place distributor0)
+	(place distributor1)
 )
 
 (:goal (and
-		(at pallet_0 outbay_0)
+		(on crate0 pallet0)
+		(on crate1 pallet1)
 	)
 ))
+
+
