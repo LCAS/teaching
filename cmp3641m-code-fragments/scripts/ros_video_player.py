@@ -172,7 +172,6 @@ class Video2ROS:
         # Were we asked to resize the video?
         if self.resize_video:
             frame = cv2.resize(frame, (self.resize_width, self.resize_height))
-        print type(frame)
         
         # Store the last frame for when we pause
         self.last_frame = frame

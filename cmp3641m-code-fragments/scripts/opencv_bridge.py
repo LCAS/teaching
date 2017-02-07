@@ -19,7 +19,7 @@ class image_converter:
         namedWindow("canny", 1)
         self.bridge = CvBridge()
         startWindowThread()
-        self.image_sub = rospy.Subscriber("/usb_cam/image_raw",
+        self.image_sub = rospy.Subscriber("/video",
                                           Image, self.callback)
         #self.image_sub = rospy.Subscriber("/turtlebot_1/camera/rgb/image_raw",Image,self.callback)
 
