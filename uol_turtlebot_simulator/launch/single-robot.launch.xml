@@ -6,6 +6,9 @@
   <arg name="3d_sensor" default="$(optenv TURTLEBOT_3D_SENSOR kinect)"/>
 
   <arg name="model" default="$(find uol_turtlebot_simulator)/urdf/kobuki_hexagons_kinect.urdf.xacro" />
+  <arg name="move_base" default="true" />
+  <arg name="gmapping" default="false" />
+
 
   <param name="robot_description" command="$(find xacro)/xacro.py '$(arg model)'" />
 
@@ -13,8 +16,11 @@
     <param name="tf_prefix" value="turtlebot" />
     <include file="$(find uol_turtlebot_simulator)/launch/robot.launch.xml" >
       <arg name="robot_name"  value="turtlebot" />
-      <arg name="x" value="-4"/>
+<!--       <arg name="x" value="-4"/>
       <arg name="y" value="-4.5"/>
+ -->      
+      <arg name="move_base" value="$(arg move_base)" />
+      <arg name="gmapping" value="$(arg gmapping)" />
     </include>
   </group>
 
