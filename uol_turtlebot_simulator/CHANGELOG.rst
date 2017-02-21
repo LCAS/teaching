@@ -2,8 +2,8 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.14 (2017-02-21)
+-------------------
 * Update tutorial.md
 * Update tutorial.md
 * Update tutorial.md

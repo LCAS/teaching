@@ -2,8 +2,8 @@
 Changelog for package uol_cmp3641m
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.14 (2017-02-21)
+-------------------
 * working
 * Contributors: Marc Hanheide
 
