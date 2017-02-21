@@ -1,5 +1,5 @@
 <launch>
-  <arg name="map_file" default="$(find uol_turtlebot_simulator)/maps/labC-cropped.yaml"/>
+  <arg name="map_file" default="$(find uol_turtlebot_simulator)/maps/object-search-arena.yaml"/>
   <arg name="move_base" default="true" />
   <arg name="gmapping" default="false" />
 

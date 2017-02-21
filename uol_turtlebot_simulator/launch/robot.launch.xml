@@ -75,12 +75,12 @@
  <node  pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf" >
     <param name="freq" value="30.0"/>
     <param name="sensor_timeout" value="1.0"/>
-    <param name="publish_tf" value="true"/>
+    <param name="publish_tf" value="false"/>
     <param name="odom_used" value="true"/>
     <param name="imu_used" value="true"/>
     <param name="vo_used" value="false"/>
     <param name="output_frame" value="odom"/>
-    <remap from="odom" to="$(arg robot_name)/odom"/>
+    <remap from="odom" to="/$(arg robot_name)/odom"/>
   </node>
 
   <!-- Localization -->
@@ -112,15 +112,16 @@
     <param name="base_frame" value="/$(arg robot_name)/base_link" />
     <param name="map_frame" value="/map" />
     <param name="odom_frame" value="/$(arg robot_name)/odom" />
-    <param name="map_update_interval" value="1" />
-    <param name="minimumScore" value="800" />
-    <param name="particles" value="5" />
-    <param name="srr" value="0.01" />
-    <param name="srt" value="0.01" />
-    <param name="str" value="0.01" />
-    <param name="stt" value="0.01" /> 
-    <param name="linearUpdate" value="0.3" />
-    <param name="angularUpdate" value="0.1" /> 
+    <!-- <param name="map_update_interval" value="5" /> -->
+    <param name="minimumScore" value="50" />
+    <param name="particles" value="50" />
+    <!-- <param name="sigma" value="0.0001" />  -->
+<!--     <param name="srr" value="0.0001" />
+    <param name="srt" value="0.0001" />
+    <param name="str" value="0.0001" />
+    <param name="stt" value="0.00001" /> --> 
+    <param name="linearUpdate" value="1" />
+    <param name="angularUpdate" value="0.5" /> 
     <remap from="map" to="/map" />
   </node>
 
