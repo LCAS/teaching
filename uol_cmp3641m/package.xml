@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>uol_cmp3641m</name>
-  <version>0.1.14</version>
+  <version>0.1.15</version>
   <description>The uol_cmp3641m package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 

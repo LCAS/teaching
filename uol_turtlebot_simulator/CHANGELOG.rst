@@ -2,8 +2,8 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.15 (2017-02-23)
+-------------------
 * renabled publish tf
 * removed turtlebot from world
 * first slam map okay-ish
