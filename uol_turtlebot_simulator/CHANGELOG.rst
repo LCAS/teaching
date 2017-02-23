@@ -2,6 +2,18 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* renabled publish tf
+* removed turtlebot from world
+* first slam map okay-ish
+* updated world from slack
+* temporary slam maps
+* somewhat working gmapping params
+* enabled gmapping, but not working well yet
+* added assessment launch and world files
+* Contributors: Marc Hanheide
+
 0.1.14 (2017-02-21)
 -------------------
 * Update tutorial.md

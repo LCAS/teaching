@@ -2,6 +2,9 @@
 Changelog for package uol_kobuki_gazebo_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.14 (2017-02-21)
 -------------------
 
