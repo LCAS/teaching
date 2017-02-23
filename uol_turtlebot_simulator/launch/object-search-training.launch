@@ -1,0 +1,19 @@
+<launch>
+
+  <arg name="move_base" default="true" />
+  <arg name="gmapping" default="false" />
+
+
+  <!-- Launch gazebo -->
+  <include file="$(find uol_turtlebot_simulator)/launch/gazebo.launch">
+  	<arg name="world_name" value="$(find uol_turtlebot_simulator)/worlds/object-search-training.world"/>
+  </include>
+  
+  <!-- Launch robots -->
+  <include file="$(find uol_turtlebot_simulator)/launch/robot.launch">
+    <arg name="map_file" value="$(find uol_turtlebot_simulator)/maps/object-search-arena.yaml"/>
+    <arg name="move_base" value="$(arg move_base)" />
+    <arg name="gmapping" value="$(arg gmapping)" />    
+  </include>
+</launch>
+

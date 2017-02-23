@@ -35,6 +35,7 @@
           <distortion_t1>0.0</distortion_t1>
           <distortion_t2>0.0</distortion_t2>
           <pointCloudCutoff>0.4</pointCloudCutoff>
+          <pointCloudCutoffMax>20</pointCloudCutoffMax>
         </plugin>
       </sensor>
     </gazebo>

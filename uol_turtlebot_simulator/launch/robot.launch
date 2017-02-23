@@ -1,0 +1,16 @@
+<launch>
+  <arg name="map_file" default="$(find uol_turtlebot_simulator)/maps/object-search-arena.yaml"/>
+  <arg name="move_base" default="true" />
+  <arg name="gmapping" default="false" />
+
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" if="$(arg move_base)">
+    <param name="frame_id" value="/map" />
+  </node>
+
+  <!-- Launch for multi robots -->
+  <include file="$(find uol_turtlebot_simulator)/launch/single-robot.launch.xml">
+    <arg name="move_base" value="$(arg move_base)" />
+    <arg name="gmapping" value="$(arg gmapping)" />
+  </include>
+</launch>
+

@@ -154,7 +154,7 @@
             <type>gaussian</type>
 	          <rate>
 	            <mean>0.0</mean>
-	            <stddev>${0.0014*0.0014}</stddev> <!-- 0.25 x 0.25 (deg/s) -->
+	            <stddev>${0.0000014*0.0000014}</stddev> <!-- 0.25 x 0.25 (deg/s) -->
 	            <bias_mean>0.0</bias_mean>
 	            <bias_stddev>0.0</bias_stddev>
 	          </rate>

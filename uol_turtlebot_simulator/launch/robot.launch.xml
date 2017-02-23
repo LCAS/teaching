@@ -4,6 +4,8 @@
   <arg name="y" default="0.0"/>
   <arg name="z" default="0.0"/>
   <arg name="robot_name" default="turtlebot" />
+  <arg name="move_base" default="true" />
+  <arg name="gmapping" default="false" />
 
   <!-- Gazebo model spawner for turtlebot -->
   <node name="spawn_$(arg robot_name)" pkg="gazebo_ros" type="spawn_model"
@@ -78,7 +80,7 @@
     <param name="imu_used" value="true"/>
     <param name="vo_used" value="false"/>
     <param name="output_frame" value="odom"/>
-    <remap from="odom" to="$(arg robot_name)/odom"/>
+    <remap from="odom" to="/$(arg robot_name)/odom"/>
   </node>
 
   <!-- Localization -->
@@ -86,7 +88,7 @@
   <arg name="initial_pose_y" default="$(arg y)"/>
   <arg name="initial_pose_a" default="0.0"/>
 
-  <include file="$(find uol_turtlebot_simulator)/launch/amcl/amcl.launch.xml">
+  <include file="$(find uol_turtlebot_simulator)/launch/amcl/amcl.launch.xml" if="$(arg move_base)">
     <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
     <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
     <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
@@ -94,7 +96,7 @@
   </include>
 
   <!-- move_base -->
-  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" >
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" if="$(arg move_base)">
     <remap from="map" to="/map" />
     <rosparam file="$(find uol_turtlebot_simulator)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find uol_turtlebot_simulator)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
@@ -103,6 +105,23 @@
     <rosparam file="$(find uol_turtlebot_simulator)/param/base_local_planner_params.yaml" command="load" />
     <rosparam file="$(find uol_turtlebot_simulator)/param/move_base_params.yaml" command="load" />
     <remap from="cmd_vel" to="move_base/cmd_vel"/>
+    <remap from="map" to="/map" />
+  </node>
+
+  <node name="gmapping" pkg="gmapping" type="slam_gmapping" if="$(arg gmapping)">
+    <param name="base_frame" value="/$(arg robot_name)/base_link" />
+    <param name="map_frame" value="/map" />
+    <param name="odom_frame" value="/$(arg robot_name)/odom" />
+    <!-- <param name="map_update_interval" value="5" /> -->
+    <param name="minimumScore" value="50" />
+    <param name="particles" value="50" />
+    <!-- <param name="sigma" value="0.0001" />  -->
+<!--     <param name="srr" value="0.0001" />
+    <param name="srt" value="0.0001" />
+    <param name="str" value="0.0001" />
+    <param name="stt" value="0.00001" /> --> 
+    <param name="linearUpdate" value="1" />
+    <param name="angularUpdate" value="0.5" /> 
     <remap from="map" to="/map" />
   </node>
 
