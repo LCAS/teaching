@@ -10,14 +10,14 @@ def forward_kinematics(w_l, w_r):
     c_l = wheel_radius * w_l
     c_r = wheel_radius * w_r
     v = (c_l + c_r) / 2
-    a = (c_l - c_r) / robot_radius
+    a = (c_r - c_l) / (2 * robot_radius)
     return (v, a)
 
 
 # computing the inverse kinematics for a differential drive
 def inverse_kinematics(v, a):
-    c_l = v + (robot_radius * a) / 2
-    c_r = v - (robot_radius * a) / 2
+    c_l = v - (robot_radius * a) 
+    c_r = v + (robot_radius * a) 
     w_l = c_l / wheel_radius
     w_r = c_r / wheel_radius
     return (w_l, w_r)
