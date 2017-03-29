@@ -2,6 +2,11 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* real test world for assessment
+* Contributors: Marc Hanheide
+
 0.1.15 (2017-02-23)
 -------------------
 * renabled publish tf
