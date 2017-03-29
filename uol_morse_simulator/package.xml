@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>uol_morse_simulator</name>
-  <version>0.1.15</version>
+  <version>0.1.16</version>
   <description>The uol_morse_simulator package</description>
 
   <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
