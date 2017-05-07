@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request, jsonify, Blueprint
 from subprocess import CalledProcessError
 
-app = Flask(__name__)
-
+app = Flask(__name__, template_folder="resources/templates")
 bp = Blueprint('fd_webserver', __name__, static_folder='static')
 
 def call_planner(domain, problem):
@@ -40,6 +39,15 @@ def call_planner(domain, problem):
 
     rmtree(tmpdir, ignore_errors=True)
     return "This contains the logs", "This shall be the plan"
+
+@app.context_processor
+def utility_processor():
+    def asset_path(asset):
+        import json
+        with open('static/manifest.json') as file:
+            config = json.load(file)
+            return request.url_root + config[asset]
+    return dict(asset_path=asset_path)
 
 
 @bp.route('/', methods=['POST', 'GET'])

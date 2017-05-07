@@ -1,0 +1,25 @@
+// Bootstrap
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+
+@import "~codemirror/lib/codemirror.css";
+@import "~codemirror/theme/eclipse.css";
+
+
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
+  margin:2px;
+}
+
+
+body { overflow-x: hidden; } // Prevent horizonal scrolling on small screens
+
+
+.dropdown {
+    margin: 0 10px;
+}
