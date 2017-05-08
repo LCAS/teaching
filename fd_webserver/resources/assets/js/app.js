@@ -10,7 +10,7 @@ window.CodeMirror = CodeMirror;
 
 window.onload = function() {
 
-    let domain_editor = CodeMirror.fromTextArea(document.getElementById("domain"), {
+    var domain_editor = CodeMirror.fromTextArea(document.getElementById("domain"), {
         lineNumbers: true,
         styleActiveLine: true,
         matchBrackets: true,
@@ -18,7 +18,7 @@ window.onload = function() {
         mode: "commonlisp" //"text/x-common-lisp"
     });
 
-    let problem_editor = CodeMirror.fromTextArea(document.getElementById("problem"), {
+    var problem_editor = CodeMirror.fromTextArea(document.getElementById("problem"), {
         lineNumbers: true,
         styleActiveLine: true,
         matchBrackets: true,
