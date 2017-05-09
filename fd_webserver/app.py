@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify, Blueprint
 from subprocess import CalledProcessError
+import __future__
 
 app = Flask(__name__, template_folder="resources/templates")
 bp = Blueprint('fd_webserver', __name__, static_folder='static')
@@ -17,7 +18,7 @@ def call_planner(domain, problem):
     problem_file = path.join(tmpdir, 'problem.pddl')
     plan_file = path.join(tmpdir, 'plan.out')
 
-    print "operate in %s" % tmpdir
+    print("operate in %s" % tmpdir)
 
     with open(domain_file, "w") as text_file:
         text_file.write(domain)
@@ -34,7 +35,7 @@ def call_planner(domain, problem):
         return e.output, "no plan due to error. check logs"
 
     except (RuntimeError, OSError) as e:
-        print e
+        print(e)
         return str(e), "no plan due to error. check logs"
 
     rmtree(tmpdir, ignore_errors=True)
@@ -53,7 +54,7 @@ def utility_processor():
 @bp.route('/', methods=['POST', 'GET'])
 def index(name=None):
     if request.method == 'POST':
-        print "post"
+        print("post")
         domain = request.form['domain']
         problem = request.form['problem']
         sout, plan = call_planner(domain, problem)
