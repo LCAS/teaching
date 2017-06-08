@@ -1,1 +1,0 @@
-../benchmarks/blocks/domain.pddl

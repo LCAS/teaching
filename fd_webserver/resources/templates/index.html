@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Fast-Downward Web Service</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link href="{{ asset_path('app.css') }}" rel="stylesheet">
+        <script src="{{ asset_path('app.js') }}"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <div class="jumbotron">
+                        <h1>
+                            Fast-Downward Planning on the Web
+                        </h1>
+                        <p>
+                            Solve PDDL problems using <a href="http://www.fast-downward.org/">fast-downward</a>. Note that this service is reported to have some problems running in MS Internet Explorer. Please use Chrome.
+                        </p>
+                        <p>Read <a href="http://www.cs.toronto.edu/~sheila/2542/s14/A1/introtopddl2.pdf">this introduction</a> into the PDDL language.
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-6 column">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Domain</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropDownDomain" data-toggle="dropdown" aria-expanded="true">
+                                        Domain Examples
+                                        <span class="caret"></span>
+                                        </button>
+                                        <ul id="ddm-domain" class="dropdown-menu" role="menu" aria-labelledby="dropDownDomain">
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">floor-domain-template</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">wolf-goat-cabbage-domain-template</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">template</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">blocks</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">slidetile</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">robot</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">depot</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">robot_typed</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" id="domain"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-5 col-sm-10">
+                                        <button id="download_domain" 
+                                            type="button" 
+                                            class="btn btn-primary btn-lg">Download</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 column">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Problem</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropDownDomain" data-toggle="dropdown" aria-expanded="true">
+                                        Predefined Problems
+                                        <span class="caret"></span>
+                                        </button>
+                                        <ul id="ddm-problem" class="dropdown-menu" role="menu" aria-labelledby="dropDownProblem">
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">floor-move-problem-01</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">floor-move-problem-02</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">floor-problem-01</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">floor-problem-02</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">wolf-goat-cabbage-problem-01</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">wolf-goat-cabbage-problem-02</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">template</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">travel-1</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">travel-2</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">move</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">depot-01</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">depot-02</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">blocks</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">slidetile_8</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">robot</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">robot_typed</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" id="problem"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-5 col-sm-10">
+                                        <button id="planit" 
+                                            data-loading-text="Processing..." 
+                                            type="button" 
+                                            class="btn btn-primary btn-lg">Solve it</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-8 column">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Log</h3>
+                        </div>
+                        <div class="panel-body">
+                            <textarea rows="30" id="sout" style="width: 100%" readonly>see the logs here after clicking "Solve it"</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 column">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Plan</h3>
+                        </div>
+                        <div class="panel-body">
+                            <textarea rows="30" id="plan" style="width: 100%" readonly>see the generated plan here after clicking "Solve it"</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

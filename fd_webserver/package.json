@@ -1,0 +1,54 @@
+{
+    "author": "Marc Hanheide <marc@hanheide.net> (http://www.hanheide.net)",
+    "bugs": {
+        "url": "https://github.com/pet1330/teaching/issues/"
+    },
+    "contributors": [
+        {
+            "name": "Peter Lightbody",
+            "email": "pet1330@gmail.com",
+            "url": "https://plightbody.co.uk"
+        },
+        {
+            "name": "Ashley Williamson",
+            "email": "awilliamson@lincoln.ac.uk",
+            "url": "https://inp.io"
+        }
+    ],
+    "dependencies": {
+        "bootstrap-sass": "^3.3.7",
+        "clean-webpack-plugin": "^0.1.16",
+        "codemirror": "^5.25.2",
+        "copy-webpack-plugin": "^4.0.1",
+        "css-loader": "^0.28.1",
+        "extract-text-webpack-plugin": "^2.1.0",
+        "file-loader": "^0.11.1",
+        "file-saver": "^1.3.3",
+        "jquery": "^3.2.1",
+        "lodash": "^4.17.4",
+        "node-sass": "^4.5.2",
+        "resolve-url-loader": "^2.0.2",
+        "sass-loader": "^6.0.3",
+        "style-loader": "^0.17.0",
+        "uglify-js": "git://github.com/mishoo/UglifyJS2#harmony",
+        "uglifyjs-webpack-plugin": "^0.4.3",
+        "url-loader": "^0.5.8",
+        "webpack": "^2.4.1",
+        "webpack-manifest-plugin": "^1.1.0"
+    },
+    "description": "Fast-Downward Planning on the Web",
+    "homepage": "https://github.com/LCAS/teaching/",
+    "keywords": [
+        "Fast-Downward",
+        "PDDL",
+        "Planning"
+    ],
+    "license": "MIT",
+    "main": "app.py",
+    "name": "fd_webserver",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/LCAS/teaching.git"
+    },
+    "version": "1.2.0"
+}
