@@ -84,7 +84,7 @@ module.exports = {
         }]),
 
         new ManifestPlugin({
-            publicPath: "static/"
+            publicPath: "fast-downward/static/"
         })
     ]
 };
