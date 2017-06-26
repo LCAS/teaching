@@ -2,6 +2,9 @@
 Changelog for package uol_cmp3641m
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.17 (2017-06-26)
 -------------------
 * removed packages that where invalid for kinetic

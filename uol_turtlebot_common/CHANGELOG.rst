@@ -2,6 +2,9 @@
 Changelog for package uol_turtlebot_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.17 (2017-06-26)
 -------------------
 * removed map_store

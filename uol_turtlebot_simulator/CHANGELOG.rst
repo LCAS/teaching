@@ -2,6 +2,11 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* changed to new kinetic launch style
+* Contributors: Marc Hanheide
+
 0.1.17 (2017-06-26)
 -------------------
 * removed packages that where invalid for kinetic
