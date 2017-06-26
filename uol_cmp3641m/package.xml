@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>uol_cmp3641m</name>
-  <version>0.1.16</version>
+  <version>0.1.18</version>
   <description>The uol_cmp3641m package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
@@ -40,7 +40,7 @@
   <!-- Use test_depend for packages you need only for testing: -->
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
-  <run_depend>uol_kobuki_gazebo_plugins</run_depend>
+  <run_depend>kobuki_gazebo_plugins</run_depend>
   <run_depend>uol_turtlebot_simulator</run_depend>
 
 
