@@ -23,6 +23,6 @@ COPY . /fastdownward
 WORKDIR /fastdownward
 
 # Install app requirements using pip
-RUN yarn && webpack -p
+RUN yarn && yarn run production
 
 CMD bash -c "source /opt/ros/indigo/setup.bash; python app.py"
