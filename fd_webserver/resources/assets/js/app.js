@@ -3,6 +3,8 @@ import CodeMirror from 'codemirror';
 import fileSaver from 'file-saver';
 import jQuery from 'jquery';
 import commonlisp from 'codemirror/mode/commonlisp/commonlisp.js';
+import 'codemirror/addon/edit/matchbrackets.js';
+import 'codemirror/addon/edit/closebrackets.js';
 
 window._ = require('lodash');
 window.$ = window.jQuery = jQuery;
@@ -14,6 +16,7 @@ window.onload = function() {
         lineNumbers: true,
         styleActiveLine: true,
         matchBrackets: true,
+        closeBrackets: true,
         theme: "eclipse",
         mode: "commonlisp" //"text/x-common-lisp"
     });
@@ -22,6 +25,7 @@ window.onload = function() {
         lineNumbers: true,
         styleActiveLine: true,
         matchBrackets: true,
+        closeBrackets: true,
         theme: "eclipse",
         mode: "commonlisp" //"text/x-common-lisp"
     });
