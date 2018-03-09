@@ -8,6 +8,14 @@ Changelog for package catkinized_downward
 0.1.17 (2017-06-26)
 -------------------
 
+Forthcoming
+-----------
+* 0.1.18
+* updated changelogs
+* 0.1.17
+* changelogs
+* Contributors: LCAS build farm, Marc Hanheide
+
 0.1.16 (2017-03-29)
 -------------------
 

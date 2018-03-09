@@ -12,6 +12,14 @@ Changelog for package uol_turtlebot_simulator
 * removed packages that where invalid for kinetic
 * Contributors: Marc Hanheide
 
+Forthcoming
+-----------
+* 0.1.18
+* updated changelogs
+* 0.1.17
+* changelogs
+* Contributors: LCAS build farm, Marc Hanheide
+
 0.1.16 (2017-03-29)
 -------------------
 * real test world for assessment

@@ -11,6 +11,16 @@ Changelog for package uol_turtlebot_common
   as it is not available in Kinetic (and not needed???)
 * Contributors: Marc Hanheide
 
+Forthcoming
+-----------
+* 0.1.18
+* updated changelogs
+* 0.1.17
+* changelogs
+* removed map_store
+  as it is not available in Kinetic (and not needed???)
+* Contributors: LCAS build farm, Marc Hanheide
+
 0.1.16 (2017-03-29)
 -------------------
 
