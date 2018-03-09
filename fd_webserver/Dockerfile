@@ -17,7 +17,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN apt-get install -y nodejs
 
 RUN pip install Flask
-RUN npm install -g webpack yarn
+RUN npm install -g webpack@3.11.0 yarn
 
 COPY . /fastdownward
 WORKDIR /fastdownward
