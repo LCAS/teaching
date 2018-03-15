@@ -5,9 +5,7 @@
 )
  (:init 
    (cleaner-at cleaner1 region_0-1)
-  
-(dirty region_0-1)
-
+   (dirty region_0-1)
 )
  (:goal (and
     (cleaned region_0-1)
