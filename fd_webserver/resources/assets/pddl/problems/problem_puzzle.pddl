@@ -9,7 +9,7 @@
 	(at B_2 P_2)
 	(at B_3 P_3)
  	(position P_1)
-              (position P_2)
+    (position P_2)
  	(position P_3)
  	(position P_4)
  	(blocks B_1)
