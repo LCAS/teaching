@@ -1,4 +1,4 @@
-(define (domain action)
+(define (domain move)
    (:predicates 
                            (position ?p)
 		(blocks ?b)
