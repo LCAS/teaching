@@ -47,7 +47,8 @@ def utility_processor():
         import json
         with open('static/manifest.json') as file:
             config = json.load(file)
-            return request.url_root + config[asset]
+            #return request.url_root + config[asset]
+            return '/'+config[asset]
     return dict(asset_path=asset_path)
 
 
@@ -67,4 +68,5 @@ def index(name=None):
 
 if __name__ == '__main__':
     app.register_blueprint(bp, url_prefix='/fast-downward')
+    app.config.update(dict(PREFERRED_URL_SCHEME='https'))
     app.run(debug=True, threaded=True, host='0.0.0.0')
