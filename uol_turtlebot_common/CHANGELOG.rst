@@ -11,8 +11,8 @@ Changelog for package uol_turtlebot_common
   as it is not available in Kinetic (and not needed???)
 * Contributors: Marc Hanheide
 
-Forthcoming
------------
+0.1.19 (2018-03-28)
+-------------------
 * prepare indigo release
 * 0.1.18
 * updated changelogs

@@ -8,8 +8,8 @@ Changelog for package catkinized_downward
 0.1.17 (2017-06-26)
 -------------------
 
-Forthcoming
------------
+0.1.19 (2018-03-28)
+-------------------
 * prepare indigo release
 * 0.1.18
 * updated changelogs

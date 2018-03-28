@@ -2,8 +2,8 @@
 Changelog for package uol_morse_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.19 (2018-03-28)
+-------------------
 * ready for updates on indigo
 * prepare indigo release
 * Contributors: Marc Hanheide

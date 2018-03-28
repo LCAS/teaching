@@ -12,8 +12,8 @@ Changelog for package uol_turtlebot_simulator
 * removed packages that where invalid for kinetic
 * Contributors: Marc Hanheide
 
-Forthcoming
------------
+0.1.19 (2018-03-28)
+-------------------
 * change position of test arena target poles for assessment
 * prepare indigo release
 * 0.1.18
