@@ -12,6 +12,13 @@ Changelog for package uol_cmp3641m
 
 Forthcoming
 -----------
+* prepare indigo release
+* 0.1.18
+* updated changelogs
+* 0.1.17
+* changelogs
+* Contributors: LCAS build farm, Marc Hanheide
+
 * 0.1.18
 * updated changelogs
 * 0.1.17
