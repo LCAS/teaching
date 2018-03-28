@@ -73,7 +73,7 @@
       <shadows>0</shadows>
     </scene>
     <model name='target_cylinder_A'>
-      <pose>3.5 -4.5 0.5 0 -0 0</pose>
+      <pose>4 -5 0.5 0 -0 0</pose>
       <link name='link'>
         <inertial>
           <mass>1</mass>
@@ -129,7 +129,7 @@
       <static>1</static>
     </model>
     <model name='target_cylinder_B'>
-      <pose>2.5 -1 0.5 0 -0 0</pose>
+      <pose>3 2 0.5 0 -0 0</pose>
       <link name='link'>
         <inertial>
           <mass>1</mass>
@@ -185,7 +185,7 @@
       <static>1</static>
     </model>
     <model name='target_cylinder_C'>
-      <pose>-1 4.5 0.5 0 -0 0</pose>
+      <pose>3 4 0.5 0 -0 0</pose>
       <link name='link'>
         <inertial>
           <mass>1</mass>
@@ -241,7 +241,7 @@
       <static>1</static>
     </model>
     <model name='target_cylinder_D'>
-      <pose>-3 0.25 0.5 0 -0 0</pose>
+      <pose>-4 5 0.5 0 -0 0</pose>
       <link name='link'>
         <inertial>
           <mass>1</mass>
@@ -4311,36 +4311,36 @@
         </link>
       </model>
       <model name='target_cylinder_A'>
-        <pose>3.5 -4.5 0.5 0 -0 0</pose>
+        <pose>4 -5 0.5 0 -0 0</pose>
         <link name='link'>
-          <pose>3.5 -4.5 0.5 0 -0 0</pose>
+          <pose>4 -5 0.5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='target_cylinder_B'>
-        <pose>2.93242 0.016787 0.5 0 -0 0</pose>
+        <pose>3 2 0.5 0 -0 0</pose>
         <link name='link'>
-          <pose>2.93242 0.016787 0.5 0 -0 0</pose>
+          <pose>3 2 0.5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='target_cylinder_C'>
-        <pose>2.50162 4.53642 0.5 0 -0 0</pose>
+        <pose>3 4 0.5 0 -0 0</pose>
         <link name='link'>
-          <pose>2.50162 4.53642 0.5 0 -0 0</pose>
+          <pose>3 4 0.5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='target_cylinder_D'>
-        <pose>-3 2.77353 0.5 0 -0 0</pose>
+        <pose>-4 5 0.5 0 -0 0</pose>
         <link name='link'>
-          <pose>-3 2.77353 0.5 0 -0 0</pose>
+          <pose>-4 5 0.5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
