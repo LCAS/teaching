@@ -3,7 +3,7 @@
 import rospy
 from cv2 import namedWindow, cvtColor, imshow
 from cv2 import destroyAllWindows, startWindowThread
-from cv2 import COLOR_BGR2GRAY
+from cv2 import COLOR_BGR2GRAY, waitKey
 from cv2 import blur, Canny
 from numpy import mean
 from sensor_msgs.msg import Image
@@ -14,16 +14,15 @@ class image_converter:
 
     def __init__(self):
 
-        namedWindow("Image window", 1)
-        namedWindow("blur", 1)
-        namedWindow("canny", 1)
         self.bridge = CvBridge()
-        startWindowThread()
-        self.image_sub = rospy.Subscriber("/video",
+        self.image_sub = rospy.Subscriber("/cam/image_raw",
                                           Image, self.callback)
         #self.image_sub = rospy.Subscriber("/turtlebot_1/camera/rgb/image_raw",Image,self.callback)
 
     def callback(self, data):
+        namedWindow("Image window")
+        namedWindow("blur")
+        namedWindow("canny")
         cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
 
         gray_img = cvtColor(cv_image, COLOR_BGR2GRAY)
@@ -33,8 +32,10 @@ class image_converter:
         img3 = Canny(gray_img, 10, 200)
         imshow("canny", img3)
 
-        imshow("Image window", gray_img)
+        imshow("Image window", cv_image)
+        waitKey(1)
 
+startWindowThread()
 rospy.init_node('image_converter')
 ic = image_converter()
 rospy.spin()
