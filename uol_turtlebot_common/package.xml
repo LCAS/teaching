@@ -53,7 +53,7 @@
   <run_depend>turtlebot_interactive_markers</run_depend>
   <run_depend>turtlebot_msgs</run_depend>
   <run_depend>turtlebot_rviz_launchers</run_depend>
-  <run_depend>turtlebot_simulator</run_depend>
+  <run_depend>turtlebot_gazebo</run_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

@@ -16,7 +16,8 @@
   
   <run_depend>turtlebot_apps</run_depend>
   <run_depend>turtlebot_rviz_launchers</run_depend>
-  <run_depend>turtlebot_simulator</run_depend>
+  <run_depend>turtlebot_gazebo</run_depend>
+  <run_depend>turtlebot_stdr</run_depend>
   <run_depend>kobuki_gazebo_plugins</run_depend>
 
   <export/>
