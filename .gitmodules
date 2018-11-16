@@ -1,0 +1,8 @@
+[submodule "uol_turtlebot_simulator/kobuki_desktop"]
+	path = kobuki_desktop
+	url = https://github.com/yujinrobot/kobuki_desktop.git
+	branch = kinetic
+[submodule "uol_turtlebot_simulator/turtlebot_simulator"]
+	path = turtlebot_simulator
+	url = https://github.com/turtlebot/turtlebot_simulator.git
+	branch = indigo
