@@ -2,6 +2,11 @@
 Changelog for package uol_turtlebot_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* on way to working kinetic
+* Contributors: Marc Hanheide
+
 0.1.18 (2017-06-26)
 -------------------
 

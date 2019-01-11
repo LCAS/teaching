@@ -2,6 +2,13 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* added rviz config for search worlds
+* on way to working kinetic
+* change position of test arena target poles for assessment
+* Contributors: Marc Hanheide, paul-baxter
+
 0.1.18 (2017-06-26)
 -------------------
 * changed to new kinetic launch style

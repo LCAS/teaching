@@ -2,6 +2,11 @@
 Changelog for package uol_cmp3641m
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* renamed package
+* Contributors: Marc Hanheide
+
 0.1.18 (2017-06-26)
 -------------------
 
