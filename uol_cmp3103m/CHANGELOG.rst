@@ -4,6 +4,10 @@ Changelog for package uol_cmp3641m
 
 Forthcoming
 -----------
+* changelogs
+* renamed package
+* Contributors: Marc Hanheide
+
 * renamed package
 * Contributors: Marc Hanheide
 
