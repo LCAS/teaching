@@ -1,0 +1,29 @@
+init_cmd: |
+  export TMULE=1
+  date
+  source /home/lcas/workspace/devel/setup.bash
+  default_iface=$(awk '$2 == 00000000 { print $1 }' /proc/net/route)
+  default_ip=`ip addr show dev "$default_iface" | grep "inet " | sed 's@ *inet \([0-9\.]*\).*@\1@'`
+  export ROS_MASTER_URI="http://${default_ip}:11311/"
+  export ROS_IP="$default_ip"
+  export ROS_HOSTNAME="$ROS_IP"  
+  export DISPLAY=:0
+
+  export TURTLEBOT_3D_SENSOR=kinect
+windows: 
+  - name: roscore
+    panes: 
+      - roscore
+  - name: turtlebot
+    panes:
+      - roslaunch turtlebot_bringup minimal.launch
+      - roslaunch turtlebot_bringup 3dsensor.launch
+  - name: webbridge
+    panes:
+      - roslaunch rosbridge_server rosbridge_websocket.launch
+  - name: vnc
+    panes:
+      - roslaunch vnc_runner vnc.launch
+  - name: update      
+    panes:
+      - "cd /home/lcas/workspace/src; wstool up; cd /home/lcas/workspace; catkin_make"
