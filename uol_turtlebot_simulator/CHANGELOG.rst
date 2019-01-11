@@ -2,8 +2,8 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.19 (2019-01-11)
+-------------------
 * changelogs
 * added rviz config for search worlds
 * on way to working kinetic

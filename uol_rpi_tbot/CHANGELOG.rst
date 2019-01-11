@@ -2,8 +2,8 @@
 Changelog for package uol_rpi_tbot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.19 (2019-01-11)
+-------------------
 * added
 * added
 * added
