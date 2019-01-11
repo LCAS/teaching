@@ -1,0 +1,14 @@
+- git:
+    local-name: network-scripts
+    uri: https://github.com/marc-hanheide/network-scripts.git
+- git:
+    local-name: remote_manager
+    uri: https://github.com/marc-hanheide/remote_manager.git
+- git:
+    local-name: robot_blockly
+    uri: https://github.com/LCAS/robot_blockly.git
+    version: master
+- git:
+    local-name: teaching
+    uri: https://github.com/LCAS/teaching.git
+
