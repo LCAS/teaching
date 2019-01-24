@@ -16,7 +16,7 @@ hostname lcas-pi-`ifconfig -a | grep wlan | awk '{print $5}' | tr -d ':'`
 hostname > /etc/hostname
 
 # make sure it's in /etc/hosts
-sed -i "s/127\.0\.1\.1\t.*/127.0.1.1 `hostname`/" /etc/hosts
+sed -i "s/127\.0\.1\.1\s.*/127.0.1.1 `hostname`/" /etc/hosts
 
 exit 0
 
