@@ -15,9 +15,9 @@ class image_converter:
     def __init__(self):
 
         self.bridge = CvBridge()
-        self.image_sub = rospy.Subscriber("/cam/image_raw",
+        self.image_sub = rospy.Subscriber("/camera/image_raw",
                                           Image, self.callback)
-        #self.image_sub = rospy.Subscriber("/turtlebot_1/camera/rgb/image_raw",Image,self.callback)
+        #self.image_sub = rospy.Subscriber("/camera/rgb/image_raw", Image, self.callback)
 
     def callback(self, data):
         namedWindow("Image window")

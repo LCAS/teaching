@@ -18,5 +18,5 @@ class image_publisher:
 
 ic = image_publisher()
 rospy.init_node('image_converter', anonymous=True)
-ic.publish('blofeld.jpg')
+ic.publish('../blofeld.jpg')
 rospy.spin()

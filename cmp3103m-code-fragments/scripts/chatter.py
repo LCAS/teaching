@@ -13,7 +13,7 @@ class Chatter:
 
     def __init__(self):
         rospy.init_node('chatter')
-        self.publisher = rospy.Publisher('/msgs', String)
+        self.publisher = rospy.Publisher('/msgs', String, queue_size=1)
 
     def run(self):
         while not rospy.is_shutdown():
