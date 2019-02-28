@@ -18,12 +18,15 @@ windows:
     panes:
       - roslaunch turtlebot_bringup minimal.launch
       - roslaunch turtlebot_bringup 3dsensor.launch
-  - name: webbridge
+  - name: blockly
     panes:
-      - roslaunch rosbridge_server rosbridge_websocket.launch
+      - roslaunch robot_blockly robot_blockly.launch
   - name: vnc
     panes:
       - roslaunch vnc_runner vnc.launch
   - name: update      
     panes:
       - "cd /home/lcas/workspace/src; wstool up; cd /home/lcas/workspace; catkin_make"
+  - name: webbridge
+    panes:
+      - roslaunch rosbridge_server rosbridge_websocket.launch
