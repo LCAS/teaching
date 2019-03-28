@@ -73,7 +73,7 @@
       <shadows>0</shadows>
     </scene>
     <model name='target_cylinder_A'>
-      <pose>4 -4 0.5 0 -0 0</pose>
+      <pose>4 -4.05 0.5 0 -0 0</pose>
       <link name='link'>
         <inertial>
           <mass>1</mass>
@@ -4311,9 +4311,9 @@
         </link>
       </model>
       <model name='target_cylinder_A'>
-        <pose>4 -4 0.5 0 -0 0</pose>
+        <pose>4 -4.05 0.5 0 -0 0</pose>
         <link name='link'>
-          <pose>4 -4 0.5 0 -0 0</pose>
+          <pose>4 -4.05 0.5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
