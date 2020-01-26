@@ -1,0 +1,17 @@
+<launch>
+
+  <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
+    <arg name="world_file" value="$(find uol_turtlebot_simulator)/worlds/empty_maze.world" />
+  </include>
+
+  <!-- <include file="$(find turtlebot_gazebo)/launch/amcl_demo.launch">
+    <arg name="map_file" value="$(find uol_turtlebot_simulator)/maps/object-search-arena.yaml" />
+  </include> -->
+  <node pkg="turtlebot_teleop" type="turtlebot_teleop_key" name="turtlebot_teleop_keyboard" output="screen">
+    <param name="scale_linear" value="0.5" type="double"/>
+    <param name="scale_angular" value="1.5" type="double"/>
+    <remap from="turtlebot_teleop_keyboard/cmd_vel" to="cmd_vel_mux/input/teleop"/>
+  </node>
+
+</launch>
+
