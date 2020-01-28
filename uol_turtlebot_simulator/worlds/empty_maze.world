@@ -2,7 +2,7 @@
 <sdf version="1.6">
   <world name="default">
     <include>
-      <uri>model://ground_plane</uri>
+      <uri>model://maze_base</uri>
     </include>
 
     <include>
