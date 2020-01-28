@@ -1,14 +1,10 @@
 <launch>
-  <arg name="robot_name" default="turtlebot" />
-  
-  <group ns="$(arg robot_name)">
-  <node pkg="kobuki_keyop" type="keyop" name="keyop" output="screen">
-    <remap from="keyop/motor_power" to="$(arg robot_name)/commands/motor_power"/>
-    <param name="linear_vel_step"  value="0.05" type="double"/>
-    <param name="linear_vel_max"   value="1.5"  type="double"/>
-    <param name="angular_vel_step" value="0.33" type="double"/>
-    <param name="angular_vel_max"  value="6.6"  type="double"/>
-    <param name="wait_for_connection_" value="true" type="bool"/>
+
+  <node pkg="turtlebot_teleop" type="turtlebot_teleop_key" name="turtlebot_teleop_keyboard" output="screen">
+    <param name="scale_linear" value="0.5" type="double"/>
+    <param name="scale_angular" value="1.5" type="double"/>
+    <remap from="turtlebot_teleop_keyboard/cmd_vel" to="cmd_vel_mux/input/teleop"/>
   </node>
-  </group>
+
 </launch>
+

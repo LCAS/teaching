@@ -2,5 +2,5 @@
   Used for visualising the turtlebot while building a map or navigating with the ros navistack.
  -->
 <launch>
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find lucia_sim_2014)/launch/rviz/navigation.rviz"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find uol_turtlebot_simulator)/launch/rviz/turtlebot.rviz"/>
 </launch>
