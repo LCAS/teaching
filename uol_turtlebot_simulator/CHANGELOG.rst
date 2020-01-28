@@ -2,6 +2,11 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* update gzmaze
+* Contributors: Marc Hanheide
+
 1.0.0 (2020-01-28)
 ------------------
 * working towards new assessment with maze (`#34 <https://github.com/LCAS/teaching/issues/34>`_)
