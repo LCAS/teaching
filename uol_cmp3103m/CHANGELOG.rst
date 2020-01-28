@@ -1,23 +1,23 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package uol_cmp3641m
+Changelog for package uol_cmp3103m
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.1.19 (2019-01-11)
--------------------
+Forthcoming
+-----------
+
+0.2.0 (2019-01-11)
+------------------
+* 0.1.19
+* changelogs
 * changelogs
 * renamed package
 * Contributors: Marc Hanheide
 
-* renamed package
-* Contributors: Marc Hanheide
+0.1.18 (2017-06-26 12:46)
+-------------------------
 
-0.1.18 (2017-06-26)
--------------------
-
-0.1.17 (2017-06-26)
--------------------
-* removed packages that where invalid for kinetic
-* Contributors: Marc Hanheide
+0.1.17 (2017-06-26 09:58)
+-------------------------
 
 0.1.16 (2017-03-29)
 -------------------
@@ -27,8 +27,6 @@ Changelog for package uol_cmp3641m
 
 0.1.14 (2017-02-21)
 -------------------
-* working
-* Contributors: Marc Hanheide
 
 0.1.13 (2015-11-19)
 -------------------
@@ -48,6 +46,9 @@ Changelog for package uol_cmp3641m
 0.1.8 (2015-02-02)
 ------------------
 
+0.1.7 (2015-01-23)
+------------------
+
 0.1.6 (2015-01-21)
 ------------------
 
@@ -56,10 +57,12 @@ Changelog for package uol_cmp3641m
 
 0.1.4 (2015-01-15)
 ------------------
-* Remote uol_turtlebot_common package. Removed dependencies from uol_morse_simulator package that do not exist in hydro yet.
-* Contributors: Christian Dondrup
 
 0.1.3 (2015-01-14)
 ------------------
-* added uol_cmp3641m package
-* Contributors: Marc Hanheide
+
+0.1.2 (2015-01-09 12:19)
+------------------------
+
+0.1.1 (2015-01-09 11:47)
+------------------------
