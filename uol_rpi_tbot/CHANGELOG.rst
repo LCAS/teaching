@@ -2,8 +2,8 @@
 Changelog for package uol_rpi_tbot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.0 (2020-01-28)
+------------------
 * added blockly
 * fixed re
 * added server files

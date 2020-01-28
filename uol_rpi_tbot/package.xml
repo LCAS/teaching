@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>uol_rpi_tbot</name>
-  <version>0.2.0</version>
+  <version>1.0.0</version>
   <description>The uol_rpi_tbot package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
