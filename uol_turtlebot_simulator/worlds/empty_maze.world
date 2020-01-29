@@ -1,13 +1,39 @@
 <?xml version="1.0"?>
 <sdf version="1.6">
   <world name="default">
+    <gui fullscreen='0'>
+      <plugin name='sample' filename='libregenerate_widget.so'/>
+      <camera name='user_camera'>
+        <pose frame=''>0.0 0.0 18 0.0 1.5707 1.5707</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <light name='sun' type='directional'>
+      <cast_shadows>0</cast_shadows>
+      <pose frame=''>0 0 100 0 -0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
     <include>
       <uri>model://maze_base</uri>
     </include>
 
-    <include>
+    <!-- <include>
       <uri>model://sun</uri>
-    </include>
+    </include> -->
 
     <gui>
       <plugin name="sample" filename="libregenerate_widget.so"/>
