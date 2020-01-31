@@ -12,7 +12,7 @@ from nav_msgs.msg import Odometry
 class odom_reader:
 
     def __init__(self):
-        self.image_sub = rospy.Subscriber("/turtlebot_1/odom",
+        self.image_sub = rospy.Subscriber("/odom",
                                           Odometry, self.callback)
 
     """

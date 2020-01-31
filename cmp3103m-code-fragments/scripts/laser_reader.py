@@ -8,7 +8,7 @@ from sensor_msgs.msg import LaserScan
 class laser_reader:
 
     def __init__(self):
-        self.image_sub = rospy.Subscriber("/turtlebot_1/scan",
+        self.laser_sub = rospy.Subscriber("/scan",
                                           LaserScan,
                                           self.callback)
 
