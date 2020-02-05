@@ -20,6 +20,7 @@
   <run_depend>turtlebot_stdr</run_depend>
   <run_depend>kobuki_gazebo_plugins</run_depend>
   <run_depend>turtlebot_teleop</run_depend>
+  <run_depend>rviz</run_depend>
   <build_depend>turtlebot_apps</build_depend>
   <build_depend>turtlebot_rviz_launchers</build_depend>
   <build_depend>turtlebot_gazebo</build_depend>
