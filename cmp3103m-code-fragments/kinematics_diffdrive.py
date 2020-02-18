@@ -1,6 +1,6 @@
 
-wheel_radius = .1
-robot_radius = 1
+wheel_radius = .06
+robot_radius = .2
 
 
 # computing the forward kinematics for a differential drive
