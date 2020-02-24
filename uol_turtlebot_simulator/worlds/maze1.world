@@ -7787,7 +7787,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>-0.5 -2 0 0 -0 1.570796</pose>
+      <pose frame=''>-0.5 -1.99 0 0 -0 1.570796</pose>
     </model>
     <model name='unit_box_0'>
       <link name='link'>
@@ -7810,7 +7810,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>2 -5.5 0 0 -0 0</pose>
+      <pose frame=''>1.99 -5.5 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>

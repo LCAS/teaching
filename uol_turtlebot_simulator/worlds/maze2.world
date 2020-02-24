@@ -8303,7 +8303,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>-3.5 -1 0 0 -0 0</pose>
+      <pose frame=''>-3.5 -0.99 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>

@@ -8002,7 +8002,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>-4 -5.5 0 0 -0 0</pose>
+      <pose frame=''>-3.99 -5.5 0 0 -0 0</pose>
     </model>
     <model name='unit_box_0'>
       <link name='link'>
@@ -8025,7 +8025,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>-6 -0.5 0 0 -0 0</pose>
+      <pose frame=''>-5.99 -0.5 0 0 -0 0</pose>
     </model>
     <model name='unit_box_1'>
       <link name='link'>
@@ -8048,7 +8048,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>4.0 -2.5 0 0 -0 0</pose>
+      <pose frame=''>4.01 -2.5 0 0 -0 0</pose>
     </model>
     <model name='unit_box_2'>
       <link name='link'>
@@ -8071,7 +8071,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>-6 -3.5 0 0 -0 0</pose>
+      <pose frame=''>-5.99 -3.5 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>
