@@ -1,7 +1,7 @@
 <launch>
 
   <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
-    <arg name="world_file" value="$(find uol_turtlebot_simulator)/worlds/maze1.world" />
+    <arg name="world_file" value="$(find uol_turtlebot_simulator)/worlds/maze2.world" />
   </include>
 
   <!-- <include file="$(find turtlebot_gazebo)/launch/amcl_demo.launch">
