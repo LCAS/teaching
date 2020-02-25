@@ -1,0 +1,10 @@
+<launch>
+
+  <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
+    <arg name="world_file" value="$(find uol_turtlebot_simulator)/worlds/maze3.world" />
+  </include>
+
+  <!-- <include file="$(find turtlebot_gazebo)/launch/amcl_demo.launch">
+    <arg name="map_file" value="$(find uol_turtlebot_simulator)/maps/object-search-arena.yaml" />
+  </include> -->
+</launch>
