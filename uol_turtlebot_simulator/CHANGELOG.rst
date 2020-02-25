@@ -2,8 +2,8 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.4 (2020-02-25)
+------------------
 * Adding 3 mazes for testing the assignment (`#36 <https://github.com/LCAS/teaching/issues/36>`_)
   * WIP: new mazes and example solution
   * not here
