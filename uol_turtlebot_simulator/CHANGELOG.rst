@@ -2,6 +2,21 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Adding 3 mazes for testing the assignment (`#36 <https://github.com/LCAS/teaching/issues/36>`_)
+  * WIP: new mazes and example solution
+  * not here
+  * 3 mazes and lanuch files
+  * fixed the models (removed state)
+  * fixing position of blue markers
+  Co-authored-by: Marc Hanheide <marc@hanheide.net>
+* new color marker
+* added missing dep
+* added missing dep
+* added missing dep
+* Contributors: Marc Hanheide, francescodelduchetto
+
 1.0.3 (2020-01-29)
 ------------------
 * updated gzmaze
