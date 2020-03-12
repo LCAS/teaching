@@ -1,7 +1,10 @@
 <launch>
 
-  <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
+  <arg name="fov"       default="60"/>
+
+  <include file="$(find uol_turtlebot_simulator)/launch/turtlebot_world.launch">
     <arg name="world_file" value="$(find uol_turtlebot_simulator)/worlds/empty_maze.world" />
+    <arg name="fov" value="$(arg fov)" />
   </include>
 
   <!-- <include file="$(find turtlebot_gazebo)/launch/amcl_demo.launch">
