@@ -14,7 +14,7 @@
             <height>480</height>
           </image>
           <clip>
-            <near>0.295</near>
+            <near>0.05</near>
             <far>100.0</far>
           </clip>
         </camera>
