@@ -2,8 +2,8 @@
 Changelog for package uol_turtlebot_simulator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.5 (2020-03-15)
+------------------
 * configure fov and no range restriction (`#37 <https://github.com/LCAS/teaching/issues/37>`_)
   * configure fov and no range restriction
   * changed close cut-off to not hit base
