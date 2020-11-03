@@ -37,9 +37,10 @@ class image_converter:
         imshow("Image window", cv_image)
         waitKey(1)
 
-startWindowThread()
+# not needed in newer versions: 
+# startWindowThread()
 rospy.init_node('image_converter')
 ic = image_converter()
 rospy.spin()
 
-destroyAllWindows()
+# destroyAllWindows()
