@@ -5,7 +5,7 @@
   <description>Turtlebot messages, services and actions</description>
 
   <author email="jorge@rnd.yujinrobot.com">Jorge Santos</author>
-  <maintainer email="jorge@rnd.yujinrobot.com">Jorge Santos</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
   <license>BSD</license>
   <url type="website">http://ros.org/wiki/turtlebot_msgs</url>
   <url type="repository">https://github.com/turtlebot/turtlebot_msgs</url>

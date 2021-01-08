@@ -5,7 +5,7 @@
      turtlebot_bringup provides roslaunch scripts for starting the TurtleBot base functionality.
   </description>
   <author>Tully Foote</author>
-  <maintainer email="d.stonier@gmail.com">Daniel Stonier</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
   <license>BSD</license>
   <url type="website">http://ros.org/wiki/turtlebot_bringup</url>
   <url type="repository">https://github.com/turtlebot/turtlebot</url>

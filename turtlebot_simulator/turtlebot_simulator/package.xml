@@ -2,7 +2,7 @@
   <name>turtlebot_simulator</name>
   <version>2.2.3</version>
   <description>Catkin metapackage for the turtlebot_simulator stack</description>
-  <maintainer email="turtlebot@osrfoundation.com">OSRF</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
   <license>BSD</license>
   <url type="website">http://ros.org/wiki/turtlebot_simulator</url>
   <url type="repository">https://github.com/turtlebot/turtlebot_simulator</url>

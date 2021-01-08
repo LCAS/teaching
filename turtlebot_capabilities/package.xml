@@ -4,8 +4,8 @@
   <version>2.4.2</version>
   <description>Capabilities for the TurtleBot</description>
 
-  <maintainer email="william@osrfoundation.org">William Woodall</maintainer>
-  <maintainer email="marcus.liebhardt@yujinrobot.com">Marcus Liebhardt</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
 
   <license>BSD</license>
 

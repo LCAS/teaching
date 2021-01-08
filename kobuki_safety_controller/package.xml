@@ -11,7 +11,7 @@
     The safety states (bumper pressed etc.) can be reset. WARNING: Dangerous!
   </description>
   <author email="marcus.liebhardt@yujinrobot.com">Marcus Liebhardt</author>
-  <maintainer email="marcus.liebhardt@yujinrobot.com">Marcus Liebhardt</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
   <license>BSD</license>
   <url type="bugtracker">https://github.com/yujinrobot/kobuki/issues</url>
   <url type="repository">https://github.com/yujinrobot/kobuki</url>

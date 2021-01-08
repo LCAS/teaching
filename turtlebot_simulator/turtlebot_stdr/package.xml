@@ -6,7 +6,7 @@
     Stdr version of turtlebot simulation. Convenient to test 2D-navigation related stuffs
   </description>
 
-  <maintainer email="mehdi.tlili@gmail.com">Mehdi Tlili</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
   <author email="mehdi.tlili@gmail.com">Mehdi Tlili</author>
   <license>BSD</license>
 

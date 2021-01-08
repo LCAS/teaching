@@ -6,7 +6,7 @@
     Stage version of turtlebot simulation. Convenient to test 2D-navigation related stuffs
   </description>
 
-  <maintainer email="jihoonl@yujinrobot.com">Jihoon Lee</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
   <author email="jorge@yujinrobot.com">Jorge Santos</author>
   <license>BSD</license>
 

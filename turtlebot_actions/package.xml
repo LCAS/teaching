@@ -4,7 +4,7 @@
   <description>
       turtlebot_actions provides several basic actionlib actions for the TurtleBot.
   </description>
-  <maintainer email="turtlebot@osrfoundation.org">OSRF</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
   <license>BSD</license>
   <url type="website">http://ros.org/wiki/turtlebot_actions</url>
   <url type="repository">https://github.com/turtlebot/turtlebot_apps</url>

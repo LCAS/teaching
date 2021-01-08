@@ -2,7 +2,7 @@
   <name>turtlebot_gazebo</name>
   <version>2.2.3</version>
   <description>Gazebo launchers and worlds for TurtleBot simulation</description>
-  <maintainer email="marcus.liebhardt@yujinrobot.com">Marcus Liebhardt</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
   <license>BSD</license>
   <url type="website">http://ros.org/wiki/turtlebot_gazebo</url>
   <url type="repository">https://github.com/turtlebot/turtlebot_simulator</url>

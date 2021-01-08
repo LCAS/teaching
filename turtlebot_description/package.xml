@@ -6,7 +6,7 @@
   </description>
   <author>Melonee Wise</author>
   <author email="stonier@yujinrobot.com">Daniel Stonier</author>
-  <maintainer email="stonier@yujinrobot.com">Daniel Stonier</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
   <license>BSD</license>
   <url type="website">http://ros.org/wiki/turtlebot_description</url>
   <url type="repository">https://github.com/turtlebot/turtlebot</url>

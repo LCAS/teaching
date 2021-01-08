@@ -3,7 +3,7 @@
   <version>2.3.7</version>
   <description>The core set of turtlebot 'app manager' apps are defined in this package. </description>
 
-  <maintainer email="stonier@rnd.yujinrobot.com">Daniel Stonier</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
 
   <license>BSD</license>
 

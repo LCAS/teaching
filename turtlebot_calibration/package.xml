@@ -2,7 +2,7 @@
   <name>turtlebot_calibration</name>
   <version>2.3.7</version>
   <description>turtlebot_calibration</description>
-  <maintainer email="turtlebot@osrfoundation.org">OSRF</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
   <license>BSD</license>
   <url type="website">http://ros.org/wiki/turtlebot_calibration</url>
   <url type="repository">https://github.com/turtlebot/turtlebot_apps</url>

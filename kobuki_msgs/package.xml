@@ -8,7 +8,7 @@
   </description>
   <author email="stonier@yujinrobot.com">Daniel Stonier</author>
   <author email="yhju@yujinrobot.com">Younghun Ju</author>
-  <maintainer email="stonier@yujinrobot.com">Daniel Stonier</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
   <license>BSD</license>
   <url type="website">http://ros.org/wiki/kobuki_msgs</url>
   <url type="repository">https://github.com/yujinrobot/kobuki_msgs</url>

@@ -5,7 +5,7 @@
        Follower for the turtlebot. Follows humans and robots around by following the centroid of a box points in front of the turtlebot.
   </description>
 
-  <maintainer email="stonier@rnd.yujinrobot.com">Daniel Stonier</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
 
   <license>BSD</license>
 
