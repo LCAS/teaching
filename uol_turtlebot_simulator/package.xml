@@ -14,8 +14,6 @@
 
   <buildtool_depend>catkin</buildtool_depend>
   
-  <run_depend>turtlebot_apps</run_depend>
-  <run_depend>turtlebot_rviz_launchers</run_depend>
   <run_depend>turtlebot_gazebo</run_depend>
   <run_depend>turtlebot_stdr</run_depend>
   <run_depend>kobuki_gazebo_plugins</run_depend>
@@ -28,8 +26,7 @@
   <run_depend>amcl</run_depend>
   <run_depend>nodelet</run_depend>
   <run_depend>gazebo_ros</run_depend>
-  <build_depend>turtlebot_apps</build_depend>
-  <build_depend>turtlebot_rviz_launchers</build_depend>
+  <build_depend>gazebo_dev</build_depend>
   <build_depend>turtlebot_gazebo</build_depend>
   <build_depend>turtlebot_stdr</build_depend>
   <build_depend>kobuki_gazebo_plugins</build_depend>
