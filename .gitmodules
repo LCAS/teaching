@@ -1,4 +1,4 @@
 [submodule "uol_turtlebot_simulator/gzmaze"]
 	path = uol_turtlebot_simulator/gzmaze
 	url = https://github.com/LCAS/gzmaze.git
-	branch = gazebo-7
+	branch = melodic
