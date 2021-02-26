@@ -31,7 +31,7 @@ class DrawASquare():
         # What to do you ctrl + c    
         rospy.on_shutdown(self.shutdown)
         
-        self.cmd_vel = rospy.Publisher('/turtlebot_1/cmd_vel', Twist, queue_size=10)
+        self.cmd_vel = rospy.Publisher('/mobile_base/commands/velocity', Twist, queue_size=10)
      
 	# 5 HZ
         r = rospy.Rate(5);
@@ -51,9 +51,9 @@ class DrawASquare():
 	#two keep drawing squares.  Go forward for 2 seconds (10 x 5 HZ) then turn for 2 second
         count = 0
         while not rospy.is_shutdown():
-	    # go forward 0.4 m (2 seconds * 0.2 m / seconds)
+	    # go forward 1 m (5 seconds * 0.2 m / seconds)
 	    rospy.loginfo("Going Straight")
-            for x in range(0,10):
+            for x in range(0,25):
                 self.cmd_vel.publish(move_cmd)
                 r.sleep()
 	    # turn 90 degrees
