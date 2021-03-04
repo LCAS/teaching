@@ -9,9 +9,6 @@ namedWindow("original")
 namedWindow("blur")
 namedWindow("canny")
 
-# this is always needed to run the GUI thread
-startWindowThread()
-
 img = imread('../blofeld.jpg')
 print('type: %s' % type(img))
 imshow("original", img)
