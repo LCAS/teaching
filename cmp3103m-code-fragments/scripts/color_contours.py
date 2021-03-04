@@ -10,8 +10,6 @@ from cv_bridge import CvBridge, CvBridgeError
 class image_converter:
 
     def __init__(self):
-
-        cv2.startWindowThread()
         self.bridge = CvBridge()
         # self.image_sub = rospy.Subscriber("/camera/image_raw",
         #                                   Image, self.callback)
