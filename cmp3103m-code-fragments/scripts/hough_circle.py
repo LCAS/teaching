@@ -4,7 +4,6 @@ import numpy as np
 import cv2.cv as cv  
 
 cv2.namedWindow("detected circles", 1)
-cv2.startWindowThread()
 
 cimg = cv2.imread('../blofeld.jpg')
 img = cv2.cvtColor(cimg,cv2.COLOR_BGR2GRAY)
