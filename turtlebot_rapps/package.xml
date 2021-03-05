@@ -1,6 +1,6 @@
 <package>
   <name>turtlebot_rapps</name>
-  <version>3.0.1</version>
+  <version>3.0.2</version>
   <description>The core set of turtlebot 'app manager' apps are defined in this package. </description>
 
   <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>

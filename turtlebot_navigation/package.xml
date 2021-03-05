@@ -1,6 +1,6 @@
 <package>
   <name>turtlebot_navigation</name>
-  <version>3.0.1</version>
+  <version>3.0.2</version>
   <description>turtlebot_navigation</description>
   <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
   <license>BSD</license>
