@@ -12,7 +12,7 @@ class image_converter:
 
     def __init__(self):
 
-        cv2.startWindowThread()
+        #cv2.startWindowThread()
         self.bridge = CvBridge()
         # self.image_sub = rospy.Subscriber("/camera/image_raw",
         #                                   Image, self.callback)

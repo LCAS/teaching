@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export GAZEBO_RESOURCE_PATH=$(rospack find ros_book_line_follower)/
+roslaunch ros_book_line_follower course.launch

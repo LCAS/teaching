@@ -5,6 +5,5 @@
 
 
 # Line Follower
-* `git clone https://github.com/marc-hanheide/ros_book_sample_code.git`
-* ensure ``export GAZEBO_RESOURCE_PATH=$GAZEBO_RESOURCE_PATH:`pwd` `` is set to find `course.*` in `chapter12`
-* `roslaunch chapter12  course.launch`
+* `roslaunch ros_book_line_follower  course.launch`
+* `rosrun ros_book_line_follower follower_p.py`
