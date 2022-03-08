@@ -10,12 +10,15 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 
 
+# launch video stream as something like: 
+# rosrun video_stream_opencv video_stream _video_stream_provider:=`pwd`/jb.m4v _loop_videofile:=true
+
 class image_converter:
 
     def __init__(self):
 
         self.bridge = CvBridge()
-        self.image_sub = rospy.Subscriber("/usb_cam/image_raw",
+        self.image_sub = rospy.Subscriber("/image_raw",
                                           Image, self.image_callback)
         # self.image_sub = rospy.Subscriber(
         #     "/camera/rgb/image_raw",
