@@ -1,3 +1,0 @@
-<launch>
-  <include file="$(find turtlebot_teleop)/launch/xbox360_teleop.launch"/>
-</launch>

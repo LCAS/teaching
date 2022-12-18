@@ -1,3 +1,0 @@
-<launch>
-  <node pkg="turtlebot_actions" type="test_fiducial.py" name="test_fiducial"/>
-</launch>
