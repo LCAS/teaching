@@ -14,7 +14,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         # Include all launch files.
-        (os.path.join('share', package_name), glob('launch/*'))
+        (os.path.join('share', package_name), glob('launch/*')),
         (os.path.join('share/worlds', package_name), glob('worlds/*'))
     ],
     install_requires=['setuptools'],

@@ -23,11 +23,15 @@ set(LIBS ${ament_cmake_LIBRARIES})
 #   #  catkin_add_env_hooks(90.gazebo_models_oru SHELLS bat DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/env-hooks)
 # endif()
 
+ament_environment_hooks("${CMAKE_CURRENT_SOURCE_DIR}/env-hooks/90.gazebo_models_uol.dsv.in")
+
 #############
 ## Install ##
 #############
 
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
+
+install(DIRECTORY models DESTINATION share/${PROJECT_NAME})
 
 install(DIRECTORY maps DESTINATION share/${PROJECT_NAME})
 
