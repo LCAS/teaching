@@ -1,0 +1,11 @@
+launch:
+
+- include:
+    file: "$(find-pkg-share gazebo_ros)/launch/gzserver.launch.py"
+    arg:
+      - name: "world"
+        value: "FAIL"
+
+
+- include:
+    file: "$(find-pkg-share gazebo_ros)/launch/gzclient.launch.py"

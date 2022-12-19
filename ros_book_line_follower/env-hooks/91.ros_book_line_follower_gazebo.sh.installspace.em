@@ -1,1 +1,0 @@
-export GAZEBO_RESOURCE_PATH=@(CMAKE_INSTALL_PREFIX)/share/ros_book_line_follower/materials:$GAZEBO_RESOURCE_PATH
