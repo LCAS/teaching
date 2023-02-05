@@ -28,10 +28,10 @@ def inverse_kinematics_from_twist(t):
 if __name__ == "__main__":
 
     (w_l, w_r) = inverse_kinematics(0.0, 1.0)
-    print "w_l = %f,\tw_r = %f" % (w_l, w_r)
+    print("w_l = %f,\tw_r = %f" % (w_l, w_r))
 
     (v, a) = forward_kinematics(w_l, w_r)
-    print "v = %f,\ta = %f" % (v, a)
+    print("v = %f,\ta = %f" % (v, a))
 
     from geometry_msgs.msg import Twist
     t = Twist()
@@ -40,4 +40,4 @@ if __name__ == "__main__":
     t.angular.z = 0.8
 
     (w_l, w_r) = inverse_kinematics_from_twist(t)
-    print "w_l = %f,\tw_r = %f" % (w_l, w_r)
+    print("w_l = %f,\tw_r = %f" % (w_l, w_r))

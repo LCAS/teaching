@@ -1,25 +1,53 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Jan 28 15:40:31 2015
+#!/usr/bin/env python3
 
-@author: lcas
-"""
+import rclpy
+from rclpy.node import Node
 
-import rospy
 from std_msgs.msg import String
-from geometry_msgs.msg import Twist
 
-
-class Receiver:
+class ChatReceiver(Node):
+    """ a simple "ChatReceiver" that publishes String messages on a topic.
+    
+        Once this is running, you can use `ros2 topic echo /msgs` to see the messages published on the topic.
+    """
 
     def __init__(self):
-        rospy.init_node('receiver')
-        self.subscriber = rospy.Subscriber(
-            '/msgs', String, callback=self.cb)
+        """ Initialise the Node. """
+        # calling the constructor of the super class with the name of the node
+        super().__init__('ChatReceiver')  
 
-    def cb(self, msg):
-        print(msg)
+        # creating a ROS2 Subscriber, for type "String" and topic name "/msgs"
+        # the forth argument is the length of the queue, i.e., only the last message is queued here
+        self.create_subscription(String, '/msgs', self.callback, 1)
 
-rec = Receiver()
+    def callback(self, msg):
+        """ the main callback, triggered when a message is received.
 
-rospy.spin()
+            The `msg` field contains the actual ROS2 message object received.
+        """
+        
+        # simply print the received message on the screen:
+        print("I received this message: %s" % msg)
+
+if __name__ == '__main__':
+    # always run "init()" first
+    rclpy.init()
+
+    # let's catch some exceptions should they happen
+    try:
+        # create the ChatReceiver object
+        node = ChatReceiver()
+
+        # tell ROS to run this node until stopped (by [ctrl-c])
+        rclpy.spin(node)
+
+        # once stopped, tidy up
+        node.destroy_node()
+        rclpy.shutdown()
+
+    except KeyboardInterrupt:
+        print('Node interrupted')
+
+    finally:
+        # always print when the node has terminated
+        print("Node terminated")
