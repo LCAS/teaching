@@ -7,8 +7,8 @@ from std_msgs.msg import String
 
 class ChatReceiver(Node):
     """ a simple "ChatReceiver" that publishes String messages on a topic.
-    
-        Once this is running, you can use `ros2 topic echo /msgs` to see the messages published on the topic.
+
+
     """
 
     def __init__(self):
