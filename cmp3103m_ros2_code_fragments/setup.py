@@ -20,12 +20,16 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'move_square = cmp3103_scripts.move_square:main',
-            'colour_mask = cmp3103_scripts.colour_mask:main',
-            'colour_center = cmp3103_scripts.colour_center:main',
-            'colour_mover = cmp3103_scripts.colour_mover:main',
-            'opencv_bridge = cmp3103_scripts.opencv_bridge:main',
-            'colour_contours = cmp3103_scripts.colour_contours:main'
+            'chat_receiver = cmp3103m_ros2_code_fragments.chat_receiver:main',
+            'chat_sender = cmp3103m_ros2_code_fragments.chat_sender:main',
+            'roamer = cmp3103m_ros2_code_fragments.roamer:main',
+            'move_square = cmp3103m_ros2_code_fragments.move_square:main',
+            'colour_mask = cmp3103m_ros2_code_fragments.colour_mask:main',
+            'colour_mask2 = cmp3103m_ros2_code_fragments.colour_mask2:main',
+            'colour_center = cmp3103m_ros2_code_fragments.colour_center:main',
+            'colour_mover = cmp3103m_ros2_code_fragments.colour_mover:main',
+            'opencv_bridge = cmp3103m_ros2_code_fragments.opencv_bridge:main',
+            'colour_contours = cmp3103m_ros2_code_fragments.colour_contours:main'
         ],
     },
 )

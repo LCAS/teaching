@@ -29,7 +29,7 @@ class ChatReceiver(Node):
         # simply print the received message on the screen:
         print("I received this message: %s" % msg)
 
-if __name__ == '__main__':
+def main(args=None):
     # always run "init()" first
     rclpy.init()
 
@@ -51,3 +51,7 @@ if __name__ == '__main__':
     finally:
         # always print when the node has terminated
         print("Node terminated")
+
+
+if __name__ == '__main__':
+    main()

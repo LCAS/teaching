@@ -41,21 +41,19 @@ class DrawASquare(Node):
             self.cmd_vel_pub.publish(self.turn_cmd)
         self.count += 1
         self.get_logger().info('count: %d' % self.count)
+ 
 
 def main(args=None):
-    print('Starting move_square.py.')
+    rclpy.init()
+    try:
+        node = DrawASquare()
+        rclpy.spin(node)
+        node.destroy_node()
+        rclpy.shutdown()
 
-    rclpy.init(args=args)
+    except Exception as e:
+        print("node terminated. %s" , e)
 
-    draw_square = DrawASquare()
-
-    rclpy.spin(draw_square)
-
-    # Destroy the node explicitly
-    # (optional - otherwise it will be done automatically
-    # when the garbage collector destroys the node object)
-    draw_square.destroy_node()
-    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()

@@ -62,16 +62,22 @@ class Roamer(Node):
             twist.linear.x = self.forward_speed
         self.twist_pub.publish(twist)        
 
-try:
-    # Initialise the ROS Python subsystem
-    rclpy.init()
-    # create the Node object we want to run
-    node = Roamer()
-    # keep the node running until it is stopped (e.g. by pressing Ctrl-C)
-    rclpy.spin(node)
-except KeyboardInterrupt:
-    print('interrupted')
-finally:
-    # we use "finally" here, to ensure that everything is correctly tidied up,
-    # in case of any exceptions happening.
-    node.destroy_node()
+def main(args=None):
+    print('Starting.')
+
+    try:
+        # Initialise the ROS Python subsystem
+        rclpy.init()
+        # create the Node object we want to run
+        node = Roamer()
+        # keep the node running until it is stopped (e.g. by pressing Ctrl-C)
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        print('interrupted')
+    finally:
+        # we use "finally" here, to ensure that everything is correctly tidied up,
+        # in case of any exceptions happening.
+        node.destroy_node()
+
+if __name__ == '__main__':
+    main()
