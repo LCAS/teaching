@@ -17,9 +17,9 @@ import matplotlib.pyplot as plt
 class ColourCenter(Node):
     def __init__(self):
         super().__init__('colour_center')
-        self.pub_video_hsv = self.create_publisher(Image, 'video/hsv', 10)
-        self.pub_video_mask = self.create_publisher(Image, 'video/mask', 10)
-        self.pub_video_contours = self.create_publisher(Image, 'video/contours', 10)
+        self.pub_image_hsv = self.create_publisher(Image, 'image/hsv', 10)
+        self.pub_image_mask = self.create_publisher(Image, 'image/mask', 10)
+        self.pub_image_contours = self.create_publisher(Image, 'image/contours', 10)
         self.sub_camera = self.create_subscription(Image, '/camera/image_raw', self.camera_callback, 10)
         self.sub_camera # prevent unused variable warning
 
@@ -36,7 +36,8 @@ class ColourCenter(Node):
         current_frame_hsv = cv2.cvtColor(current_frame, cv2.COLOR_BGR2HSV)
         # Create mask for range of colours (HSV low values, HSV high values)
         # Onine colour picker - https://redketchup.io/color-picker
-        current_frame_mask = cv2.inRange(current_frame_hsv,(70, 0, 50), (150, 255, 255))
+        #current_frame_mask = cv2.inRange(current_frame_hsv,(70, 0, 50), (150, 255, 255))
+        current_frame_mask = cv2.inRange(current_frame_hsv,(0, 150, 50), (255, 255, 255))
 
         contours, hierarchy = cv2.findContours(current_frame_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
@@ -60,10 +61,10 @@ class ColourCenter(Node):
             print("No Centroid Found")        
 
         # Convert OpenCV image to ROS Image message and publish topic
-        self.pub_video_hsv.publish(self.br.cv2_to_imgmsg(current_frame_hsv))
-        self.pub_video_mask.publish(self.br.cv2_to_imgmsg(current_frame_mask))
-        self.pub_video_contours.publish(self.br.cv2_to_imgmsg(cv2.cvtColor(current_frame_contours, cv2.COLOR_BGR2RGB)))
-        #self.get_logger().info('Publishing video frame')
+        self.pub_image_hsv.publish(self.br.cv2_to_imgmsg(current_frame_hsv, encoding='rgb8'))
+        self.pub_image_mask.publish(self.br.cv2_to_imgmsg(current_frame_mask))
+        self.pub_image_contours.publish(self.br.cv2_to_imgmsg(cv2.cvtColor(current_frame_contours, cv2.COLOR_BGR2RGB), encoding='rgb8'))
+        #self.get_logger().info('Publishing image frame')
 
 def main(args=None):
     print('Starting colour_center.py.')
