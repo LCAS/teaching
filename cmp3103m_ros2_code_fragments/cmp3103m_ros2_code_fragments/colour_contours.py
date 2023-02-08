@@ -77,9 +77,11 @@ class ColourContours(Node):
             # and if the area is big enough, we draw the outline
             # of the contour (in blue)
             if a > 100.0:
-                cv2.drawContours(cv_image, c, -1, (255, 0, 0), 3)
+                cv2.drawContours(cv_image, c, -1, (0, 0, 255), 5)
         print('====')
-        cv2.imshow("Image window", cv_image)
+
+        cv_image_small = cv2.resize(cv_image, (0,0), fx=0.4, fy=0.4) # reduce image size
+        cv2.imshow("Image window", cv_image_small)
         cv2.waitKey(1)
 
 def main(args=None):

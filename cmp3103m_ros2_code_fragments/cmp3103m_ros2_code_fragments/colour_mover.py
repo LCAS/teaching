@@ -19,9 +19,9 @@ class ColourMover(Node):
         super().__init__('colour_mover')
         
         # publish to the image topics for the different images from opencv
-        self.pub_video_hsv = self.create_publisher(Image, 'video/hsv', 10)
-        self.pub_video_mask = self.create_publisher(Image, 'video/mask', 10)
-        self.pub_video_contours = self.create_publisher(Image, 'video/contours', 10)
+        self.pub_image_hsv = self.create_publisher(Image, 'image/hsv', 10)
+        self.pub_image_mask = self.create_publisher(Image, 'image/mask', 10)
+        self.pub_image_contours = self.create_publisher(Image, 'image/contours', 10)
 
         # publish cmd_vel topic to move the robot
         self.pub_cmd_vel = self.create_publisher(Twist, 'cmd_vel', 10)
@@ -51,7 +51,9 @@ class ColourMover(Node):
         contours = sorted(contours, key=cv2.contourArea, reverse=True)[:1]
 
         # Draw contour(s) (image to draw on, contours, contour number -1 to draw all contours, colour, thickness):
-        current_frame_contours = cv2.drawContours(current_frame, contours, 0, (0, 255, 0), 20)        
+        current_frame_contours = cv2.drawContours(current_frame, contours, 0, (0, 255, 0), 20)
+
+        self.tw=Twist() # twist message to publish
         
         if len(contours) > 0:
             M = cv2.moments(contours[0])
@@ -65,7 +67,6 @@ class ColourMover(Node):
             cv2.circle(current_frame, (round(cx), round(cy)), 50, (0, 255, 0), -1)
                         
             # find height/width of robot camera image from ros2 topic echo /camera/image_raw height: 1080 width: 1920
-            self.tw=Twist()
 
             # if center of object is to the left of image center move right
             if cx < 900:
@@ -79,13 +80,17 @@ class ColourMover(Node):
                 
             self.pub_cmd_vel.publish(self.tw)
         else:
-            print("No Centroid Found")        
+            print("No Centroid Found")
+            # turn until we can see a coloured object
+            self.tw.angular.z=0.3
+
+        self.pub_cmd_vel.publish(self.tw)
 
         # Convert OpenCV image to ROS Image message and publish topic
-        self.pub_video_hsv.publish(self.br.cv2_to_imgmsg(current_frame_hsv))
-        self.pub_video_mask.publish(self.br.cv2_to_imgmsg(current_frame_mask))
-        self.pub_video_contours.publish(self.br.cv2_to_imgmsg(cv2.cvtColor(current_frame_contours, cv2.COLOR_BGR2RGB)))
-        #self.get_logger().info('Publishing video frame')
+        self.pub_image_hsv.publish(self.br.cv2_to_imgmsg(current_frame_hsv, encoding='rgb8'))
+        self.pub_image_mask.publish(self.br.cv2_to_imgmsg(current_frame_mask))
+        self.pub_image_contours.publish(self.br.cv2_to_imgmsg(cv2.cvtColor(current_frame_contours, cv2.COLOR_BGR2RGB), encoding='rgb8'))
+        #self.get_logger().info('Publishing image frame')
 
 def main(args=None):
     print('Starting colour_mover.py.')

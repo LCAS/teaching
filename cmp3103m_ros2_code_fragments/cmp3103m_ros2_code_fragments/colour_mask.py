@@ -16,8 +16,8 @@ import numpy as np
 class ColourMask(Node):
     def __init__(self):
         super().__init__('colour_mask')
-        self.pub_video_hsv = self.create_publisher(Image, 'video/hsv', 10)  
-        self.pub_video_mask = self.create_publisher(Image, 'video/mask', 10)       
+        self.pub_image_hsv = self.create_publisher(Image, 'image/hsv', 10)  
+        self.pub_image_mask = self.create_publisher(Image, 'image/mask', 10)       
         self.sub_camera = self.create_subscription(Image, '/camera/image_raw', self.camera_callback, 10)
         self.sub_camera # prevent unused variable warnings
 
@@ -33,12 +33,13 @@ class ColourMask(Node):
         # Convert image to HSV
         current_frame_hsv = cv2.cvtColor(current_frame, cv2.COLOR_BGR2HSV)
         # Create mask for range of colours (HSV low values, HSV high values)
-        current_frame_mask = cv2.inRange(current_frame_hsv,(70, 0, 50), (150, 255, 255))
+        #current_frame_mask = cv2.inRange(current_frame_hsv,(70, 0, 50), (150, 255, 255))
+        current_frame_mask = cv2.inRange(current_frame_hsv,(0, 150, 50), (255, 255, 255))
 
         # Convert OpenCV image to ROS Image message and publish topic
-        self.pub_video_hsv.publish(self.br.cv2_to_imgmsg(current_frame_hsv))
-        self.pub_video_mask.publish(self.br.cv2_to_imgmsg(current_frame_mask))
-        #self.get_logger().info('Publishing video frame')
+        self.pub_image_hsv.publish(self.br.cv2_to_imgmsg(current_frame_hsv, encoding='rgb8'))
+        self.pub_image_mask.publish(self.br.cv2_to_imgmsg(current_frame_mask))
+        #self.get_logger().info('Publishing image frame')
 
 def main(args=None):
     print('Starting colour_mask.py.')

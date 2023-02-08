@@ -14,7 +14,7 @@ import numpy as np
 class OpencvBridge(Node):
     def __init__(self):
         super().__init__('opencv_bridge')
-        self.sub_camera = self.create_subscription(Image, '/image_raw', self.camera_callback, 10)
+        self.sub_camera = self.create_subscription(Image, '/camera', self.camera_callback, 10)
         self.sub_camera # prevent unused variable warning
 
         self.br = CvBridge()
@@ -30,13 +30,19 @@ class OpencvBridge(Node):
         cv_image = self.br.imgmsg_to_cv2(data, desired_encoding='passthrough') # 'bgr8'
 
         gray_img = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
-        print(np.mean(gray_img))
-        img2 = cv2.blur(gray_img, (3, 3))
-        cv2.imshow("blur", img2)
-        img3 = cv2.Canny(gray_img, 10, 200)
-        cv2.imshow("canny", img3)
+        gray_img_small = cv2.resize(gray_img, (0,0), fx=0.2, fy=0.2) 
+        print(np.mean(gray_img_small))
 
-        cv2.imshow("Image window", cv_image)
+        blur_img = cv2.blur(gray_img, (3, 3))
+        blur_img_small = cv2.resize(blur_img, (0,0), fx=0.2, fy=0.2) # reduce image size
+        cv2.imshow("blur", blur_img_small)
+
+        canny_img = cv2.Canny(gray_img, 10, 200)
+        canny_img_small = cv2.resize(canny_img, (0,0), fx=0.2, fy=0.2) # reduce image size
+        cv2.imshow("canny", canny_img_small)
+
+        cv_image_small = cv2.resize(cv_image, (0,0), fx=0.2, fy=0.2) # reduce image size
+        cv2.imshow("Image window", cv_image_small)
         cv2.waitKey(1)
 
 def main(args=None):
