@@ -29,6 +29,10 @@ ament_environment_hooks("${CMAKE_CURRENT_SOURCE_DIR}/env-hooks/90.gazebo_models_
 ## Install ##
 #############
 
+install(PROGRAMS
+        scripts/twist_watchdog.py
+        DESTINATION lib/${PROJECT_NAME})
+
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 
 install(DIRECTORY models DESTINATION share/${PROJECT_NAME})
