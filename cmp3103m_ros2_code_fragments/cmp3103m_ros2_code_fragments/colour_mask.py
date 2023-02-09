@@ -3,7 +3,6 @@
 # An example of TurtleBot 3 subscribe to camera topic and mask colours
 # Written for humble
 # cv2 image types - http://wiki.ros.org/cv_bridge/Tutorials/ConvertingBetweenROSImagesAndOpenCVImagesPython
-# Onine colour picker - https://redketchup.io/color-picker
 
 import rclpy
 from rclpy.node import Node

@@ -3,7 +3,6 @@
 # An example of TurtleBot 3 subscribe to camera topic, mask colours, find and display contours, and move robot to center the object in image frame
 # Written for humble
 # cv2 image types - http://wiki.ros.org/cv_bridge/Tutorials/ConvertingBetweenROSImagesAndOpenCVImagesPython
-# Onine colour picker - https://redketchup.io/color-picker
 
 import rclpy
 from rclpy.node import Node
@@ -38,7 +37,6 @@ class ColourChaser(Node):
         # Convert image to HSV
         current_frame_hsv = cv2.cvtColor(current_frame, cv2.COLOR_BGR2HSV)
         # Create mask for range of colours (HSV low values, HSV high values)
-        # Onine colour picker - https://redketchup.io/color-picker
         current_frame_mask = cv2.inRange(current_frame_hsv,(70, 0, 50), (150, 255, 255))
 
         contours, hierarchy = cv2.findContours(current_frame_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
