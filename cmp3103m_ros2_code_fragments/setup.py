@@ -27,6 +27,7 @@ setup(
             'colour_mask = cmp3103m_ros2_code_fragments.colour_mask:main',
             'colour_mask2 = cmp3103m_ros2_code_fragments.colour_mask2:main',
             'colour_center = cmp3103m_ros2_code_fragments.colour_center:main',
+            'colour_chaser = cmp3103m_ros2_code_fragments.colour_chaser:main',
             'colour_mover = cmp3103m_ros2_code_fragments.colour_mover:main',
             'opencv_bridge = cmp3103m_ros2_code_fragments.opencv_bridge:main',
             'colour_contours = cmp3103m_ros2_code_fragments.colour_contours:main'

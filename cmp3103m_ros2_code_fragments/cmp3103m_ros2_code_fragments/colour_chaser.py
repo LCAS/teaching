@@ -14,14 +14,9 @@ from cv_bridge import CvBridge # Package to convert between ROS and OpenCV Image
 import cv2
 import numpy as np
 
-class ColourMover(Node):
+class ColourChaser(Node):
     def __init__(self):
-        super().__init__('colour_mover')
-        
-        # publish to the image topics for the different images from opencv
-        self.pub_image_hsv = self.create_publisher(Image, 'image/hsv', 10)
-        self.pub_image_mask = self.create_publisher(Image, 'image/mask', 10)
-        self.pub_image_contours = self.create_publisher(Image, 'image/contours', 10)
+        super().__init__('colour_chaser')
 
         # publish cmd_vel topic to move the robot
         self.pub_cmd_vel = self.create_publisher(Twist, 'cmd_vel', 10)
@@ -35,6 +30,8 @@ class ColourMover(Node):
 
     def camera_callback(self, data):
         #self.get_logger().info("camera_callback")
+
+        cv2.namedWindow("Image window", 1)
 
         # Convert ROS Image message to OpenCV image
         current_frame = self.br.imgmsg_to_cv2(data, desired_encoding='passthrough') # 'bgr8'
@@ -86,25 +83,24 @@ class ColourMover(Node):
 
         self.pub_cmd_vel.publish(self.tw)
 
-        # Convert OpenCV image to ROS Image message and publish topic
-        self.pub_image_hsv.publish(self.br.cv2_to_imgmsg(current_frame_hsv, encoding='rgb8'))
-        self.pub_image_mask.publish(self.br.cv2_to_imgmsg(current_frame_mask))
-        self.pub_image_contours.publish(self.br.cv2_to_imgmsg(cv2.cvtColor(current_frame_contours, cv2.COLOR_BGR2RGB), encoding='rgb8'))
-        #self.get_logger().info('Publishing image frame')
+        # show the cv images
+        current_frame_contours_small = cv2.resize(current_frame_contours, (0,0), fx=0.4, fy=0.4) # reduce image size
+        cv2.imshow("Image window", current_frame_contours_small)
+        cv2.waitKey(1)
 
 def main(args=None):
-    print('Starting colour_mover.py.')
+    print('Starting colour_chaser.py.')
 
     rclpy.init(args=args)
 
-    colour_mover = ColourMover()
+    colour_chaser = ColourChaser()
 
-    rclpy.spin(colour_mover)
+    rclpy.spin(colour_chaser)
 
     # Destroy the node explicitly
     # (optional - otherwise it will be done automatically
     # when the garbage collector destroys the node object)
-    colour_mover.destroy_node()
+    colour_chaser.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':
