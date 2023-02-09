@@ -14,8 +14,7 @@ import numpy as np
 class OpencvBridge(Node):
     def __init__(self):
         super().__init__('opencv_bridge')
-        self.sub_camera = self.create_subscription(Image, '/camera', self.camera_callback, 10)
-        self.sub_camera # prevent unused variable warning
+        self.create_subscription(Image, '/camera', self.camera_callback, 10)
 
         self.br = CvBridge()
 

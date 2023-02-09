@@ -21,9 +21,8 @@ class ColourChaser(Node):
         # publish cmd_vel topic to move the robot
         self.pub_cmd_vel = self.create_publisher(Twist, 'cmd_vel', 10)
 
-        # subscribe to the camera topic 
-        self.sub_camera = self.create_subscription(Image, '/camera/image_raw', self.camera_callback, 10)
-        self.sub_camera # prevent unused variable warning
+        # subscribe to the camera topic
+        self.create_subscription(Image, '/camera/image_raw', self.camera_callback, 10)
 
         # Used to convert between ROS and OpenCV images
         self.br = CvBridge()
@@ -54,26 +53,27 @@ class ColourChaser(Node):
         
         if len(contours) > 0:
             M = cv2.moments(contours[0]) # only select the largest controur
-            # find the centroid of the contour
-            cx = int(M['m10']/M['m00'])
-            cy = int(M['m01']/M['m00'])
-            #print("Centroid of the biggest area: ({}, {})".format(cx, cy))
+            if M['m00'] > 0:
+                # find the centroid of the contour
+                cx = int(M['m10']/M['m00'])
+                cy = int(M['m01']/M['m00'])
+                #print("Centroid of the biggest area: ({}, {})".format(cx, cy))
 
-            # Draw a circle centered at centroid coordinates
-            # cv2.circle(image, center_coordinates, radius, color, thickness) -1 px will fill the circle
-            cv2.circle(current_frame, (round(cx), round(cy)), 50, (0, 255, 0), -1)
-                        
-            # find height/width of robot camera image from ros2 topic echo /camera/image_raw height: 1080 width: 1920
+                # Draw a circle centered at centroid coordinates
+                # cv2.circle(image, center_coordinates, radius, color, thickness) -1 px will fill the circle
+                cv2.circle(current_frame, (round(cx), round(cy)), 50, (0, 255, 0), -1)
+                            
+                # find height/width of robot camera image from ros2 topic echo /camera/image_raw height: 1080 width: 1920
 
-            # if center of object is to the left of image center move right
-            if cx < 900:
-                self.tw.angular.z=0.3
-            # else if center of object is to the right of image center move left
-            elif cx >= 1200:
-                self.tw.angular.z=-0.3
-            else: # center of object is in a 100 px range in the center of the image so dont turn
-                #print("object in the center of image")
-                self.tw.angular.z=0.0
+                # if center of object is to the left of image center move right
+                if cx < 900:
+                    self.tw.angular.z=0.3
+                # else if center of object is to the right of image center move left
+                elif cx >= 1200:
+                    self.tw.angular.z=-0.3
+                else: # center of object is in a 100 px range in the center of the image so dont turn
+                    #print("object in the center of image")
+                    self.tw.angular.z=0.0
                 
             self.pub_cmd_vel.publish(self.tw)
         else:

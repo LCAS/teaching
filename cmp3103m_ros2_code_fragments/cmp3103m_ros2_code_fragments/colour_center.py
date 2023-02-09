@@ -20,8 +20,9 @@ class ColourCenter(Node):
         self.pub_image_hsv = self.create_publisher(Image, 'image/hsv', 10)
         self.pub_image_mask = self.create_publisher(Image, 'image/mask', 10)
         self.pub_image_contours = self.create_publisher(Image, 'image/contours', 10)
-        self.sub_camera = self.create_subscription(Image, '/camera/image_raw', self.camera_callback, 10)
-        self.sub_camera # prevent unused variable warning
+        
+        # subscribe to the camera topic
+        self.create_subscription(Image, '/camera/image_raw', self.camera_callback, 10)
 
         # Used to convert between ROS and OpenCV images
         self.br = CvBridge()

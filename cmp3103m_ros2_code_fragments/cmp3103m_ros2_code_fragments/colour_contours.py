@@ -14,8 +14,7 @@ import numpy as np
 class ColourContours(Node):
     def __init__(self):
         super().__init__('colour_contours')
-        self.sub_camera = self.create_subscription(Image, '/camera/image_raw', self.camera_callback, 10)
-        self.sub_camera # prevent unused variable warning
+        self.create_subscription(Image, '/camera/image_raw', self.camera_callback, 10)
 
         self.br = CvBridge()
 
@@ -77,7 +76,7 @@ class ColourContours(Node):
             # and if the area is big enough, we draw the outline
             # of the contour (in blue)
             if a > 100.0:
-                cv2.drawContours(cv_image, c, -1, (0, 0, 255), 5)
+                cv2.drawContours(cv_image, c, -1, (0, 0, 255), 10)
         print('====')
 
         cv_image_small = cv2.resize(cv_image, (0,0), fx=0.4, fy=0.4) # reduce image size
