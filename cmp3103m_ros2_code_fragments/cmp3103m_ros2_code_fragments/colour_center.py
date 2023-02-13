@@ -30,7 +30,7 @@ class ColourCenter(Node):
         #self.get_logger().info("camera_callback")
 
         # Convert ROS Image message to OpenCV image
-        current_frame = self.br.imgmsg_to_cv2(data, desired_encoding='passthrough') # 'bgr8'
+        current_frame = self.br.imgmsg_to_cv2(data, desired_encoding='bgr8')
 
         # Convert image to HSV
         current_frame_hsv = cv2.cvtColor(current_frame, cv2.COLOR_BGR2HSV)
@@ -47,6 +47,7 @@ class ColourCenter(Node):
         current_frame_contours = cv2.drawContours(current_frame, contours, 0, (0, 255, 0), 20)        
         
         if len(contours) > 0:
+            # find the centre of the contour: https://docs.opencv.org/3.4/d8/d23/classcv_1_1Moments.html
             M = cv2.moments(contours[0])
             # Centroid
             cx = int(M['m10']/M['m00'])

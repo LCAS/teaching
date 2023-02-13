@@ -26,7 +26,7 @@ class ColourMask(Node):
         #self.get_logger().info("camera_callback")
 
         # Convert ROS Image message to OpenCV image
-        current_frame = self.br.imgmsg_to_cv2(data, desired_encoding='passthrough') # 'bgr8'
+        current_frame = self.br.imgmsg_to_cv2(data, desired_encoding='bgr8')
 
         # Convert image to HSV
         current_frame_hsv = cv2.cvtColor(current_frame, cv2.COLOR_BGR2HSV)

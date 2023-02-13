@@ -14,7 +14,7 @@ import numpy as np
 class OpencvBridge(Node):
     def __init__(self):
         super().__init__('opencv_bridge')
-        self.create_subscription(Image, '/camera', self.camera_callback, 10)
+        self.create_subscription(Image, '/camera/image_raw', self.camera_callback, 10)
 
         self.br = CvBridge()
 
@@ -26,7 +26,7 @@ class OpencvBridge(Node):
         cv2.namedWindow("canny")
 
         # Convert ROS Image message to OpenCV image
-        cv_image = self.br.imgmsg_to_cv2(data, desired_encoding='passthrough') # 'bgr8'
+        cv_image = self.br.imgmsg_to_cv2(data, desired_encoding='bgr8')
 
         gray_img = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
         gray_img_small = cv2.resize(gray_img, (0,0), fx=0.2, fy=0.2) 

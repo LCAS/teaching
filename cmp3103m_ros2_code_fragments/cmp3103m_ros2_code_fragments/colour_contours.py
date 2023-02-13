@@ -23,7 +23,7 @@ class ColourContours(Node):
 
         cv2.namedWindow("Image window", 1)
         try:
-            cv_image = self.br.imgmsg_to_cv2(data, "passthrough") # 'bgr8'
+            cv_image = self.br.imgmsg_to_cv2(data, "bgr8")
         except CvBridgeError as e:
             print(e)
 

@@ -32,12 +32,13 @@ class ColourChaser(Node):
         cv2.namedWindow("Image window", 1)
 
         # Convert ROS Image message to OpenCV image
-        current_frame = self.br.imgmsg_to_cv2(data, desired_encoding='passthrough') # 'bgr8'
+        current_frame = self.br.imgmsg_to_cv2(data, desired_encoding='bgr8')
 
         # Convert image to HSV
         current_frame_hsv = cv2.cvtColor(current_frame, cv2.COLOR_BGR2HSV)
         # Create mask for range of colours (HSV low values, HSV high values)
         current_frame_mask = cv2.inRange(current_frame_hsv,(70, 0, 50), (150, 255, 255))
+        #current_frame_mask = cv2.inRange(current_frame_hsv,(0, 150, 50), (255, 255, 255)) # orange
 
         contours, hierarchy = cv2.findContours(current_frame_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
@@ -50,6 +51,7 @@ class ColourChaser(Node):
         self.tw=Twist() # twist message to publish
         
         if len(contours) > 0:
+            # find the centre of the contour: https://docs.opencv.org/3.4/d8/d23/classcv_1_1Moments.html
             M = cv2.moments(contours[0]) # only select the largest controur
             if M['m00'] > 0:
                 # find the centroid of the contour
@@ -63,10 +65,10 @@ class ColourChaser(Node):
                             
                 # find height/width of robot camera image from ros2 topic echo /camera/image_raw height: 1080 width: 1920
 
-                # if center of object is to the left of image center move right
+                # if center of object is to the left of image center move left
                 if cx < 900:
                     self.tw.angular.z=0.3
-                # else if center of object is to the right of image center move left
+                # else if center of object is to the right of image center move right
                 elif cx >= 1200:
                     self.tw.angular.z=-0.3
                 else: # center of object is in a 100 px range in the center of the image so dont turn
