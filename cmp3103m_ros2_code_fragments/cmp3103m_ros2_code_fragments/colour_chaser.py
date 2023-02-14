@@ -74,8 +74,7 @@ class ColourChaser(Node):
                 else: # center of object is in a 100 px range in the center of the image so dont turn
                     #print("object in the center of image")
                     self.tw.angular.z=0.0
-                
-            self.pub_cmd_vel.publish(self.tw)
+                    
         else:
             print("No Centroid Found")
             # turn until we can see a coloured object

@@ -78,7 +78,6 @@ class ColourMover(Node):
                     #print("object in the center of image")
                     self.tw.angular.z=0.0
                     
-                self.pub_cmd_vel.publish(self.tw)
             else:
                 print("No Centroid Found")
                 # turn until we can see a coloured object
