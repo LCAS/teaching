@@ -17,7 +17,7 @@ class ColourMover(Node):
     def __init__(self):
         super().__init__('colour_mover')
         
-        # publish to the image topics for the different images from opencv
+        # publish the output images of the OpenCV processing on seperate Image topics
         self.pub_image_hsv = self.create_publisher(Image, 'image/hsv', 10)
         self.pub_image_mask = self.create_publisher(Image, 'image/mask', 10)
         self.pub_image_contours = self.create_publisher(Image, 'image/contours', 10)

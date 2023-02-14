@@ -15,8 +15,12 @@ import numpy as np
 class ColourMask(Node):
     def __init__(self):
         super().__init__('colour_mask')
+
+        # publish the output images of the OpenCV processing on seperate Image topics
         self.pub_image_hsv = self.create_publisher(Image, 'image/hsv', 10)
         self.pub_image_mask = self.create_publisher(Image, 'image/mask', 10)
+
+        # subscribe to the camera topic
         self.create_subscription(Image, '/camera/image_raw', self.camera_callback, 10)
 
         # Used to convert between ROS and OpenCV images
