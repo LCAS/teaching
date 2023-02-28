@@ -16,9 +16,15 @@ import numpy as np
 class ColourChaser(Node):
     def __init__(self):
         super().__init__('colour_chaser')
+        
+        self.turn_vel = 0.0
 
         # publish cmd_vel topic to move the robot
         self.pub_cmd_vel = self.create_publisher(Twist, 'cmd_vel', 10)
+
+        # create timer to publish cmd_vel topic
+        timer_period = 0.1  # seconds
+        self.timer = self.create_timer(timer_period, self.timer_callback)
 
         # subscribe to the camera topic
         self.create_subscription(Image, '/camera/image_raw', self.camera_callback, 10)
@@ -47,8 +53,6 @@ class ColourChaser(Node):
 
         # Draw contour(s) (image to draw on, contours, contour number -1 to draw all contours, colour, thickness):
         current_frame_contours = cv2.drawContours(current_frame, contours, 0, (0, 255, 0), 20)
-
-        self.tw=Twist() # twist message to publish
         
         if len(contours) > 0:
             # find the centre of the contour: https://docs.opencv.org/3.4/d8/d23/classcv_1_1Moments.html
@@ -67,25 +71,32 @@ class ColourChaser(Node):
 
                 # if center of object is to the left of image center move left
                 if cx < 900:
-                    self.tw.angular.z=0.3
+                    self.turn_vel = 0.3
                 # else if center of object is to the right of image center move right
                 elif cx >= 1200:
-                    self.tw.angular.z=-0.3
+                    self.turn_vel = -0.3
                 else: # center of object is in a 100 px range in the center of the image so dont turn
                     #print("object in the center of image")
-                    self.tw.angular.z=0.0
+                    self.turn_vel = 0.0
                     
         else:
             print("No Centroid Found")
             # turn until we can see a coloured object
-            self.tw.angular.z=0.3
-
-        self.pub_cmd_vel.publish(self.tw)
+            self.turn_vel = 0.3
 
         # show the cv images
         current_frame_contours_small = cv2.resize(current_frame_contours, (0,0), fx=0.4, fy=0.4) # reduce image size
         cv2.imshow("Image window", current_frame_contours_small)
         cv2.waitKey(1)
+
+    def timer_callback(self):
+        #print('entered timer_callback')
+
+        self.tw=Twist() # twist message to publish
+
+        self.tw.angular.z = self.turn_vel
+
+        self.pub_cmd_vel.publish(self.tw)
 
 def main(args=None):
     print('Starting colour_chaser.py.')

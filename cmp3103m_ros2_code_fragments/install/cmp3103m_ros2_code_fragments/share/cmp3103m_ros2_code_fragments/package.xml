@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>cmp3103m_ros2_code_fragments</name>
+  <version>0.0.1</version>
+  <description>CMP3103 example code</description>
+  <maintainer email="jcox289@gmail.com">Jonathan Cox</maintainer>
+  <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
+  <license>MIT</license>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
