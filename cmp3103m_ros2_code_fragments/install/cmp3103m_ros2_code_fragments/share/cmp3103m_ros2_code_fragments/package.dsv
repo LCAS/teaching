@@ -1,0 +1,6 @@
+source;share/cmp3103m_ros2_code_fragments/hook/pythonpath.ps1
+source;share/cmp3103m_ros2_code_fragments/hook/pythonpath.dsv
+source;share/cmp3103m_ros2_code_fragments/hook/pythonpath.sh
+source;share/cmp3103m_ros2_code_fragments/hook/ament_prefix_path.ps1
+source;share/cmp3103m_ros2_code_fragments/hook/ament_prefix_path.dsv
+source;share/cmp3103m_ros2_code_fragments/hook/ament_prefix_path.sh
