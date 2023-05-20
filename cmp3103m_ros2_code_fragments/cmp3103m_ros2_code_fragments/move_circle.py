@@ -18,7 +18,7 @@ class MoveInACircle(Node):
 
         self.move_cmd = Twist()
         self.move_cmd.linear.x = 0.05   # m/s
-        self.move_cmd.angular.z = radians(10); #30 deg/s in radians/s
+        self.move_cmd.angular.z = radians(10); #10 deg/s in radians/s
 
     def timer_callback(self):
         self.cmd_vel_pub.publish(self.move_cmd)
