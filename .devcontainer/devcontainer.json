@@ -10,8 +10,7 @@
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-		"ghcr.io/devcontainers/features/desktop-lite:1": {},
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+		"ghcr.io/devcontainers/features/desktop-lite:1": {}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -26,10 +25,11 @@
 	  }
 	},
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bash -c 'apt update && rosdep update'",
-
+	"postCreateCommand": "bash -c 'sudo apt update && rosdep update'",
+	"containerUser": "lcas",
 	// Configure tool-specific properties.
 	// "customizations": {},
+	"runArgs": [ "--security-opt", "seccomp=unconfined" ],
 
 	"containerEnv": {
         "ROS_LOCALHOST_ONLY": "0",
@@ -42,7 +42,6 @@
 			"extensions": [
 				"dotjoshjohnson.xml",
 				"zachflower.uncrustify",
-				"ms-azuretools.vscode-docker",
 				"ms-python.python",
 				"ms-vscode.cpptools",
 				"redhat.vscode-yaml",

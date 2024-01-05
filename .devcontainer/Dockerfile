@@ -7,5 +7,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         ros-humble-cv-bridge ros-humble-rosbridge-suite ros-humble-turtlebot3-teleop nano syslog-ng
 
 
-RUN echo "source /usr/share/gazebo/setup.bash" >> $HOME/.bashrc \
-    && echo "source /opt/ros/humble/setup.bash" >> $HOME/.bashrc
+RUN useradd -rm -d /home/lcas -s /bin/bash -g root -G sudo -u 1001 lcas
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+RUN echo "source /usr/share/gazebo/setup.bash" >> /home/lcas/.bashrc \
+    && echo "source /opt/ros/humble/setup.bash" >> /home/lcas/.bashrc
