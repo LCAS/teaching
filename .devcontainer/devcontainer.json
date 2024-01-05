@@ -1,0 +1,45 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "lcas-humble",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "lcas.lincoln.ac.uk/lcas/ros:humble",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/desktop-lite:1": {}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	"forwardPorts": [6080, 5901],
+	"portsAttributes": {
+	  "6080": {
+		"label": "desktop"
+	  }
+	},
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "ros",
+    "customizations": {
+		"extensions": [
+			"dotjoshjohnson.xml",
+			"zachflower.uncrustify",
+			"ms-azuretools.vscode-docker",
+			"ms-iot.vscode-ros",
+			"ms-python.python",
+			"ms-vscode.cpptools",
+			"redhat.vscode-yaml",
+			"smilerobotics.urdf",
+			"streetsidesoftware.code-spell-checker",
+			"twxs.cmake",
+			"yzhang.markdown-all-in-one"
+    	]
+	}
+
+}
