@@ -1,0 +1,19 @@
+name: 'devcontainer CI' 
+on: # rebuild any PRs and main branch changes
+  pull_request:
+  push:
+    branches:
+      - lcas_humble
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout (GitHub)
+        uses: actions/checkout@v3
+
+      - name: Build and run dev container task
+        uses: devcontainers/ci@v0.3
+        with:
+          imageName: lcas.lincoln.ac.uk/lcas/devcontainer/teaching
