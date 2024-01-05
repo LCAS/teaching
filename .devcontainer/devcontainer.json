@@ -3,11 +3,15 @@
 {
 	"name": "lcas-humble",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "lcas.lincoln.ac.uk/lcas/ros:humble",
+	// "image": "lcas.lincoln.ac.uk/lcas/ros:humble",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-		"ghcr.io/devcontainers/features/desktop-lite:1": {}
+		"ghcr.io/devcontainers/features/desktop-lite:1": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -15,31 +19,43 @@
 	"forwardPorts": [6080, 5901],
 	"portsAttributes": {
 	  "6080": {
-		"label": "desktop"
+		"label": "novnc"
+	  },
+	  "5901": {
+		"label": "vnc"
 	  }
 	},
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
+	"postCreateCommand": "bash -c 'apt update && rosdep update'",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
 
+	"containerEnv": {
+        "ROS_LOCALHOST_ONLY": "0",
+        "LIBGL_ALWAYS_SOFTWARE": "1" // Needed for software rendering of opengl
+    },
+
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	"remoteUser": "ros",
     "customizations": {
-		"extensions": [
-			"dotjoshjohnson.xml",
-			"zachflower.uncrustify",
-			"ms-azuretools.vscode-docker",
-			"ms-iot.vscode-ros",
-			"ms-python.python",
-			"ms-vscode.cpptools",
-			"redhat.vscode-yaml",
-			"smilerobotics.urdf",
-			"streetsidesoftware.code-spell-checker",
-			"twxs.cmake",
-			"yzhang.markdown-all-in-one"
-    	]
+		"vscode": {
+			"extensions": [
+				"dotjoshjohnson.xml",
+				"zachflower.uncrustify",
+				"ms-azuretools.vscode-docker",
+				"ms-iot.vscode-ros",
+				"ms-python.python",
+				"ms-vscode.cpptools",
+				"redhat.vscode-yaml",
+				"smilerobotics.urdf",
+				"streetsidesoftware.code-spell-checker",
+				"twxs.cmake",
+				"king2021.vnc-extension",
+				"nonanonno.vscode-ros2",
+				"deitry.colcon-helper",
+				"yzhang.markdown-all-in-one"
+			]
+		}
 	}
 
 }
