@@ -1,8 +1,0 @@
-<launch>
-  <node name="rostopic_pub_A" pkg="rostopic" type="rostopic" args="pub /topic_a std_msgs/String 'data: fromA' -r1"/>
-  <node name="rostopic_pub_B" pkg="rostopic" type="rostopic" args="pub /topic_b std_msgs/String 'data: fromB' -r10"/>
-  <node name="topic_throttle" pkg="topic_tools" type="throttle" args=" messages /topic_a 0.1 /topic_c"/>
-  <node name="topic_mux" pkg="topic_tools" type="mux" args="/out /topic_a /topic_b /topic_c"/>
-
-</launch>
-

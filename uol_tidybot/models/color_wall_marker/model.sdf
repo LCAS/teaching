@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='unit_box'>
+    <link name='link'>
+      <pose frame=''>0 0 .5 0 0 0</pose>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.02 .6 .6</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 0 1 1</ambient>
+        </material>
+        <pose frame=''>0 0 0 0 0 0</pose>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+    </link>
+    <static>1</static>
+    <allow_auto_disable>1</allow_auto_disable>
+  </model>
+</sdf>

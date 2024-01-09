@@ -1,0 +1,3 @@
+{
+    //"hooks": ["share/pkgname/hook/something.sh"]
+}
