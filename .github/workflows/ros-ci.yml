@@ -3,9 +3,9 @@ name: ros CI
 on:
   push:
     # you may want to configure the branches that this should be run on here.
-    branches: [ "lcas_humble" ]
+    branches: [ "2324-devel" ]
   pull_request:
-    branches: [ "lcas_humble" ]
+    branches: [ "2324-devel" ]
 
 jobs:
   test_docker: # On Linux, iterates on all ROS 1 and ROS 2 distributions.
