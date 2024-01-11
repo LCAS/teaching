@@ -51,8 +51,8 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN echo "source /usr/share/gazebo/setup.bash" >> /home/lcas/.bashrc \
     && echo "source /opt/ros/humble/setup.bash" >> /home/lcas/.bashrc
 
-RUN mkdir -p /opt/ros/extensions 
-WORKDIR /opt/ros/extensions 
+RUN mkdir -p /opt/lcas/extensions 
+WORKDIR /opt/lcas/extensions 
 
 RUN git clone https://github.com/YDLIDAR/YDLidar-SDK.git &&\
     mkdir -p YDLidar-SDK/build && \

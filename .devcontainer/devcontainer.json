@@ -25,7 +25,7 @@
 	  }
 	},
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bash -c 'sudo apt update && rosdep update'",
+	"postCreateCommand": "bash -c 'sudo apt update && rosdep update && cd /home/lcas/ws && colcon build && echo \"source /home/lcas/ws/install/setup.bash\" >> ~/.bashrc'",
 	"containerUser": "lcas",
 	// Configure tool-specific properties.
 	// "customizations": {},
@@ -51,7 +51,9 @@
 				"king2021.vnc-extension",
 				"nonanonno.vscode-ros2",
 				"deitry.colcon-helper",
-				"yzhang.markdown-all-in-one"
+				"yzhang.markdown-all-in-one",
+				"ms-azuretools.vscode-docker",
+				"github.vscode-github-actions"
 			]
 		}
 	}
