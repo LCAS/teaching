@@ -32,7 +32,7 @@ jobs:
           #   ros_version: 1
 
           # Humble Hawksbill (May 2022 - May 2027)
-          - docker_image: ubuntu:jammy
+          - docker_image: lcas.lincoln.ac.uk/lcas/devcontainer/ros2-teaching:2324-devel
             ros_distribution: humble
             ros_version: 2
 
@@ -54,13 +54,13 @@ jobs:
         uses: LCAS/setup-ros@master
         with:
           required-ros-distributions: ${{ matrix.ros_distribution }}
-      - name: build and test ROS 1
+      - name: build and test ROS 1 ${{ matrix.ros_distribution }}
         if: ${{ matrix.ros_version == 1 }}
         uses: ros-tooling/action-ros-ci@v0.3
         with:
           import-token: ${{ github.token }}
           target-ros1-distro: ${{ matrix.ros_distribution }}
-      - name: build and test ROS 2
+      - name: build and test ROS 2 ${{ matrix.ros_distribution }}
         if: ${{ matrix.ros_version == 2 }}
         uses: ros-tooling/action-ros-ci@v0.3
         with:

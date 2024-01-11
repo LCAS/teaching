@@ -39,3 +39,4 @@ jobs:
           imageName: lcas.lincoln.ac.uk/lcas/devcontainer/ros2-teaching
           push: always
           imageTag: ${{ env.BRANCH }}
+          runCmd: "bash -c 'sudo apt update && rosdep update && cd /home/lcas/ws && colcon build && echo \"source /home/lcas/ws/install/setup.bash\" >> ~/.bashrc'"
