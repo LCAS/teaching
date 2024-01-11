@@ -50,6 +50,12 @@ jobs:
       image: ${{ matrix.docker_image }}
     steps:
       - uses: actions/checkout@v3
+      - name: Docker Login LCAS
+        uses: docker/login-action@v3
+        with:
+          registry: lcas.lincoln.ac.uk
+          username: lcas
+          password: lincoln
       - name: setup ROS environment
         uses: LCAS/setup-ros@master
         with:
