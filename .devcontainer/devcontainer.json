@@ -5,7 +5,8 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	// "image": "lcas.lincoln.ac.uk/lcas/ros:humble",
 	"build": {
-		"dockerfile": "Dockerfile"
+		"dockerfile": "Dockerfile",
+		"context": "."
 	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
@@ -29,7 +30,7 @@
 	"containerUser": "lcas",
 	// Configure tool-specific properties.
 	// "customizations": {},
-	"runArgs": [ "--security-opt", "seccomp=unconfined" ],
+	"runArgs": [ "--security-opt", "seccomp=unconfined", "--cap-add=NET_ADMIN" ],
 
 	"containerEnv": {
         "ROS_LOCALHOST_ONLY": "0",

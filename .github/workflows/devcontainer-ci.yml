@@ -39,4 +39,4 @@ jobs:
           imageName: lcas.lincoln.ac.uk/lcas/devcontainer/ros2-teaching
           push: always
           imageTag: ${{ env.BRANCH }}
-          runCmd: "bash .devcontainer/run.sh"
+          runCmd: "bash .devcontainer/run-ci.sh"

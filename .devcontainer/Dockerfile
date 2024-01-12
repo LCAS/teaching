@@ -87,5 +87,8 @@ RUN git clone https://github.com/libuvc/libuvc.git &&\
     ldconfig  &&\
     cd ../.. && rm -r libuvc*
 
+COPY *repos *.sh /tmp/.devcontainer/
+RUN bash /tmp/.devcontainer/install.sh
+
 RUN mkdir -p /home/lcas/ws/src && ln -s /workspaces /home/lcas/ws/src/workspaces
 WORKDIR /home/lcas/ws

@@ -1,9 +1,23 @@
 #!/bin/bash
 
 set -e
-source /opt/ros/humble/setup.bash
+
+WORKSPACE="`pwd`"
+
+source /opt/ros/lcas/install/setup.bash
 sudo apt update
 rosdep --rosdistro=humble update 
+
+
+# sudo rm -rf /opt/ros/lcas
+# sudo mkdir -p /opt/ros/lcas/src
+# sudo chown -R lcas /opt/ros/lcas
+# cd /opt/ros/lcas/src
+# vcs import < $WORKSPACE/.devcontainer/lcas.repos
+# rosdep install --from-paths . -i -y
+# cd /opt/ros/lcas
+# colcon build
+
 
 cd /home/lcas/ws
 colcon build 
