@@ -41,9 +41,9 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         ros-humble-imu-tools \
         libgflags-dev \
         nlohmann-json3-dev \
-        ros-humble-image-*       
-
-RUN apt-get -y install --no-install-recommends wget
+        ros-humble-image-* \
+        wget \
+        openvpn      
 
 RUN useradd -rm -d /home/lcas -s /bin/bash -g root -G sudo -u 1001 lcas
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
