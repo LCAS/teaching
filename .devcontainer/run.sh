@@ -20,6 +20,6 @@ rosdep --rosdistro=humble update
 
 
 cd /home/lcas/ws
-colcon build 
+colcon build --symlink-install
 echo "source /home/lcas/ws/install/setup.bash" >> ~/.bashrc
 
