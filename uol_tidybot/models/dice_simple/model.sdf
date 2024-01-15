@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="dice_simple">
+    <link name="link">
+      <inertial>
+        <pose>  0.0000000000e+00  0.0000000000e+00  0.0000000000e+00 0 0 0 </pose>
+        <mass> 0.2 </mass>
+        <inertia>
+          <ixx>  3.3333332480e-02 </ixx>
+          <ixy>  0.0000000000e+00 </ixy>
+          <ixz>  0.0000000000e+00 </ixz>
+          <iyy>  3.3333332480e-02 </iyy>
+          <iyz>  0.0000000000e+00 </iyz>
+          <izz>  3.3333332480e-02 </izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>  0.0000000000e+00  0.0000000000e+00  0.0000000000e+00 0 0 0 </pose>
+        <geometry>
+          <mesh>
+            <uri>model://dice_simple/meshes/dice_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+          <!-- <contact>
+            <ode>
+              <kp>10000000.0</kp>
+              <kd>1.0</kd>
+              <min_depth>0.001</min_depth>
+              <max_vel>0.1</max_vel>
+            </ode>
+          </contact> -->
+        </surface>
+      </collision>
+      <visual name="visual">
+        <pose>  0.0000000000e+00  0.0000000000e+00  0.0000000000e+00 0 0 0 </pose>
+        <geometry>
+          <mesh>
+            <uri>model://dice_simple/meshes/dice_simple.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Green</name>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0.005</angular>
+      </velocity_decay>
+    </link>
+  </model>
+</sdf>

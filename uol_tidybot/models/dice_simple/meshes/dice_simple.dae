@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+    <asset>
+        <contributor>
+            <author>VCGLab</author>
+            <authoring_tool>VCGLib | MeshLab</authoring_tool>
+        </contributor>
+        <created>Mon Jan 15 11:28:00 2024 GMT</created>
+        <modified>Mon Jan 15 11:28:00 2024 GMT</modified>
+        <up_axis>Y_UP</up_axis>
+    </asset>
+    <library_geometries>
+        <geometry id="shape0-lib" name="shape0">
+            <mesh>
+                <source id="shape0-lib-positions" name="position">
+                    <float_array id="shape0-lib-positions-array" count="24">-0.01 -0.01 0.01 0.01 -0.01 0.01 0.01 0.01 0.01 -0.01 0.01 0.01 0.01 0.01 -0.01 -0.01 0.01 -0.01 0.01 -0.01 -0.01 -0.01 -0.01 -0.01</float_array>
+                    <technique_common>
+                        <accessor count="8" source="#shape0-lib-positions-array" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="shape0-lib-vertices">
+                    <input semantic="POSITION" source="#shape0-lib-positions"/>
+                </vertices>
+                <triangles count="12">
+                    <input offset="0" semantic="VERTEX" source="#shape0-lib-vertices"/>
+                    <p>3 2 4 3 4 5 0 1 2 0 2 3 5 4 6 5 6 7 7 6 1 7 1 0 1 6 4 1 4 2 7 0 3 7 3 5</p>
+                </triangles>
+            </mesh>
+        </geometry>
+    </library_geometries>
+    <library_visual_scenes>
+        <visual_scene id="VisualSceneNode" name="VisualScene">
+            <node id="node" name="node">
+                <instance_geometry url="#shape0-lib"/>
+            </node>
+        </visual_scene>
+    </library_visual_scenes>
+    <scene>
+        <instance_visual_scene url="#VisualSceneNode"/>
+    </scene>
+</COLLADA>
