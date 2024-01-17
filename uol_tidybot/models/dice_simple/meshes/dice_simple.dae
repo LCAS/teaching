@@ -13,7 +13,7 @@
         <geometry id="shape0-lib" name="shape0">
             <mesh>
                 <source id="shape0-lib-positions" name="position">
-                    <float_array id="shape0-lib-positions-array" count="24">-0.01 -0.01 0.01 0.01 -0.01 0.01 0.01 0.01 0.01 -0.01 0.01 0.01 0.01 0.01 -0.01 -0.01 0.01 -0.01 0.01 -0.01 -0.01 -0.01 -0.01 -0.01</float_array>
+                    <float_array id="shape0-lib-positions-array" count="24">-0.03 -0.03 0.03 0.03 -0.03 0.03 0.03 0.03 0.03 -0.03 0.03 0.03 0.03 0.03 -0.03 -0.03 0.03 -0.03 0.03 -0.03 -0.03 -0.03 -0.03 -0.03</float_array>
                     <technique_common>
                         <accessor count="8" source="#shape0-lib-positions-array" stride="3">
                             <param name="X" type="float"/>
