@@ -14,7 +14,7 @@ from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
  
   # Constants for paths to different files and folders
-  urdf_model_name = 'limo_four_diff.gazebo'
+  urdf_model_name = 'tidybot.gazebo'
   world_file_name = 'level_1_1.world'
   rviz_config_file_name = 'urdf.rviz'
 
@@ -32,7 +32,7 @@ def generate_launch_description():
   pkg_gazebo_ros = FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
 
   default_urdf_model_path = os.path.join(
-    get_package_share_directory('limo_description'), 
+    get_package_share_directory('uol_tidybot'), 
     'urdf',
     urdf_model_name
   )

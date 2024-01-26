@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<robot name="tidybot" xmlns:xacro="http://ros.org/wiki/xacro">
+    <!-- a lightweight robot geometry model -->
+    <xacro:arg name="model_lite" default="true" />
+
+    <xacro:include filename="$(find limo_description)/urdf/limo_four_diff.gazebo" />
+    <!-- <xacro:include filename="$(find limo_description)/urdf/tidybot.gazebo" /> -->
+
+    <!-- Vehicle Geometries -->
+    <xacro:property name="pusher_width" value="0.25" />
+    <xacro:property name="pusher_height" value="0.06" />
+    <xacro:property name="pusher_x" value="0.16" />
+    <xacro:property name="pusher_y" value="0.0" />
+    <xacro:property name="pusher_z" value="-0.11" />
+
+    <!-- Base link -->
+    <link name="pusher">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.01 ${pusher_width} ${pusher_height}"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.01 ${pusher_width} ${pusher_height}"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="pusher_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="pusher"/>
+        <origin xyz="${pusher_x} ${pusher_y} ${pusher_z}" rpy="0 0 0"/>
+    </joint>
+
+</robot>

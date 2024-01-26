@@ -14,6 +14,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
         (path.join('share', package_name, 'launch'), glob(path.join('launch', '*launch.[pxy][yma]*'))),
         (path.join('share', package_name, 'param'), glob(path.join('param', '*.yaml'))),
+        (path.join('share', package_name, 'urdf'), glob(path.join('urdf', 'tidybot.*'))),
         (path.join('share', package_name, 'worlds'), glob(path.join('worlds', '*.world'))),
         (path.join('share', package_name, 'models', 'dice_simple'), glob(path.join('models', 'dice_simple', 'model.*'))),
         (path.join('share', package_name, 'models', 'dice_simple','meshes'), glob(path.join('models', 'dice_simple', 'meshes', '*.dae'))),
@@ -28,6 +29,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'generate_objects = uol_tidybot.spawn_objects:main',
         ],
     },
 )

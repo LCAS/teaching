@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<robot name="tidybot"
+    xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="$(find uol_tidybot)/urdf/tidybot.xacro" />
+    <!-- <xacro:include filename="$(find limo_description)/urdf/limo_four_diff.gazebo" /> -->
+    <gazebo reference="pusher">
+      <material>Gazebo/Blue</material>
+    </gazebo>
+
+</robot>

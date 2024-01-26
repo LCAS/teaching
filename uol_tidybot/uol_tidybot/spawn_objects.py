@@ -53,7 +53,7 @@ class ObjectSpawner(Node):
         self.get_logger().debug(future.result())
         self.get_logger().debug('leave')
 
-    def place_objects(self, N=20, cx=0.0, cy=0.0, spread=1.3):
+    def place_objects(self, N=20, cx=0.0, cy=0.0, spread=1.0):
         for i in range(0,N):
             x = uniform(cx-spread, cx+spread)
             y = uniform(cy-spread, cy+spread)
