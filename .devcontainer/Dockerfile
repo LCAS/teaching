@@ -43,7 +43,14 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         nlohmann-json3-dev \
         ros-humble-image-* \
         wget \
-        openvpn      
+        openvpn \
+        python3 \
+        cmake g++ pip \
+        libasio-dev \
+        libtinyxml2-dev \
+        libssl-dev \
+        python3-sphinx \
+        libyaml-cpp-dev     
 
 RUN useradd -rm -d /home/lcas -s /bin/bash -g root -G sudo -u 1001 lcas
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers

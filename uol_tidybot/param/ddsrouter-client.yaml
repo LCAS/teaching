@@ -1,0 +1,46 @@
+##################################
+# CONFIGURATION VERSION
+version: v3.0                                      # 0
+
+##################################
+# ALLOWED TOPICS
+# Allowing ROS2 HelloWorld demo_nodes topic
+
+#allowlist:
+#  - name: rt/chatter                               # 1
+#    type: std_msgs::msg::dds_::String_             # 1
+
+##################################
+# PARTICIPANTS
+participants:
+
+##################################
+# SIMPLE PARTICIPANT
+# This participant will subscribe to topics in allowlist in domain 0 and listen every message published there
+
+  # - name: SimpleROS2                               # 2
+  #   kind: local                                    # 3
+  #   domain: 0                                      # 4
+
+  - name: EchoParticipant                                             # 6
+    kind: echo                                                        # 7
+    discovery: true                                                   # 8
+    #data: true                                                        # 9
+    #verbose: true                                                     # 10
+
+
+  - name: ServerROS2                               # 5
+    kind: local-discovery-server                   # 6
+    discovery-server-guid:
+      ros-discovery-server: true                   # 7
+      id: 1                                        # 8
+    listening-addresses:                           # 9
+      - domain: localhost                          # 10
+        port: 11888                                # 11
+
+  - name: WANClient                                               # 6
+    kind: wan                                                     # 7
+    connection-addresses:                                         # 8
+      - domain: ngrok.lcas.group
+        port: 10023
+        transport: tcp

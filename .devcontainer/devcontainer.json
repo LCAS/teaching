@@ -33,7 +33,6 @@
 	"runArgs": [ "--security-opt", "seccomp=unconfined", "--cap-add=NET_ADMIN" ],
 
 	"containerEnv": {
-        "ROS_LOCALHOST_ONLY": "0",
         "LIBGL_ALWAYS_SOFTWARE": "1" // Needed for software rendering of opengl
     },
 
