@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'uol_turtlebot_control'
+package_name = 'uol_tidybot_control'
 
 setup(
     name=package_name,
@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-                'control_strategy = uol_turtlebot_control.robot_control_strategy:main',
+                'control_strategy = uol_tidybot_control.robot_control_strategy:main',
         ],
     },
 )
