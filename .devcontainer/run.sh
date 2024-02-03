@@ -4,6 +4,11 @@ set -e
 
 WORKSPACE="`pwd`"
 
+git config --global core.autocrlf false
+
+sudo chown -R lcas /home/lcas/ws
+sudo chown -R lcas /workspaces
+
 source /opt/ros/lcas/install/setup.bash
 sudo apt update
 rosdep --rosdistro=humble update 
