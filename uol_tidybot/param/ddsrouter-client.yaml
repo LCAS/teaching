@@ -33,14 +33,14 @@ participants:
     kind: local-discovery-server                   # 6
     discovery-server-guid:
       ros-discovery-server: true                   # 7
-      id: 1                                        # 8
+      id: 0                                        # 8
     listening-addresses:                           # 9
-      - domain: localhost                          # 10
+      - domain: 0.0.0.0                          # 10
         port: 11888                                # 11
 
   - name: WANClient                                               # 6
     kind: wan                                                     # 7
     connection-addresses:                                         # 8
       - domain: ngrok.lcas.group
-        port: 10023
+        port: 10021
         transport: tcp
