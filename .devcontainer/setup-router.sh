@@ -1,6 +1,6 @@
 unset RMW_IMPLEMENTATION
 unset ROS_LOCALHOST_ONLY
-export FASTRTPS_DEFAULT_PROFILES_FILE=/workspaces/teaching/uol_tidybot/param/super_client_configuration_file.xml
+#export FASTRTPS_DEFAULT_PROFILES_FILE=/workspaces/teaching/uol_tidybot/param/super_client_configuration_file.xml
 #export ROS_DISCOVERY_SERVER=localhost:11888
 
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
