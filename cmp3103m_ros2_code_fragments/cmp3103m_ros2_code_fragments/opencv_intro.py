@@ -1,50 +1,53 @@
-
 import cv2
-
 import numpy as np
 
-# declare windows you want to display
-cv2.namedWindow("original")
-cv2.namedWindow("blur")
-cv2.namedWindow("canny")
+class ImageProcessor:
+    def __init__(self, image_path):
+        self.image_path = image_path
+        self.img = None
+        self.blur_img = None
+        self.canny_img = None
 
-img = cv2.imread('blofeld.jpg')
-print('type: %s' % type(img))
-cv2.imshow("original", img)
+    def initialize_windows(self):
+        """Initialize the windows for displaying images."""
+        cv2.namedWindow("original")
+        cv2.namedWindow("blur")
+        cv2.namedWindow("canny")
 
-# create a new blurred image:
-blur_img = cv2.blur(img, (7, 7))
+    def load_and_display_image(self):
+        """Load an image from a file and display it."""
+        self.img = cv2.imread(self.image_path)
+        print('type: %s' % type(self.img))
+        cv2.imshow("original", self.img)
 
-# draw on the image:
-cv2.circle(blur_img, (100, 100), 30, (255, 0, 255), 5)
+    def blur_and_display_image(self):
+        """Blur an image and display it."""
+        self.blur_img = cv2.blur(self.img, (7, 7))
+        cv2.circle(self.blur_img, (100, 100), 30, (255, 0, 255), 5)
+        cv2.imshow("blur", self.blur_img)
 
-# display the image:
-cv2.imshow("blur", blur_img)
+    def apply_canny_and_display_image(self):
+        """Apply the Canny algorithm for edge detection and display the image."""
+        self.canny_img = cv2.Canny(self.img, 10, 200)
+        cv2.imshow("canny", self.canny_img)
+        print('shape: %s' % str(self.canny_img.shape))
 
-# Canny is an algorith for edge detection
-canny_img = cv2.Canny(img, 10, 200)
-cv2.imshow("canny", canny_img)
-print('shape: %s' % str(canny_img.shape))
+    def count_edge_pixels(self):
+        """Count the number of edge pixels in an image."""
+        h = self.canny_img.shape[0]  # height
+        w = self.canny_img.shape[1]  # width
+        count = np.sum(self.canny_img > 0)
+        print('faster count edge pixels: %d' % count)
 
-# the shape gives you the dimensions
-h = canny_img.shape[0]  # height
-w = canny_img.shape[1]  # width
+    def process_image(self):
+        self.initialize_windows()
+        self.load_and_display_image()
+        self.blur_and_display_image()
+        self.apply_canny_and_display_image()
+        self.count_edge_pixels()
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
 
-# loop over the image, pixel by pixel
-count = 0
-# a slow way to iterate over the pixels
-for y in range(0, h):
-    for x in range(0, w):
-        # threshold the pixel
-        if canny_img[y, x] > 0:
-            count += 1
-print('count edge pixels: %d' % count)
-
-# a fast way to iterate using numpy:
-count = np.sum(canny_img > 0)
-print('faster count edge pixels: %d' % count)
-
-# qait key is also always needed to sync the GUI threads
-cv2.waitKey(0)
-# good practice to tidy up at the end
-cv2.destroyAllWindows()
+if __name__ == "__main__":
+    processor = ImageProcessor('blofeld.jpg')
+    processor.process_image()

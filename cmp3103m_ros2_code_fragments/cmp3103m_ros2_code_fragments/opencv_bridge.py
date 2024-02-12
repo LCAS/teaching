@@ -12,15 +12,51 @@ import cv2
 import numpy as np
 
 class OpencvBridge(Node):
+    """
+    A class that demonstrates how to use the ROS2 CVBridge for image processing.
+
+    This class sets up the necessary subscriptions and provides a callback function
+    for processing camera data. It converts ROS Image messages to OpenCV images,
+    performs various image processing operations, and displays the results.
+
+    Attributes:
+        br: CvBridge object for converting ROS Image messages to OpenCV images.
+
+    Subscriptions:
+        /limo/depth_camera_link/image_raw: ROS Image topic for receiving camera data.
+
+    Published Topics:
+        None
+
+    """
+
     def __init__(self):
+        """
+        Initializes the OpencvBridge class.
+
+        This method sets up the necessary subscriptions and initializes the CvBridge object.
+
+        Args:
+            None
+
+        Returns:
+            None
+        """
         super().__init__('opencv_bridge')
-        self.create_subscription(Image, '/camera/', self.camera_callback, 10)
+        self.create_subscription(Image, '/limo/depth_camera_link/image_raw', self.camera_callback, 10)
 
         self.br = CvBridge()
 
     def camera_callback(self, data):
-        #self.get_logger().info("camera_callback")
+        """
+        Callback function for processing camera data.
 
+        Args:
+            data: ROS Image message containing camera data.
+
+        Returns:
+            None
+        """
         cv2.namedWindow("Image window")
         cv2.namedWindow("blur")
         cv2.namedWindow("canny")
