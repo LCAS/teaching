@@ -5,6 +5,8 @@ set -e
 source /opt/ros/humble/setup.bash
 apt update
 rosdep --rosdistro=humble update 
+
+# fix tab completion
 pip install -U argcomplete
 
 rm -rf /opt/ros/lcas
@@ -16,8 +18,5 @@ rosdep install --from-paths . -r -i -y
 cd /opt/ros/lcas
 colcon build
 
-
-#cd /home/lcas/ws
-#colcon build 
 echo "source /opt/ros/lcas/install/setup.bash" >> ~/.bashrc
 

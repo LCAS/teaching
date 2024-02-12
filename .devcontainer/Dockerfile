@@ -1,5 +1,7 @@
 FROM lcas.lincoln.ac.uk/lcas/ros:humble
 
+RUN echo "deb [trusted=yes] https://download.eclipse.org/zenoh/debian-repo/ /" | tee -a /etc/apt/sources.list
+
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y upgrade \
     && apt-get -y install --no-install-recommends ros-humble-desktop ros-humble-turtlebot3-gazebo ros-humble-turtlebot3-navigation2 \
@@ -50,7 +52,10 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         libtinyxml2-dev \
         libssl-dev \
         python3-sphinx \
-        libyaml-cpp-dev     
+        libyaml-cpp-dev \
+        ros-humble-cyclonedds \
+        ros-humble-zenoh-bridge-dds \
+        llvm-dev libclang-dev
 
 RUN useradd -rm -d /home/lcas -s /bin/bash -g root -G sudo -u 1001 lcas
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
@@ -96,6 +101,14 @@ RUN git clone https://github.com/libuvc/libuvc.git &&\
 
 COPY *repos *.sh /tmp/.devcontainer/
 RUN bash /tmp/.devcontainer/install.sh
+
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y 
+RUN git clone https://github.com/eclipse-zenoh/zenoh-plugin-ros2dds.git
+WORKDIR /opt/lcas/extensions/zenoh-plugin-ros2dds
+RUN bash -c "source '$HOME/.cargo/env'; cargo build --release -p zenoh-bridge-ros2dds"
+RUN install target/release/zenoh-bridge-ros2dds /usr/local/bin/
+
+RUN cat /tmp/.devcontainer/setup-router.sh >> /home/lcas/.bashrc
 
 RUN mkdir -p /home/lcas/ws/src && ln -s /workspaces /home/lcas/ws/src/workspaces
 WORKDIR /home/lcas/ws

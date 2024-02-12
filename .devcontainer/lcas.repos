@@ -7,31 +7,4 @@ repositories:
     type: git
     url: https://github.com/LCAS/limo_ros2.git
     version: humble
-  foonathan_memory_vendor:
-    type: git
-    url: https://github.com/eProsima/foonathan_memory_vendor.git
-    version: v1.3.1
-  fastcdr:
-    type: git
-    url: https://github.com/eProsima/Fast-CDR.git
-    version: v1.1.0
-  fastdds:
-    type: git
-    url: https://github.com/eProsima/Fast-DDS.git
-    version: v2.11.2
-  dev-utils:
-    type: git
-    url: https://github.com/eProsima/dev-utils.git
-    version: v0.4.0
-  ddspipe:
-    type: git
-    url: https://github.com/eProsima/DDS-Pipe.git
-    version: v0.2.0
-  ddsrouter:
-    type: git
-    url: https://github.com/eProsima/DDS-Router.git
-    version: v2.0.0
-  googletest-distribution: 
-    type: git
-    url: https://github.com/google/googletest.git
-    version: release-1.11.0
+  
