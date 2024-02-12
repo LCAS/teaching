@@ -37,3 +37,4 @@ read -r -d '' CYCLONEDDS_URI << EOM
 EOM
 
 export CYCLONEDDS_URI
+

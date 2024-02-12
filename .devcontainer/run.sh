@@ -16,7 +16,10 @@ rosdep --rosdistro=humble update
 cd /home/lcas/ws
 colcon build --symlink-install
 
+if ! grep -q "source /opt/ros/lcas/install/setup.bash" ~/.bashrc; then
+    echo "source /opt/ros/lcas/install/setup.bash" >> ~/.bashrc
+fi
+
 if ! grep -q "source /home/lcas/ws/install/setup.bash" ~/.bashrc; then
     echo "source /home/lcas/ws/install/setup.bash" >> ~/.bashrc
 fi
-
