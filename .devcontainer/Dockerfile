@@ -108,5 +108,7 @@ WORKDIR /opt/lcas/extensions/zenoh-plugin-ros2dds
 RUN bash -c "source '$HOME/.cargo/env'; cargo build --release -p zenoh-bridge-ros2dds"
 RUN install target/release/zenoh-bridge-ros2dds /usr/local/bin/
 
+RUN cat /tmp/.devcontainer/setup-router.sh >> /home/lcas/.bashrc
+
 RUN mkdir -p /home/lcas/ws/src && ln -s /workspaces /home/lcas/ws/src/workspaces
 WORKDIR /home/lcas/ws
