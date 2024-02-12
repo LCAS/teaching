@@ -14,7 +14,7 @@ import numpy as np
 class ColourContours(Node):
     def __init__(self):
         super().__init__('colour_contours')
-        self.create_subscription(Image, '/camera/image_raw', self.camera_callback, 10)
+        self.create_subscription(Image, '/limo/depth_camera_link/image_raw', self.camera_callback, 1)
 
         self.br = CvBridge()
 

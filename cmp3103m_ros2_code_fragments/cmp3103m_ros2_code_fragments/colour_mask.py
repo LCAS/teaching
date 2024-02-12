@@ -16,18 +16,18 @@ class ColourMask(Node):
     def __init__(self):
         super().__init__('colour_mask')
 
-        # publish the output images of the OpenCV processing on seperate Image topics
+        # publish the output images of the OpenCV processing on separate Image topics
         self.pub_image_hsv = self.create_publisher(Image, 'image/hsv', 10)
         self.pub_image_mask = self.create_publisher(Image, 'image/mask', 10)
 
         # subscribe to the camera topic
-        self.create_subscription(Image, '/camera/image_raw', self.camera_callback, 10)
+        self.create_subscription(Image, '/limo/depth_camera_link/image_raw', self.camera_callback, 10)
 
         # Used to convert between ROS and OpenCV images
         self.br = CvBridge()
 
     def camera_callback(self, data):
-        #self.get_logger().info("camera_callback")
+        self.get_logger().info("camera_callback")
 
         # Convert ROS Image message to OpenCV image
         current_frame = self.br.imgmsg_to_cv2(data, desired_encoding='bgr8')

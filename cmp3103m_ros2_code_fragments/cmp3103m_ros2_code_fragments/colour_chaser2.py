@@ -27,7 +27,7 @@ class ColourChaser(Node):
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
         # subscribe to the camera topic
-        self.create_subscription(Image, '/camera/image_raw', self.camera_callback, 10)
+        self.create_subscription(Image, '/limo/depth_camera_link/image_raw', self.camera_callback, 10)
 
         # Used to convert between ROS and OpenCV images
         self.br = CvBridge()
@@ -47,12 +47,13 @@ class ColourChaser(Node):
         current_frame_mask = cv2.inRange(current_frame_hsv,(0, 150, 50), (255, 255, 255)) # orange
 
         contours, hierarchy = cv2.findContours(current_frame_mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-
+        #print(contours)
         # Sort by area (keep only the biggest one)
         contours = sorted(contours, key=cv2.contourArea, reverse=True)[:1]
+        #print(contours)
 
         # Draw contour(s) (image to draw on, contours, contour number -1 to draw all contours, colour, thickness):
-        current_frame_contours = cv2.drawContours(current_frame, contours, 0, (0, 255, 0), 20)
+        current_frame_contours = cv2.drawContours(current_frame, contours, 0, (255, 255, 0), 20)
         
         if len(contours) > 0:
             # find the centre of the contour: https://docs.opencv.org/3.4/d8/d23/classcv_1_1Moments.html
@@ -61,19 +62,19 @@ class ColourChaser(Node):
                 # find the centroid of the contour
                 cx = int(M['m10']/M['m00'])
                 cy = int(M['m01']/M['m00'])
-                #print("Centroid of the biggest area: ({}, {})".format(cx, cy))
+                print("Centroid of the biggest area: ({}, {})".format(cx, cy))
 
                 # Draw a circle centered at centroid coordinates
                 # cv2.circle(image, center_coordinates, radius, color, thickness) -1 px will fill the circle
-                cv2.circle(current_frame, (round(cx), round(cy)), 50, (0, 255, 0), -1)
+                cv2.circle(current_frame, (round(cx), round(cy)), 5, (0, 255, 0), -1)
                             
                 # find height/width of robot camera image from ros2 topic echo /camera/image_raw height: 1080 width: 1920
 
                 # if center of object is to the left of image center move left
-                if cx < 900:
+                if cx < data.width / 3:
                     self.turn_vel = 0.3
                 # else if center of object is to the right of image center move right
-                elif cx >= 1200:
+                elif cx >= 2 * data.width / 3:
                     self.turn_vel = -0.3
                 else: # center of object is in a 100 px range in the center of the image so dont turn
                     #print("object in the center of image")

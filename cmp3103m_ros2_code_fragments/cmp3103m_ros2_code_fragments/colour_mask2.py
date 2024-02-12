@@ -16,7 +16,7 @@ class ColourMask(Node):
         super().__init__('colour_mask')
         self.pub_video_hsv = self.create_publisher(Image, 'video/hsv', 10)
         self.pub_video_mask = self.create_publisher(Image, 'video/mask', 10)
-        self.create_subscription(Image, '/camera/image_raw', self.camera_callback, 10)
+        self.create_subscription(Image, '/limo/depth_camera_link/image_raw', self.camera_callback, 10)
 
         # Used to convert between ROS and OpenCV images
         self.br = CvBridge()
