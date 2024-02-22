@@ -18,6 +18,8 @@ setup(
         (path.join('share', package_name, 'worlds'), glob(path.join('worlds', '*.world'))),
         (path.join('share', package_name, 'models', 'dice_simple'), glob(path.join('models', 'dice_simple', 'model.*'))),
         (path.join('share', package_name, 'models', 'dice_simple','meshes'), glob(path.join('models', 'dice_simple', 'meshes', '*.dae'))),
+        (path.join('share', package_name, 'models', 'dice_simple_red'), glob(path.join('models', 'dice_simple_red', 'model.*'))),
+        (path.join('share', package_name, 'models', 'dice_simple_red','meshes'), glob(path.join('models', 'dice_simple_red', 'meshes', '*.dae'))),
         (path.join('share', package_name, 'meshes'), glob(path.join('meshes', '*'))),
     ],
     install_requires=['setuptools'],

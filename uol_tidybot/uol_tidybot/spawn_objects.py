@@ -24,14 +24,22 @@ class ObjectSpawner(Node):
 
     def __init__(self, sdf_file=None):
         super().__init__('ObjectSpawner')
+        # declare a new ROS2 boolean parameter named "red"
+        self.declare_parameter('red', False)
+        # Create a client for the 'spawn_entity' service
         self.cli = self.create_client(SpawnEntity, 'spawn_entity')
         while not self.cli.wait_for_service(timeout_sec=5.0):
             self.get_logger().info('service not available, waiting again...')
         self.req = SpawnEntity.Request()
         if sdf_file is None:
-            self.sdf_file = os.path.join(
-                get_package_share_directory('uol_tidybot'), 
-                'models','dice_simple','model.sdf')
+            if self.get_parameter('red').value:
+                self.sdf_file = os.path.join(
+                    get_package_share_directory('uol_tidybot'), 
+                    'models','dice_simple_red','model.sdf')
+            else:
+                self.sdf_file = os.path.join(
+                    get_package_share_directory('uol_tidybot'), 
+                    'models','dice_simple','model.sdf')
         else:
             self.sdf_file = sdf_file
         
