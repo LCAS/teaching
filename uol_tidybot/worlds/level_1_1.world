@@ -261,125 +261,55 @@
       </link>
     </model>
 
-    <!-- <model name='box_1'>
-      <pose>1.0 0.0 0.3 0 0 0</pose>
+    <model name='indicator_greem'>
+      <static>1</static>
+      <pose>1.485 0.0 0.55 0 0 0</pose>
       <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.05 0.05 0.05</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
         <visual name='visual'>
           <geometry>
             <box>
-              <size>0.05 0.05 0.05</size>
+              <size>0.01 1 0.1</size>
             </box>
           </geometry>
           <material>
             <script>
-              <name>Gazebo/Red</name>
+              <name>Gazebo/Green</name>
               <uri>file://media/materials/scripts/gazebo.material</uri>
             </script>
           </material>
         </visual>
-        <inertial>
-          <mass value="0.1"/>
-          <inertia ixx="0.04" ixy="0.0" ixz="0.0" iyy="0.04" iyz="0.0" izz="0.04"/>
-        </inertial>
-
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>1</kinematic>
-      </link>
-    </model> -->
-
-    <!-- <model name='marble_1_5cm'>
-      <link name='link'>
-        <pose>0 0 0.0075 0 -0 0</pose>
-        <inertial>
-          <mass>0.0062</mass>
-          <inertia>
-            <ixx>1.395e-07</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1.395e-07</iyy>
-            <iyz>0</iyz>
-            <izz>1.395e-07</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <sphere>
-              <radius>0.0075</radius>
-            </sphere>
-          </geometry>
-          <surface>
-            <contact>
-              <poissons_ratio>0.22</poissons_ratio>
-              <elastic_modulus>5.1e+10</elastic_modulus>
-              <ode>
-                <kp>100000</kp>
-                <kd>100</kd>
-                <max_vel>100</max_vel>
-                <min_depth>0.001</min_depth>
-              </ode>
-            </contact>
-            <friction>
-              <torsional>
-                <coefficient>1</coefficient>
-                <use_patch_radius>0</use_patch_radius>
-                <surface_radius>0.01</surface_radius>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <sphere>
-              <radius>0.0075</radius>
-            </sphere>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Red</name>
-            </script>
-          </material>
-        </visual>
-        <velocity_decay>
-          <linear>0</linear>
-          <angular>0.005</angular>
-        </velocity_decay>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>-1 0 2 0 -0 0</pose>
-    </model> -->
+    </model>
+
+    <model name='indicator_red'>
+      <static>1</static>
+      <pose>-1.485 0.0 0.55 0 0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.01 1 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
 
     <include>
 			<uri>model://dice_simple</uri>
-      <pose>-1 0 2 0 -0 0</pose>
+      <pose>.8 0 2 0 -0 0</pose>
 		</include>
 
     <gui fullscreen='0'>

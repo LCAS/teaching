@@ -1,6 +1,0 @@
-free_thresh: 0.196
-image: object-search-arena.pgm
-negate: 0
-occupied_thresh: 0.65
-origin: [-5.6499999999999915, -6.199999999999989, 0.0]
-resolution: 0.05
