@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="dice_simple">
+  <model name="dice_simple_red">
     <link name="link">
       <inertial>
         <pose>  0.0000000000e+00  0.0000000000e+00  0.0000000000e+00 0 0 0 </pose>
@@ -18,7 +18,7 @@
         <pose>  0.0000000000e+00  0.0000000000e+00  0.0000000000e+00 0 0 0 </pose>
         <geometry>
           <mesh>
-            <uri>model://dice_simple/meshes/dice_simple.dae</uri>
+            <uri>model://dice_simple_red/meshes/dice_simple.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -42,13 +42,13 @@
         <pose>  0.0000000000e+00  0.0000000000e+00  0.0000000000e+00 0 0 0 </pose>
         <geometry>
           <mesh>
-            <uri>model://dice_simple/meshes/dice_simple.dae</uri>
+            <uri>model://dice_simple_red/meshes/dice_simple.dae</uri>
           </mesh>
         </geometry>
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Green</name>
+            <name>Gazebo/Red</name>
           </script>
         </material>
       </visual>
