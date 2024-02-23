@@ -5,7 +5,7 @@ from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, ExecuteProcess, IncludeLaunchDescription
 from launch.conditions import IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import Command, LaunchConfiguration, PythonExpression
+from launch.substitutions import Command, LaunchConfiguration, PythonExpression, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from ament_index_python.packages import get_package_share_directory
@@ -13,10 +13,10 @@ from ament_index_python.packages import get_package_share_directory
  
 def generate_launch_description():
  
-  # Constants for paths to different files and folders
+  # setting defaults
   urdf_model_name = 'tidybot.gazebo'
-  world_file_name = 'level_1_1.world'
   rviz_config_file_name = 'urdf.rviz'
+  default_world = 'level_1_1.world'
 
   robot_name_in_model = 'limo_gazebosim'
 
@@ -30,6 +30,7 @@ def generate_launch_description():
  
   # Set the path to different files and folders.  
   pkg_gazebo_ros = FindPackageShare(package='gazebo_ros').find('gazebo_ros')   
+  pkg_uol_tidybot = FindPackageShare(package='uol_tidybot').find('uol_tidybot')   
 
   default_urdf_model_path = os.path.join(
     get_package_share_directory('uol_tidybot'), 
@@ -37,11 +38,12 @@ def generate_launch_description():
     urdf_model_name
   )
  
-  world_path = os.path.join(
-    get_package_share_directory('uol_tidybot'), 
-    'worlds',
-    world_file_name
-  )
+  #world_path_prefix = os.path.join(
+  #  get_package_share_directory('uol_tidybot'), 
+  #  'worlds'
+  #)
+
+  world_path_prefix = PathJoinSubstitution([FindPackageShare('uol_tidybot'), 'worlds'])
 
   gazebo_models_path = os.path.join(
     get_package_share_directory('uol_tidybot'), 
@@ -68,7 +70,7 @@ def generate_launch_description():
   use_robot_state_pub = LaunchConfiguration('use_robot_state_pub')
   use_rviz = LaunchConfiguration('use_rviz')
   use_simulator = LaunchConfiguration('use_simulator')
-  world = LaunchConfiguration('world')
+  world = LaunchConfiguration('world', default=default_world)
  
   remappings = [((namespace, '/tf'), '/tf'),
                 ((namespace, '/tf_static'), '/tf_static'),
@@ -128,8 +130,8 @@ def generate_launch_description():
  
   declare_world_cmd = DeclareLaunchArgument(
     name='world',
-    default_value=world_path,
-    description='Full path to the world model file to load')
+    default_value=default_world,
+    description='Name of the world file in uol_tidybot package')
  
   # Subscribe to the joint states of the robot, and publish the 3D pose of each link.    
   start_robot_state_publisher_cmd = Node(
@@ -174,7 +176,7 @@ def generate_launch_description():
   start_gazebo_server_cmd = IncludeLaunchDescription(
     PythonLaunchDescriptionSource(os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')),
     condition=IfCondition(use_simulator),
-    launch_arguments={'world': world}.items())
+    launch_arguments={'world': PathJoinSubstitution([world_path_prefix, world])}.items())
  
   # Start Gazebo client    
   start_gazebo_client_cmd = IncludeLaunchDescription(
