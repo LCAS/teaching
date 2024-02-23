@@ -1,9 +1,0 @@
-<launch>
-
-  <!-- Launch gazebo -->
-  <include file="$(find uol_turtlebot_simulator)/launch/gazebo.launch"/>
-  
-  <!-- Launch robots -->
-  <include file="$(find uol_turtlebot_simulator)/launch/robots.launch"/>
-</launch>
-
