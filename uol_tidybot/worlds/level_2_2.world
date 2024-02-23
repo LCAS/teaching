@@ -581,7 +581,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>0.0 1.25 0 0 0 -1.57296</pose>
+      <pose>0.0 -1.25 0 0 0 1.57296</pose>
       <static>1</static>
     </model>
 
@@ -603,13 +603,13 @@
           <geometry>
             <mesh>
               <uri>model://first_2015_trash_can/meshes/trash_can.dae</uri>
-              <scale>.7 .7 .7</scale>
+              <scale>.5 .5 .5</scale>
             </mesh>
           </geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Yellow</name>
+              <name>Gazebo/Blue</name>
             </script>
           </material>
         </visual>
@@ -617,7 +617,7 @@
           <geometry>
             <mesh>
               <uri>model://first_2015_trash_can/meshes/trash_can.dae</uri>
-              <scale>.7 .7 .7</scale>
+              <scale>.5 .5 .5</scale>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -638,7 +638,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>-0.5 -0.60 0 0 -0 0</pose>
+      <pose>-0.5 0.60 0 0 0 0</pose>
       <static>1</static>
     </model>
 
