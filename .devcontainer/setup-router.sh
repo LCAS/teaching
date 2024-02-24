@@ -21,7 +21,7 @@ read -r -d '' CYCLONEDDS_URI << EOM
             <Peer address="`hostname`"/>
             <!--<Peer address="[IPV6-address]"/>-->
         </Peers>
-        <ParticipantIndex>auto</ParticipantIndex>
+        <ParticipantIndex>120</ParticipantIndex>
     </Discovery>
         <Internal>
             <Watermarks>
@@ -32,6 +32,18 @@ read -r -d '' CYCLONEDDS_URI << EOM
             <Verbosity>info</Verbosity>
             <OutputFile>stdout</OutputFile>
         </Tracing>
+    </Domain>
+</CycloneDDS>
+EOM
+
+read -r -d '' CYCLONEDDS_URI << EOM
+<?xml version="1.0" encoding="UTF-8" ?>
+<CycloneDDS xmlns="https://cdds.io/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd">
+    <Domain>
+        <General>
+            <AllowMulticast>false</AllowMulticast>
+            <NetworkInterfaceAddress>127.0.0.1</NetworkInterfaceAddress>
+        </General>
     </Domain>
 </CycloneDDS>
 EOM
