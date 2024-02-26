@@ -99,6 +99,10 @@ RUN git clone https://github.com/libuvc/libuvc.git &&\
     ldconfig  &&\
     cd ../.. && rm -r libuvc*
 
+# add commit history to bust cache if and when needed.
+ADD "https://api.github.com/repos/LCAS/limo_ros2/commits?per_page=1&sha=humble" .lcas_addons.limo_ros2.commits
+ADD "https://api.github.com/repos/LCAS/teaching/commits?per_page=1&sha=2324-devel" .lcas_addons.teaching.commits
+
 COPY *repos *.sh /tmp/.devcontainer/
 RUN bash /tmp/.devcontainer/install.sh
 
