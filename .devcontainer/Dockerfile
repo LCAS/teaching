@@ -99,19 +99,19 @@ RUN git clone https://github.com/libuvc/libuvc.git &&\
     ldconfig  &&\
     cd ../.. && rm -r libuvc*
 
-# add commit history to bust cache if and when needed.
-ADD "https://api.github.com/repos/LCAS/limo_ros2/commits?per_page=1&sha=humble" .lcas_addons.limo_ros2.commits
-ADD "https://api.github.com/repos/LCAS/teaching/commits?per_page=1&sha=2324-devel" .lcas_addons.teaching.commits
-
-COPY *repos *.sh /tmp/.devcontainer/
-RUN bash /tmp/.devcontainer/install.sh
-
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y 
 RUN git clone https://github.com/eclipse-zenoh/zenoh-plugin-ros2dds.git
 WORKDIR /opt/lcas/extensions/zenoh-plugin-ros2dds
 RUN bash -c "source '$HOME/.cargo/env'; cargo build --release -p zenoh-bridge-ros2dds"
 RUN install target/release/zenoh-bridge-ros2dds /usr/local/bin/
 
+
+# add commit history to bust cache if and when needed.
+ADD "https://api.github.com/repos/LCAS/limo_ros2/commits?per_page=1&sha=humble" .lcas_addons.limo_ros2.commits
+ADD "https://api.github.com/repos/LCAS/teaching/commits?per_page=1&sha=2324-devel" .lcas_addons.teaching.commits
+
+COPY *repos *.sh /tmp/.devcontainer/
+RUN bash /tmp/.devcontainer/install.sh
 RUN cat /tmp/.devcontainer/setup-router.sh >> /home/lcas/.bashrc
 
 RUN mkdir -p /home/lcas/ws/src && ln -s /workspaces /home/lcas/ws/src/workspaces
