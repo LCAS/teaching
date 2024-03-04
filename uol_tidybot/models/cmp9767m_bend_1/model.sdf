@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <model name="cmp9767m_bend_1">
+  <static>true</static>
+    <link name="realhard">
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>5.04 1.1</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+	     <pose>0 0 0.01 0 0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>5.04 1.1</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://cmp9767m_bend_1/materials/scripts</uri>
+            <uri>model://cmp9767m_bend_1/materials/textures</uri>
+            <name>cmp9767m_bend_1/realeasy_bend_1</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+  </model>
+</sdf>

@@ -1,0 +1,34 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://cmp9767m_ground_3</uri>
+    </include>
+    <include>
+      <uri>model://cmp9767m_plant_textures</uri>
+      <pose>0 0 0 0 0 0 </pose>
+      <name>rows_1</name>
+    </include>
+    <include>
+      <uri>model://cmp9767m_plant_textures</uri>
+      <pose>0.0 -5.25 0.0 0 0 0</pose>
+      <name>rows_2</name>
+    </include>
+    <include>
+      <uri>model://cmp9767m_plant_textures</uri>
+      <pose>0.0 5.25 0.0 0 0 0</pose>
+      <name>rows_3</name>
+    </include>
+    <include>
+      <uri>model://cmp9767m_enclosure</uri>
+    </include>
+    <physics type="ode">
+        <real_time_update_rate>200</real_time_update_rate>
+        <real_time_factor>1</real_time_factor>
+        <max_step_size>0.005</max_step_size>
+    </physics>
+    <gravity>0 0 -9.8</gravity>
+  </world>
+</sdf>

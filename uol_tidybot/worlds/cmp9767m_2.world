@@ -1,0 +1,48 @@
+<sdf version='1.6'>
+  <world name='default'>
+
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>0.0 0.0 15.7465 0.0 1.57 0.0</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://cmp9767m_ground_3</uri>
+    </include>
+    <include>
+      <uri>model://cmp9767m_cropweed</uri>
+      <pose>-2.5 -3.0 0 0 0 0</pose>
+      <name>row_1</name>
+    </include>
+    <include>
+      <uri>model://cmp9767m_cropweed</uri>
+      <pose>2.5 -3.0 0 0 0 0</pose>
+      <name>row_2</name>
+    </include>
+    <include>
+      <uri>model://cmp9767m_cropweed</uri>
+      <pose>-2.5 -2.0 0 0 0 0</pose>
+      <name>row_3</name>
+    </include>
+    <include>
+      <uri>model://cmp9767m_cropweed</uri>
+      <pose>2.5 -2.0 0 0 0 0</pose>
+      <name>row_4</name>
+    </include>
+    <include>
+      <uri>model://cmp9767m_enclosure</uri>
+    </include>
+    <physics type="ode">
+        <real_time_update_rate>200</real_time_update_rate>
+        <real_time_factor>1</real_time_factor>
+        <max_step_size>0.005</max_step_size>
+    </physics>
+    <gravity>0 0 -9.8</gravity>
+  </world>
+</sdf>

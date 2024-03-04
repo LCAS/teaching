@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+<model name="cmp9767m_ground_3">
+  <static>true</static>
+    <link name="dirt">
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>25 25</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>Inf</mu>
+              <mu2>Inf</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>25 25</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://cmp9767m_ground_3/materials/scripts</uri>
+            <uri>model://cmp9767m_ground_3/materials/textures</uri>
+            <name>cmp9767m_ground_3/dirt</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

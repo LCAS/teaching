@@ -1,0 +1,17 @@
+material cmp9767m_bend_1/realeasy_bend_1
+{
+  technique
+  {
+    pass
+    {
+      scene_blend alpha_blend
+      depth_write off
+
+      texture_unit
+      {
+        texture realeasy_bend_1.png
+        filtering trilinear
+      }
+    }
+  }
+}

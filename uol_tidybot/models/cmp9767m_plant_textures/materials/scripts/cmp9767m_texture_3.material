@@ -1,0 +1,17 @@
+material cmp9767m_plant_textures/texture_3
+{
+  technique
+  {
+    pass
+    {
+      scene_blend alpha_blend
+      depth_write off
+
+      texture_unit
+      {
+        texture texture_3.png
+        filtering trilinear
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+material cmp9767m_ground_3/dirt
+{
+  technique
+  {
+    pass
+    {
+      ambient 0.8 0.8 0.8 1.0
+      diffuse 0.1 0.1 0.1 1.0
+      specular 0.01 0.01 0.01 1.0
+      emissive 0.0 0.0 0.0 1.0
+
+      texture_unit
+      {
+        scale .1 .1
+        texture dirt.png
+        filtering trilinear
+      }
+    }
+  }
+}

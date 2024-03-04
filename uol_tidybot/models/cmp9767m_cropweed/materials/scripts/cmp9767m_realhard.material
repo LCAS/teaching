@@ -1,0 +1,17 @@
+material cmp9767m_cropweed/realhard
+{
+  technique
+  {
+    pass
+    {
+      scene_blend alpha_blend
+      depth_write off
+
+      texture_unit
+      {
+        texture realhard.png
+        filtering trilinear
+      }
+    }
+  }
+}

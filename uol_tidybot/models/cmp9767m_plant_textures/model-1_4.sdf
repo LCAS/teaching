@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <model name="cmp9767m_plant_textures">
+  <static>true</static>
+    <link name="texture_1_1">
+      <pose frame=''>-1.540 -2.0 0.025 0 -0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3.076 0.793</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3.076 0.793</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://cmp9767m_plant_textures/materials/scripts</uri>
+            <uri>model://cmp9767m_plant_textures/materials/textures</uri>
+            <name>cmp9767m_plant_textures/texture_1</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="texture_1_2">
+      <pose frame=''>1.50 -2.0 0.025 0 -0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3.040 0.793</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3.040 0.793</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://cmp9767m_plant_textures/materials/scripts</uri>
+            <uri>model://cmp9767m_plant_textures/materials/textures</uri>
+            <name>cmp9767m_plant_textures/texture_2</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="texture_2_1">
+      <pose frame=''>-1.699 -0.75 0.025 0 -0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>2.759 0.793</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>2.759 0.793</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://cmp9767m_plant_textures/materials/scripts</uri>
+            <uri>model://cmp9767m_plant_textures/materials/textures</uri>
+            <name>cmp9767m_plant_textures/texture_3</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="texture_2_2">
+      <pose frame=''>1.399 -0.75 0.025 0 -0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3.436 0.793</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3.436 0.793</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://cmp9767m_plant_textures/materials/scripts</uri>
+            <uri>model://cmp9767m_plant_textures/materials/textures</uri>
+            <name>cmp9767m_plant_textures/texture_4</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="texture_3_1">
+      <pose frame=''>-1.540 0.75 0.025 0 -0 3.14</pose>
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3.076 0.793</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3.076 0.793</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://cmp9767m_plant_textures/materials/scripts</uri>
+            <uri>model://cmp9767m_plant_textures/materials/textures</uri>
+            <name>cmp9767m_plant_textures/texture_1</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="texture_3_2">
+      <pose frame=''>1.50 0.75 0.025 0 -0 3.14</pose>
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3.040 0.793</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3.040 0.793</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://cmp9767m_plant_textures/materials/scripts</uri>
+            <uri>model://cmp9767m_plant_textures/materials/textures</uri>
+            <name>cmp9767m_plant_textures/texture_2</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="texture_4_1">
+      <pose frame=''>-1.699 2.0 0.025 0 -0 3.14</pose>
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>2.759 0.793</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>2.759 0.793</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://cmp9767m_plant_textures/materials/scripts</uri>
+            <uri>model://cmp9767m_plant_textures/materials/textures</uri>
+            <name>cmp9767m_plant_textures/texture_3</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <link name="texture_4_2">
+      <pose frame=''>1.399 2.0 0.025 0 -0 3.14</pose>
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3.436 0.793</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>3.436 0.793</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://cmp9767m_plant_textures/materials/scripts</uri>
+            <uri>model://cmp9767m_plant_textures/materials/textures</uri>
+            <name>cmp9767m_plant_textures/texture_4</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
