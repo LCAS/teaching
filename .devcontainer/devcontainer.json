@@ -16,13 +16,22 @@
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-	"forwardPorts": [6080, 5901],
+	"forwardPorts": [6080, 5901, 8888, 7447, 7448],
 	"portsAttributes": {
 	  "6080": {
 		"label": "novnc"
 	  },
 	  "5901": {
 		"label": "vnc"
+	  },
+	  "8888": {
+		"label": "zenoh-8888"
+	  },
+	  "7447": {
+		"label": "zenoh-7447"
+	  },
+	  "7448": {
+		"label": "zenoh-7448"
 	  }
 	},
 	// Use 'postCreateCommand' to run commands after the container is created.
