@@ -1,0 +1,17 @@
+{
+  plugins: {
+    rest: {                        // activate and configure the REST plugin
+      http_port: 10000             // with HTTP server listening on port 10000
+    },
+    storage_manager: {             // activate and configure the storage_manager plugin
+      storages: {
+        myhome: {                  // configure a "myhome" storage
+          key_expr: "vista/**",    // which subscribes and replies to query on vista/**
+          volume: {                // and using the "memory" volume (always present by default)
+            id: "memory"
+          }
+        }
+      }
+    }
+  }
+}

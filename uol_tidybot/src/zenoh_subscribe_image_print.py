@@ -3,7 +3,7 @@ import time
 from io import BytesIO
 
 # Define the zenoh topic where the image data will be published
-topic = "image_data/*"
+topic = "vista/image_data"
 
 # Callback function to handle received image data
 def callback(data):
