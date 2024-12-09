@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
   pull_request:
     branches:
-      - 2324-devel
+      - 2425-devel
   push:
     branches:
-      - 2324-devel
+      - 2425-devel
 
 jobs:
   build:
