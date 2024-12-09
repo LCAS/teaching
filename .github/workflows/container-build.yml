@@ -55,11 +55,10 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: "^16.13.0 || >=18.0.0"
-    - uses: de-vri-es/setup-git-credentials@v2
-      with:
-        credentials: ${{ secrets.LCAS_GITHUB_CREDENTIALS }}
 
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
     - name: What
       run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
