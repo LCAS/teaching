@@ -1,8 +1,7 @@
 LCAS Teaching Repo
 ========
 
-A repository for all the teaching stuff (mainly CMP3103M)
-
+A repository for all the teaching stuff (mainly CMP3103)
 
 
 ## Some useful launch commands
