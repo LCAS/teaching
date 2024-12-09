@@ -50,7 +50,7 @@ def generate_launch_description():
     'models'
   )
 
-  os.environ["GAZEBO_MODEL_PATH"] = ':'.join([gazebo_models_path]+os.getenv("GAZEBO_MODEL_PATH").split(':'))
+  os.environ["GAZEBO_MODEL_PATH"] = ':'.join([gazebo_models_path]+os.getenv("GAZEBO_MODEL_PATH","").split(':'))
   
   default_rviz_config_path = os.path.join(
     get_package_share_directory('limo_gazebosim'), 
