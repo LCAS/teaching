@@ -1,61 +1,50 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "lcas-humble",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	// "image": "lcas.lincoln.ac.uk/lcas/ros:humble",
+	"name": "L-CAS Humble CUDA-OpenGL Devcontainer",
+	// Use the below image to not build locally (pushed by GitHub Action)
+	// disable the "build" section below in this case
+	// "image": "lcas.lincoln.ac.uk/devcontainer/lcas/rob2002:cuda-opengl-main",
 	"build": {
-		"dockerfile": "Dockerfile",
-		"context": "."
+		"dockerfile": "./Dockerfile",
+		"args": {
+			"BASE_IMAGE": "lcas.lincoln.ac.uk/lcas/ros:jammy-humble-cuda12.2-opengl"
+		},
+		"context": "..",
+		"target": "devcontainer"
 	},
 
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	"features": {
-		"ghcr.io/devcontainers/features/desktop-lite:1": {}
-	},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-	"forwardPorts": [6080, 5901],
+	"forwardPorts": [5801],
 	"portsAttributes": {
-	  "6080": {
-		"label": "novnc"
-	  },
-	  "5901": {
-		"label": "vnc"
-	  }
+		"5801": {
+			"label": "desktop",
+			"onAutoForward": "openBrowser"
+		}
 	},
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bash .devcontainer/run.sh",
-	"containerUser": "lcas",
-	// Configure tool-specific properties.
-	// "customizations": {},
-	"runArgs": [ "--security-opt", "seccomp=unconfined", "--cap-add=NET_ADMIN" ],
 
-	"containerEnv": {
-        "LIBGL_ALWAYS_SOFTWARE": "1" // Needed for software rendering of opengl
-    },
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// Here we run `colcon build` to build the workspace initially, (to speed up later builds), and we keep going if it fails for some packages to get as much compiled as possible
+	"postStartCommand": "/opt/entrypoint.sh /bin/true; .devcontainer/post-create.sh",
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-    "customizations": {
+	"remoteUser": "ros",
+	"updateRemoteUserUID": true, // ensure internal user has the same UID as the host user and update file permissions
+	"customizations": {
 		"vscode": {
 			"extensions": [
-				"dotjoshjohnson.xml",
-				"zachflower.uncrustify",
 				"ms-python.python",
+				"GitHub.vscode-pull-request-github",
 				"ms-vscode.cpptools",
-				"redhat.vscode-yaml",
-				"smilerobotics.urdf",
-				"streetsidesoftware.code-spell-checker",
-				"twxs.cmake",
-				"king2021.vnc-extension",
+				"JaehyunShim.vscode-ros2",
 				"nonanonno.vscode-ros2",
 				"deitry.colcon-helper",
-				"yzhang.markdown-all-in-one",
-				"ms-azuretools.vscode-docker",
 				"github.vscode-github-actions"
 			]
 		}
+	},
+	"hostRequirements": {
+		"gpu": "optional",
+		"cpus": 2,
+		"memory": "6gb"
 	}
-
 }

@@ -1,0 +1,104 @@
+# ## Build OpenGL-supported Docker Images
+
+# This GitHub Actions workflow is triggered when there is a push to the `2425-devel` branch or when a tag is created. It also runs when there is a pull request to the `2425-devel` branch.
+
+# ### Jobs
+
+# #### build
+
+# This job runs on the `lcas` runner and defines a matrix strategy to build Docker images for different configurations.
+
+# ##### Matrix Configuration
+
+# The matrix configuration includes the following variables:
+
+# - `base_image`: The base image for the Docker image.
+# - `ros_distro`: The ROS (Robot Operating System) distribution.
+# - `robot_platform`: The platform for the robot.
+# - `push_tag`: The tag to be used when pushing the Docker image.
+
+# ##### Steps
+
+# The steps in the `build` job are as follows:
+
+# 1. Set up Node.js using the `actions/setup-node` action.
+# 2. Check out the repository using the `actions/checkout` action.
+# 3. Set the `BRANCH` environment variable to the branch name using a shell command.
+# 4. Log in to the Docker registry (`lcas.lincoln.ac.uk`) using the `docker/login-action` action. This step is skipped for pull request events.
+# 5. Build and push the Docker image using the `docker/build-push-action` action. The Dockerfile is located in the `.devcontainer/docker/ros2` directory. The image is built for the `linux/amd64` platform. The push is only performed for non-pull request events. The tags for the image are determined by the matrix configuration variables.
+
+name: Build Docker image
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ 2425-devel ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ 2425-devel ]
+
+jobs:
+  build-docker-image:
+    if: github.repository_owner == 'LCAS'
+    runs-on: lcas
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - base_image: lcas.lincoln.ac.uk/lcas/ros:jammy-humble-cuda12.2-opengl
+            ros_distro: humble
+            push_image: lcas.lincoln.ac.uk/devcontainer/ros2-teaching
+  
+    steps:
+    - name: Node Js
+      uses: actions/setup-node@v4
+      with:
+        node-version: "^16.13.0 || >=18.0.0"
+    - uses: de-vri-es/setup-git-credentials@v2
+      with:
+        credentials: ${{ secrets.LCAS_GITHUB_CREDENTIALS }}
+
+    - uses: actions/checkout@v3
+
+    - name: What
+      run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
+    - name: Docker Login LCAS
+      if: ${{ github.event_name != 'pull_request' }}
+      uses: docker/login-action@v3
+      with:
+        registry: lcas.lincoln.ac.uk
+        username: ${{ secrets.LCAS_REGISTRY_PUSHER }}
+        password: ${{ secrets.LCAS_REGISTRY_TOKEN }}
+
+    - name: Docker meta
+      id: meta_public
+      uses: docker/metadata-action@v5
+      with:
+        # list of Docker images to use as base name for tags
+        images: |
+          ${{ matrix.push_image }}
+        # generate Docker tags based on the following events/attributes
+        tags: |
+          type=raw,value=latest
+          type=ref,event=branch
+          type=ref,event=pr
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
+          type=semver,pattern={{major}}        
+
+    - name: Build Public Docker Image
+      uses: docker/build-push-action@v6
+      with:
+        context: .
+        file: .devcontainer/Dockerfile
+        platforms: linux/amd64
+        push: ${{ github.event_name != 'pull_request' }}
+        tags: ${{ steps.meta_public.outputs.tags }}
+        labels: ${{ steps.meta_public.outputs.labels }}
+        target: compiled
+        build-args: |
+            BASE_IMAGE=${{ matrix.base_image }}
+            BRANCH=${{ env.BRANCH }}
+            ROS_DISTRO=${{ matrix.ros_distro }}

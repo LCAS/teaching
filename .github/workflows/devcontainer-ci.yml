@@ -17,36 +17,14 @@ jobs:
         with:
           node-version: "^16.13.0 || >=18.0.0"
       - name: Checkout (GitHub)
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: What
         run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
-      - name: Docker Login LCAS
-        if: ${{ github.event_name != 'pull_request' }} 
-        uses: docker/login-action@v3
-        with:
-          registry: lcas.lincoln.ac.uk
-          username: ${{ secrets.LCAS_REGISTRY_PUSHER }}
-          password: ${{ secrets.LCAS_REGISTRY_TOKEN }}
-      - name: Docker Login dockerhub
-        if: ${{ github.event_name != 'pull_request' }} 
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USER }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Build and push dev container task
+      - name: Build container
         if: ${{ github.event_name != 'pull_request' }} 
         uses: devcontainers/ci@v0.3
         with:
-          imageName: lcas.lincoln.ac.uk/lcas/devcontainer/ros2-teaching
-          push: always
-          imageTag: ${{ env.BRANCH }}
-          #runCmd: "bash .devcontainer/run-ci.sh"
-      - name: Build (only) dev container task
-        if: ${{ github.event_name == 'pull_request' }} 
-        uses: devcontainers/ci@v0.3
-        with:
-          imageName: lcas.lincoln.ac.uk/lcas/devcontainer/ros2-teaching
+          imageName: devcontainer/ros2-teaching
           push: never
           imageTag: ${{ env.BRANCH }}
           #runCmd: "bash .devcontainer/run-ci.sh"
