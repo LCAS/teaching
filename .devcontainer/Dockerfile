@@ -14,12 +14,10 @@ RUN apt-get update \
     python3-matplotlib \
     python3-pandas \
     ros-humble-rviz2 \
-    ros-humble-gazebo-plugins \
     ros-humble-nav2-* \
     ros-humble-tf-transformations \
     ros-humble-rqt* \
-    ros-humble-find-object-2d \
-    zenoh-bridge-ros2dds
+    ros-humble-find-object-2d
 
 # get the source tree and analyse it for its package.xml only
 FROM base as sourcefilter
