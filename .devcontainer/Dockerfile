@@ -6,6 +6,9 @@ USER root
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+RUN add-apt-repository ppa:openrobotics/gazebo11-non-amd64 && apt update
+RUN apt-get source -y gazebo
+
 RUN apt-get update \
     && apt-get install -qq -y --no-install-recommends \
     git \
