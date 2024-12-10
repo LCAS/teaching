@@ -14,6 +14,7 @@ RUN apt-get update \
     python3-matplotlib \
     python3-pandas \
     ros-humble-rviz2 \
+    ros-humble-gazebo-plugins \
     ros-humble-nav2-* \
     ros-humble-tf-transformations \
     ros-humble-rqt* \
