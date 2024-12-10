@@ -1,7 +1,7 @@
 ARG BASE_IMAGE=lcas.lincoln.ac.uk/lcas/ros:jammy-humble-cuda12.2-opengl
-ARG TARGETARCH
 
 FROM ${BASE_IMAGE} as base
+ARG TARGETARCH
 
 USER root
 
