@@ -1,4 +1,5 @@
 ARG BASE_IMAGE=lcas.lincoln.ac.uk/lcas/ros:jammy-humble-cuda12.2-opengl
+ARG TARGETARCH
 
 FROM ${BASE_IMAGE} as base
 
@@ -7,6 +8,7 @@ USER root
 ENV DEBIAN_FRONTEND=noninteractive
 
 
+RUN echo "building for ${TARGETARCH}"
 RUN if [ "${TARGETARCH}" = "arm64" ]; then \
     add-apt-repository -s -y ppa:openrobotics/gazebo11-non-amd64; \
     fi
