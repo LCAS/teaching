@@ -7,7 +7,7 @@ USER root
 ENV DEBIAN_FRONTEND=noninteractive
 
 
-RUN if [ "$(uname -m)" = "aarch64" ]; then \
+RUN if [ "${TARGETARCH}" = "arm64" ]; then \
     add-apt-repository -s -y ppa:openrobotics/gazebo11-non-amd64; \
     fi
 
