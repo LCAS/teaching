@@ -7,9 +7,15 @@
   <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
   <license>Apache-2.0</license>
 
-  <depend>limo_bringup</depend>
   <depend>limo_msgs</depend>
   <depend>limo_gazebosim</depend>
+
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>rqt_common_plugins</exec_depend>
+  <exec_depend>find_object_2d</exec_depend>
+  <exec_depend>tf_transformations</exec_depend>
+  <exec_depend>navigation2</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

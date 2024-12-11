@@ -8,12 +8,16 @@
 	"build": {
 		"dockerfile": "./Dockerfile",
 		"args": {
+			// set the base image, add `-arm64` as a suffix if you have an ARM (e.g. Apple Mx) CPU:
 			"BASE_IMAGE": "lcas.lincoln.ac.uk/lcas/ros:jammy-humble-cuda12.2-opengl"
 		},
+		// change this to linux/arm64 if you have an ARM (e.g. Apple Mx) CPU:
+		"platform": "linux/amd64",
 		"context": "..",
 		"target": "devcontainer"
 	},
 
+	// forward the virtual desktop port
 	"forwardPorts": [5801],
 	"portsAttributes": {
 		"5801": {

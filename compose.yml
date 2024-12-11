@@ -1,0 +1,21 @@
+services:
+  teaching_desktop:
+    image: local/teaching_desktop:latest
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+      target: compiled
+      args:
+        BASE_IMAGE: lcas.lincoln.ac.uk/lcas/ros:jammy-humble-cuda12.2-opengl
+    ports:
+      - "5801"
+    user: ros
+    command: /bin/bash -c "(source /opt/ros/lcas/install/setup.bash; ros2 launch uol_tidybot tidybot.launch.py &); source /opt/ros/lcas/install/setup.bash; rviz2"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+        limits:
+          cpus: '2'
+          memory: 6GB
