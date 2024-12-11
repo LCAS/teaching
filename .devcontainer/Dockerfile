@@ -15,13 +15,16 @@ RUN if [ "${TARGETARCH}" = "arm64" ]; then \
     add-apt-repository -s -y ppa:openrobotics/gazebo11-non-amd64; \
     fi
 
-RUN apt-get update \
-    && apt-get install -qq -y --no-install-recommends \
-    git \
-    python3-pip \
-    python3-rosdep \
-    python3-matplotlib \
-    python3-pandas
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -qq -y --no-install-recommends \
+        git \
+        python3-pip \
+        python3-rosdep \
+        python3-matplotlib \
+        python3-pandas && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # get the source tree and analyse it for its package.xml only
 FROM base as sourcefilter
@@ -42,7 +45,7 @@ FROM base as depinstaller
 # copy the reduced source tree (only package.xml) from previous stage
 COPY --from=sourcefilter /tmp/src /tmp/src
 RUN rosdep update --rosdistro=${ROS_DISTRO} && apt-get update
-RUN rosdep install --from-paths /tmp/src --ignore-src -r -y && rm -rf /tmp/src && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN rosdep install --from-paths /tmp/src --ignore-src -r -y && rm -rf /tmp/src && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/src
 
 FROM depinstaller as depbuilder
 # add commit history to bust cache if and when needed.
@@ -89,7 +92,7 @@ RUN . /opt/ros/lcas/install/setup.sh && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN cd /opt/ros/lcas && colcon build --packages-up-to uol_tidybot && \
+RUN cd /opt/ros/lcas && colcon build --packages-up-to uol_tidybot_control && \
     rm -rf /opt/ros/lcas/src/ /opt/ros/lcas/build/ /opt/ros/lcas/log/
 
 RUN echo "source /opt/ros/lcas/install/setup.bash" >> ~/.bashrc
