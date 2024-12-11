@@ -51,19 +51,23 @@ COPY .devcontainer/*repos .devcontainer/*.sh /tmp/.devcontainer/
 
 # get the source tree and build it (include gazebo only for arm64 platform as it is not available for arm64)
 # see https://github.com/gazebosim/gazebo-classic/issues/3236
-RUN source /opt/ros/humble/setup.bash; \
-    apt update; \
-    rosdep --rosdistro=humble update; \
-    mkdir -p /opt/ros/lcas/src; \
-    cd /opt/ros/lcas/src; \
-    vcs import < /tmp/.devcontainer/lcas.repos; \
-    if [ "${TARGETARCH}" = "arm64" ]; then vcs import < /tmp/.devcontainer/gazebo_ros_pkgs.repos; fi ; \
-    vcs pull; \
-    rosdep install --from-paths . -i -y; \
-    cd /opt/ros/lcas
+RUN mkdir -p /opt/ros/lcas/src && \
+    cd /opt/ros/lcas/src && \
+    vcs import < /tmp/.devcontainer/lcas.repos
+RUN  if [ "${TARGETARCH}" = "arm64" ]; then vcs import < /tmp/.devcontainer/gazebo_ros_pkgs.repos; fi
+
+RUN . /opt/ros/humble/setup.sh && \
+    apt update && \
+    rosdep --rosdistro=${ROS_DISTRO} update && \
+    cd /opt/ros/lcas/src && \
+    vcs pull && \
+    rosdep install --from-paths . -i -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # build the workspace but only until limo_gazebosim to avoid building the hardware specific packages
-RUN cd /opt/ros/lcas; colcon build --packages-up-to limo_gazebosim
+RUN cd /opt/ros/lcas; colcon build --packages-up-to limo_gazebosim; \
+    rm -rf /opt/ros/lcas/src/ /opt/ros/lcas/build/ /opt/ros/lcas/log/
 
 FROM depbuilder as devcontainer
 # add user ros with sudo rights if it doesn't exist
@@ -78,7 +82,17 @@ RUN echo "source /opt/ros/lcas/install/setup.bash" >> ~ros/.bashrc
 FROM devcontainer as compiled
 
 COPY ./src /opt/ros/lcas/src/teaching-code/src
-RUN cd /opt/ros/lcas && colcon build --packages-up-to uol_tidybot
+RUN . /opt/ros/lcas/install/setup.sh && \
+    apt update && \
+    rosdep --rosdistro=${ROS_DISTRO} update && \
+    rosdep install --from-paths /opt/ros/lcas/src/teaching-code/src --ignore-src -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN cd /opt/ros/lcas && colcon build --packages-up-to uol_tidybot && \
+    rm -rf /opt/ros/lcas/src/ /opt/ros/lcas/build/ /opt/ros/lcas/log/
+
 RUN echo "source /opt/ros/lcas/install/setup.bash" >> ~/.bashrc
+RUN find /opt/ros/lcas/ 
 
 USER ros
