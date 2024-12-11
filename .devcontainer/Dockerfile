@@ -54,7 +54,7 @@ COPY .devcontainer/*repos .devcontainer/*.sh /tmp/.devcontainer/
 RUN mkdir -p /opt/ros/lcas/src && \
     cd /opt/ros/lcas/src && \
     vcs import < /tmp/.devcontainer/lcas.repos
-RUN  if [ "${TARGETARCH}" = "arm64" ]; then vcs import < /tmp/.devcontainer/gazebo_ros_pkgs.repos; fi
+RUN  if [ "${TARGETARCH}" = "arm64" ]; then cd /opt/ros/lcas/src; vcs import < /tmp/.devcontainer/gazebo_ros_pkgs.repos; fi
 
 RUN . /opt/ros/humble/setup.sh && \
     apt update && \
