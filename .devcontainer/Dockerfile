@@ -99,3 +99,4 @@ RUN echo "source /opt/ros/lcas/install/setup.bash" >> ~/.bashrc
 RUN find /opt/ros/lcas/ 
 
 USER ros
+ENV SHELL=/bin/bash
