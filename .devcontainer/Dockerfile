@@ -48,8 +48,6 @@ RUN rosdep update --rosdistro=${ROS_DISTRO} && apt-get update
 RUN rosdep install --from-paths /tmp/src --ignore-src -r -y && rm -rf /tmp/src && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/src
 
 FROM depinstaller as depbuilder
-# add commit history to bust cache if and when needed.
-ADD "https://api.github.com/repos/LCAS/limo_ros2/commits?per_page=1&sha=humble" .lcas_addons.limo_ros2.commits
 COPY .devcontainer/*repos .devcontainer/*.sh /tmp/.devcontainer/
 
 # get the source tree and build it (include gazebo only for arm64 platform as it is not available for arm64)
