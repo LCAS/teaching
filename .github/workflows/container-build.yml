@@ -94,6 +94,7 @@ jobs:
         context: .
         file: .devcontainer/Dockerfile
         platforms: linux/amd64
+        pull: true
         push: true
         tags: ${{ steps.meta_public.outputs.tags }}
         labels: ${{ steps.meta_public.outputs.labels }}
@@ -162,6 +163,7 @@ jobs:
         context: .
         file: .devcontainer/Dockerfile
         platforms: linux/arm64
+        pull: true
         push: true
         tags: ${{ steps.meta_public.outputs.tags }}
         labels: ${{ steps.meta_public.outputs.labels }}
