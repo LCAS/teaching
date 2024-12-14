@@ -94,7 +94,7 @@ jobs:
         context: .
         file: .devcontainer/Dockerfile
         platforms: linux/amd64
-        push: ${{ github.event_name != 'pull_request' }}
+        push: true
         tags: ${{ steps.meta_public.outputs.tags }}
         labels: ${{ steps.meta_public.outputs.labels }}
         target: compiled
@@ -162,7 +162,7 @@ jobs:
         context: .
         file: .devcontainer/Dockerfile
         platforms: linux/arm64
-        push: ${{ github.event_name != 'pull_request' }}
+        push: true
         tags: ${{ steps.meta_public.outputs.tags }}
         labels: ${{ steps.meta_public.outputs.labels }}
         target: compiled
