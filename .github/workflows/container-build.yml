@@ -84,7 +84,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - base_image: lcas.lincoln.ac.uk/lcas/ros:jammy-humble-cuda12.2-opengl-arm64-1
+          - base_image: lcas.lincoln.ac.uk/lcas/limo_platform_arm64:1
             ros_distro: humble
             push_image: lcas.lincoln.ac.uk/devcontainer/ros2-teaching-arm64
   
