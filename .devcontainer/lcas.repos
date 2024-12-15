@@ -1,5 +1,0 @@
-repositories:
-  limo_ros2:
-    type: git
-    url: https://github.com/LCAS/limo_ros2.git
-    version: v0.0.1

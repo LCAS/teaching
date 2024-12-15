@@ -1,6 +1,0 @@
-repositories:
-  gazebo_ros_pkgs:
-    type: git
-    url: https://github.com/ros-simulation/gazebo_ros_pkgs.git
-    version: 3.7.0
-
