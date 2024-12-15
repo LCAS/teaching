@@ -24,7 +24,6 @@ jobs:
       - name: What
         run: echo "BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
       - name: Build container
-        if: ${{ github.event_name != 'pull_request' }} 
         uses: devcontainers/ci@v0.3
         with:
           #imageName: devcontainer/ros2-teaching
