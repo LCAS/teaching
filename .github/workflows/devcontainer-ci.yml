@@ -26,7 +26,7 @@ jobs:
       - name: Build container
         uses: devcontainers/ci@v0.3
         with:
-          #imageName: devcontainer/ros2-teaching
+          imageName: lcas.lincoln.ac.uk/devcontainer/ros2-teaching
           push: never
-          #imageTag: ${{ env.BRANCH }}
+          imageTag: ci
           #runCmd: "bash .devcontainer/run-ci.sh"
