@@ -8,11 +8,8 @@
 	"build": {
 		"dockerfile": "./Dockerfile",
 		"args": {
-			// set the base image, add `-arm64` as a suffix if you have an ARM (e.g. Apple Mx) CPU:
-			"BASE_IMAGE": "lcas.lincoln.ac.uk/lcas/limo_platform_amd64:1"
+			"BASE_IMAGE": "lcas.lincoln.ac.uk/lcas/limo_platform:2"
 		},
-		// change this to linux/arm64 if you have an ARM (e.g. Apple Mx) CPU:
-		"platform": "linux/amd64",
 		"context": ".."
 	},
 
