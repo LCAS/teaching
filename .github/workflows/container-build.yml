@@ -20,7 +20,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - base_image: lcas.lincoln.ac.uk/lcas/limo_platform:1
+          - base_image: lcas.lincoln.ac.uk/lcas/limo_platform:2
             push_image: lcas.lincoln.ac.uk/devcontainer/ros2-teaching
   
     steps:
