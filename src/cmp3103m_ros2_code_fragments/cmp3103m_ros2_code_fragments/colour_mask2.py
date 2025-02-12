@@ -44,7 +44,8 @@ class ColourMask(Node):
 
 def main(args=None):
     print('Starting colour_mask.py.')
-
+    cv2.startWindowThread()
+    
     rclpy.init(args=args)
 
     colour_mask = ColourMask()

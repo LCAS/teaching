@@ -93,6 +93,7 @@ class ColourMover(Node):
 
 def main(args=None):
     print('Starting colour_mover.py.')
+    cv2.startWindowThread()
 
     rclpy.init(args=args)
 

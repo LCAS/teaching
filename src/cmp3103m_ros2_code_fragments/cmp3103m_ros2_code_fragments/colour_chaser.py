@@ -91,6 +91,7 @@ class ColourChaser(Node):
 
 def main(args=None):
     print('Starting colour_chaser.py.')
+    cv2.startWindowThread()
 
     rclpy.init(args=args)
 

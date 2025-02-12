@@ -70,7 +70,8 @@ class ColourCenter(Node):
 
 def main(args=None):
     print('Starting colour_center.py.')
-
+    cv2.startWindowThread()
+    
     rclpy.init(args=args)
 
     colour_center = ColourCenter()

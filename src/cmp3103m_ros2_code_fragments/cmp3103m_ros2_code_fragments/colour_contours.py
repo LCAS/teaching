@@ -85,7 +85,8 @@ class ColourContours(Node):
 
 def main(args=None):
     print('Starting colour_contours.py.')
-
+    cv2.startWindowThread()
+    
     rclpy.init(args=args)
 
     colour_contours = ColourContours()

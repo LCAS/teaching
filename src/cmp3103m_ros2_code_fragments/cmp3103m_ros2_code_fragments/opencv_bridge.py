@@ -82,7 +82,8 @@ class OpencvBridge(Node):
 
 def main(args=None):
     print('Starting opencv_bridge.py.')
-
+    cv2.startWindowThread()
+    
     rclpy.init(args=args)
 
     opencv_bridge = OpencvBridge()
