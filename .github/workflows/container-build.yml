@@ -4,11 +4,11 @@ name: Build Docker image
 on:
   workflow_dispatch:
   push:
-    branches: [ 2425-devel ]
+    branches: [ 2526-devel ]
     tags:
       - 'v*'
   pull_request:
-    branches: [ 2425-devel ]
+    branches: [ 2526-devel ]
 
 jobs:
   build-docker-image:
