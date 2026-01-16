@@ -261,7 +261,7 @@
       </link>
     </model>
 
-    <model name='indicator_greem'>
+    <model name='indicator_blue'>
       <static>1</static>
       <pose>1.485 0.0 0.55 0 0 0</pose>
       <link name='link'>
@@ -273,7 +273,7 @@
           </geometry>
           <material>
             <script>
-              <name>Gazebo/Green</name>
+              <name>Gazebo/Blue</name>
               <uri>file://media/materials/scripts/gazebo.material</uri>
             </script>
           </material>
