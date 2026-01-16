@@ -32,6 +32,7 @@ setup(
     entry_points={
         'console_scripts': [
             'generate_objects = uol_tidybot.spawn_objects:main',
+            'spawn_patches = uol_tidybot.spawn_patches:main',
         ],
     },
 )

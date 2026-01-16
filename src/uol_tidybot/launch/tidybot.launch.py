@@ -9,7 +9,7 @@ from launch.substitutions import Command, LaunchConfiguration, PythonExpression,
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from ament_index_python.packages import get_package_share_directory
-
+import time
  
 def generate_launch_description():
  
@@ -17,6 +17,7 @@ def generate_launch_description():
   urdf_model_name = 'tidybot.gazebo'
   rviz_config_file_name = 'urdf.rviz'
   default_world = 'level_1_1.world'
+  default_complexity = 'low_complexity'
 
   robot_name_in_model = 'limo_gazebosim'
 
@@ -71,6 +72,7 @@ def generate_launch_description():
   use_rviz = LaunchConfiguration('use_rviz')
   use_simulator = LaunchConfiguration('use_simulator')
   world = LaunchConfiguration('world', default=default_world)
+  complexity = LaunchConfiguration('complexity', default=default_complexity)  
  
   remappings = [((namespace, '/tf'), '/tf'),
                 ((namespace, '/tf_static'), '/tf_static'),
@@ -150,6 +152,14 @@ def generate_launch_description():
     parameters=[{'use_sim_time': use_sim_time}],
             remappings=remappings)
     
+  spawn_red_patches_node = Node(
+    package='uol_tidybot',
+    executable='spawn_patches', 
+    name='spawn_patches',
+    output='screen',
+    parameters=[{'task_complexity': _}]
+  )
+                                          
   start_joint_state_publisher_gui_node = Node(
     condition=IfCondition(gui),
     package='joint_state_publisher_gui',
@@ -217,6 +227,8 @@ def generate_launch_description():
   ld.add_action(declare_use_simulator_cmd)
   ld.add_action(declare_world_cmd)
   ld.add_action(twist_watchdog)
+
+
  
   # Add any actions
   ld.add_action(start_gazebo_server_cmd)
@@ -224,7 +236,13 @@ def generate_launch_description():
   ld.add_action(spawn_entity_cmd)
   ld.add_action(start_robot_state_publisher_cmd)
   ld.add_action(start_joint_state_publisher_cmd)
+  ld.add_action(spawn_red_patches_node)
+
+
   # ld.add_action(start_dummy_sensors)
   ld.add_action(start_rviz_cmd)
+ 
+
+
  
   return ld

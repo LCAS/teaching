@@ -32,7 +32,7 @@ class ObjectSpawner(Node):
     def __init__(self):
         super().__init__('ObjectSpawner')
         # declare a new ROS2 boolean parameter named "red"
-        self.declare_parameter('red', False, descriptor=ParameterDescriptor(description='Use red dice model instead of the default white dice model. Default is False.'))
+        self.declare_parameter('red', True, descriptor=ParameterDescriptor(description='Use red dice model instead of the default white dice model. Default is False.'))
         self.declare_parameter('n_objects', 10, descriptor=ParameterDescriptor(description='Number of objects to spawn. Default is 10.'))
         self.declare_parameter('cx', 0.0, descriptor=ParameterDescriptor(description='Center of the object distribution (x coordinate in m). Default is 0.0.'))
         self.declare_parameter('cy', 0.0, descriptor=ParameterDescriptor(description='Center of the object distribution (y coordinate in m). Default is 0.0.'))
