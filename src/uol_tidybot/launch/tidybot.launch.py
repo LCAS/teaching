@@ -157,7 +157,7 @@ def generate_launch_description():
     executable='spawn_patches', 
     name='spawn_patches',
     output='screen',
-    parameters=[{'task_complexity': _}]
+    parameters=[{'task_complexity': default_complexity}]
   )
                                           
   start_joint_state_publisher_gui_node = Node(
